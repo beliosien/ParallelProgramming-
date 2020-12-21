@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tmp/ParallelProgramming-/Opencl/source/main.c
+stdio.h
+-
+opencl.h
+/home/tmp/ParallelProgramming-/Opencl/source/opencl.h
+log.h
+/home/tmp/ParallelProgramming-/Opencl/source/log.h
+
+include/log.h
+errno.h
+-
+stdio.h
+-
+string.h
+-
+
+include/opencl.h
+CL/cl.h
+-
+
