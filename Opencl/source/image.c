@@ -2,8 +2,6 @@
 #include "image.h"
 #include "log.h"
 
-static const unsigned int BYTE_PER_PIXEL = 3;
-
 image_t* create_image(char* name,  unsigned int width,  unsigned int height)
 {
     image_t* image = (image_t*) malloc(sizeof(image_t));
@@ -16,8 +14,8 @@ image_t* create_image(char* name,  unsigned int width,  unsigned int height)
     image->name = name; 
     image->width = width;
     image->height = height;
-    image->buffer_size = image->height * image->width * BYTE_PER_PIXEL;
-    image->buffer = (unsigned char*) malloc(sizeof(unsigned char)* image->buffer_size);
+    image->buffer_size = image->height * image->width;
+    image->buffer = (unsigned int*) malloc(sizeof(unsigned int)* image->buffer_size);
 
 
     if (image->buffer == NULL)

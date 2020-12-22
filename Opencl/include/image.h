@@ -1,9 +1,3 @@
-/**
- * @Author: Ossim Belias
- * 
-*/
-
-
 #ifndef INCLUDE_IMAGE_H_
 #define INCLUDE_IMAGE_H_
 
@@ -24,7 +18,7 @@ typedef struct image {
     unsigned int height;
 
     unsigned int buffer_size; 
-    unsigned char* buffer;
+    unsigned int* buffer;
 
     image_opencl_t* opencl_image;
 
