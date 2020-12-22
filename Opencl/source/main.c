@@ -61,14 +61,6 @@ int main(){
     program = clCreateProgramWithSource(context, 1, (const char**) &KernelSource, NULL, &err);
     checkError(err, "error with the program creation");
 
-    // building the program
-    /*err= clBuildProgram(program, 0,NULL, NULL, NULL, NULL);
-    if (err != CL_SUCCESS)
-    {
-        LOG_ERROR("error with building program";
-        return -1;
-    }*/
-
 
     if (clBuildProgram(program, 0, NULL, NULL, NULL, NULL) != CL_SUCCESS)
     {
