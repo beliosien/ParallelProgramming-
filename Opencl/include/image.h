@@ -25,14 +25,14 @@ typedef struct image {
 
     unsigned int buffer_size; 
     unsigned char* buffer;
-    
+
     image_opencl_t* opencl_image;
 
 } image_t;
 
 
 
-image_t* create_image(char* name, int width, int height); // create an empty image
+image_t* create_image(char* name,  unsigned int width,  unsigned int height); // create an empty image
 void  destroy_image(image_t* image);
 
 int image_opencl(image_t* image);
