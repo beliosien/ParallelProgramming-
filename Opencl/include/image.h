@@ -6,7 +6,8 @@
 typedef struct image_opencl {
     cl_context context;
     cl_command_queue command_queue;
-    cl_mem buffer; 
+    cl_mem buffer_in;
+    cl_mem buffer_out; 
     cl_kernel kernel;
 
 } image_opencl_t;

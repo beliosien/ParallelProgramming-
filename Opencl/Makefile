@@ -143,6 +143,60 @@ sample/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/build
 .PHONY : sample/fast
 
+source/image-opencl.o: source/image-opencl.c.o
+
+.PHONY : source/image-opencl.o
+
+# target to build an object file
+source/image-opencl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/image-opencl.c.o
+.PHONY : source/image-opencl.c.o
+
+source/image-opencl.i: source/image-opencl.c.i
+
+.PHONY : source/image-opencl.i
+
+# target to preprocess a source file
+source/image-opencl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/image-opencl.c.i
+.PHONY : source/image-opencl.c.i
+
+source/image-opencl.s: source/image-opencl.c.s
+
+.PHONY : source/image-opencl.s
+
+# target to generate assembly for a file
+source/image-opencl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/image-opencl.c.s
+.PHONY : source/image-opencl.c.s
+
+source/image.o: source/image.c.o
+
+.PHONY : source/image.o
+
+# target to build an object file
+source/image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/image.c.o
+.PHONY : source/image.c.o
+
+source/image.i: source/image.c.i
+
+.PHONY : source/image.i
+
+# target to preprocess a source file
+source/image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/image.c.i
+.PHONY : source/image.c.i
+
+source/image.s: source/image.c.s
+
+.PHONY : source/image.s
+
+# target to generate assembly for a file
+source/image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/image.c.s
+.PHONY : source/image.c.s
+
 source/main.o: source/main.c.o
 
 .PHONY : source/main.o
@@ -206,6 +260,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sample"
+	@echo "... source/image-opencl.o"
+	@echo "... source/image-opencl.i"
+	@echo "... source/image-opencl.s"
+	@echo "... source/image.o"
+	@echo "... source/image.i"
+	@echo "... source/image.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"

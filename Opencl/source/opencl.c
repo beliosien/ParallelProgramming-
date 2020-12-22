@@ -9,7 +9,43 @@
 #include "opencl.h"
 
 
-void sayHello()
+char* opencl_kernel_path = NULL;
+
+
+static char* getPath()
 {
-    printf("hello world \n");
+    char* path = NULL;
+
+    if (opencl_kernel_path != NULL)
+    {
+        if(access(opencl_kernel_path, F_OK) < 0)
+        {
+            LOG_ERROR("file %s  cannot be accessed  ", opencl_kernel_path);
+            goto fail_exit;
+        }
+
+        path = opencl_kernel_path;
+    }
+
+
+    if (path == NULL)
+    {
+        if(access(__KERNEL_FILE__, F_OK) < 0)
+        {
+            LOG_ERROR("file %s cannot be accessed", __KERNEL_FILE__);
+            goto fail_exit;
+        }
+
+        path =__KERNEL_FILE__;
+    }
+
+    return path;
+
+fail_exit:
+    return NULL;
+}
+
+
+int opencl_load_kernel_code(char** code, size_t* len){
+
 }

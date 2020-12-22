@@ -16,6 +16,8 @@ target_link_libraries(sample -lm -lpthread /usr/lib64/libOpenCL.so.1)
 target_sources(sample PUBLIC
     source/main.c
     source/opencl.c
+    source/image.c
+    source/image-opencl.c
 )
 
 
