@@ -12,11 +12,15 @@ typedef struct image_opencl {
 
 } image_opencl_t;
 
+typedef struct image image_t;
+typdef int (*image_handler)(image_t* image);
 
 typedef struct image {
     const char*  name;
     unsigned int width;
     unsigned int height;
+
+    image_handler handler;
 
     unsigned int buffer_size; 
     unsigned int* buffer;
@@ -27,7 +31,7 @@ typedef struct image {
 
 
 
-image_t* create_image(char* name,  unsigned int width,  unsigned int height); // create an empty image
+image_t* create_image(char* name, image_handler handler, unsigned int width,  unsigned int height); // create an empty image
 void  destroy_image(image_t* image);
 
 int image_opencl(image_t* image);

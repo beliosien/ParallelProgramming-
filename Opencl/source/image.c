@@ -2,7 +2,7 @@
 #include "image.h"
 #include "log.h"
 
-image_t* create_image(char* name,  unsigned int width,  unsigned int height)
+image_t* create_image(char* name, image_handler handler, unsigned int width,  unsigned int height)
 {
     image_t* image = (image_t*) malloc(sizeof(image_t));
     if (image == NULL)
@@ -16,7 +16,7 @@ image_t* create_image(char* name,  unsigned int width,  unsigned int height)
     image->height = height;
     image->buffer_size = image->height * image->width;
     image->buffer = (unsigned int*) malloc(sizeof(unsigned int)* image->buffer_size);
-
+    image->handler = handler;
 
     if (image->buffer == NULL)
     {
