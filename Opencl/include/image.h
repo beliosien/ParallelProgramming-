@@ -13,7 +13,7 @@ typedef struct image_opencl {
 } image_opencl_t;
 
 typedef struct image image_t;
-typdef int (*image_handler)(image_t* image);
+typedef int (*image_handler)(image_t* image);
 
 typedef struct image {
     const char*  name;
