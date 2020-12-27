@@ -59,11 +59,11 @@ static void fail_unknown_argument(const char* exec_name, const char* opt) {
     exit(1);
 }
 
-static void fail_unknown_method(const char* exec_name, const char* arg) {
+/*static void fail_unknown_method(const char* exec_name, const char* arg) {
     fprintf(stderr, "%s: unrecognized argument '%s' for option `--method`\n", exec_name, arg);
     fprintf(stderr, "Try '%s --help' for more information.\n", exec_name);
     exit(1);
-}
+}*/
 
 static void fail_multiple_method(const char* exec_name) {
     fprintf(stderr, "%s: zero or one option `--method` must be specified\n", exec_name);
@@ -189,7 +189,7 @@ int main(int argc, char* argv[]) {
     unsigned int width      = 512;
     unsigned int height     = 512;
     //unsigned int taylor     = 6;
-    unsigned int iterations = 0;
+    //unsigned int iterations = 0;
 
     unsigned int opencl_platform_index = 0;
     unsigned int opencl_device_index   = 0;
@@ -210,7 +210,7 @@ int main(int argc, char* argv[]) {
                 use_method_opencl = true;
                 use_method_count++;
             } else {
-                fail_unknown_method(exec_name, argv[i + 1]);
+                //fail_unknown_method(exec_name, argv[i + 1]);
             }
 
             i++;
@@ -263,7 +263,7 @@ int main(int argc, char* argv[]) {
                 fail_missing_argument(exec_name, argv[i]);
             }
 
-            iterations = get_strictly_positive_integer_or_fail(exec_name, argv[i], argv[i + 1]);
+            //iterations = get_strictly_positive_integer_or_fail(exec_name, argv[i], argv[i + 1]);
             i++;
 
             //do_benchmark = true;
@@ -278,9 +278,9 @@ int main(int argc, char* argv[]) {
     }
 
     image_t* image = NULL;
-    image_opencl_t image_opencl;
+    image_opencl_t opencl_image;
     image_opencl_t* image_opencl_ptr = configure_opencl(opencl_platform_index, opencl_device_index, 
-                            &image_opencl, width, height);
+                            &opencl_image, width, height);
 
     /*if (do_benchmark) {
         run_benchmark(sinoscope_opencl_ptr, width, height, taylor, 200.0, iterations);

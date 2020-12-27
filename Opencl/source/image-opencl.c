@@ -40,6 +40,7 @@ int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, unsi
     size_t len = 0;
 
     err = opencl_load_kernel_code(&kernelSource, &len);
+
     if (err < 0)
     {
         LOG_ERROR("error loading kernel code");
@@ -61,9 +62,10 @@ int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, unsi
     char* options = malloc(strlen(options_prefix) + strlen(opencl_include) + 1);
     strcpy(options, options_prefix);
     strcat(options, opencl_include);
-    error = clBuildProgram(program, 1, &device_id, options, NULL, NULL);
-    if (error != CL_SUCCESS) {
+    err = clBuildProgram(program, 1, &device_id, options, NULL, NULL);
+    if (err!= CL_SUCCESS) {
         LOG_ERROR("failed to build OpenCL program");
+        opencl_print_build_log(program, device_id);
         free(options);
         goto fail_exit;
     }
@@ -75,7 +77,7 @@ int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, unsi
     {
         LOG_ERROR("error creating the kernel");
         goto fail_exit;
-    }
+    } 
 
 
     return 0;
@@ -108,7 +110,7 @@ int image_opencl(image_t* image) {
     cl_int err = 0;
 
     struct params_t params;
-    params.width = image->widht;
+    params.width = image->width;
     params.height = image->height;
     params.buffer_size = image->buffer_size;
 
@@ -122,7 +124,7 @@ int image_opencl(image_t* image) {
     }
 
     size_t global_size[] = {(size_t)image->height, (size_t)image->width};
-    error = clEnqueueNDRangeKernel(image->opencl_image->command_queue, image->opencl_image->kernel, 2, 
+    err = clEnqueueNDRangeKernel(image->opencl_image->command_queue, image->opencl_image->kernel, 2, 
                         NULL, global_size, NULL, 0, NULL, NULL);
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to enqueue and execute OpenCL kernel");
@@ -135,14 +137,14 @@ int image_opencl(image_t* image) {
         goto fail_exit;
     }
 
-    err = clEnqueueWriteBuffer(image->opencl_image->command_queue, sinoscope->opencl->buffer_in, CL_TRUE, 0, 
+    err = clEnqueueWriteBuffer(image->opencl_image->command_queue, image->opencl_image->buffer_in, CL_TRUE, 0, 
                                 image->buffer_size, image->buffer, 0 , NULL, NULL);
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to enqueue commands to write buffer");
         goto fail_exit;
     }
 
-    err = clEnqueueReadBuffer(image->opencl_image->command_queue, sinoscope->opencl->buffer_out, CL_TRUE, 0, 
+    err = clEnqueueReadBuffer(image->opencl_image->command_queue, image->opencl_image->buffer_out, CL_TRUE, 0, 
                                 image->buffer_size, image->buffer, 0 , NULL, NULL);
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to enqueue commands to read buffer");
