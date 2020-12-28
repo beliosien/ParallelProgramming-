@@ -23,7 +23,7 @@ typedef struct image {
     image_handler handler;
 
     unsigned int buffer_size; 
-    unsigned int* buffer;
+    unsigned char* buffer;
 
     image_opencl_t* opencl_image;
 

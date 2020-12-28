@@ -15,7 +15,7 @@ image_t* create_image(char* name, image_handler handler, unsigned int width,  un
     image->width = width;
     image->height = height;
     image->buffer_size = image->height * image->width;
-    image->buffer = (unsigned int*) malloc(sizeof(unsigned int)* image->buffer_size);
+    image->buffer = (unsigned char*) malloc(sizeof(unsigned char)* image->buffer_size);
     image->handler = handler;
 
     if (image->buffer == NULL)
@@ -37,4 +37,10 @@ void destroy_image(image_t* image)
 {
     free(image->buffer);
     free(image);
+}
+
+
+int image_save_png(image_t* image, char* filename)
+{
+    
 }
