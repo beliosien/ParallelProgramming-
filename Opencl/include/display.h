@@ -3,6 +3,10 @@
 #ifndef INCLUDE_DISPLAY_H_
 #define INCLUDE_DISPLAY_H_
 
+/***
+ * display helps us to see any kind of image
+*/
+
 #include "image.h"
 
 int display_init(image_t* image);
