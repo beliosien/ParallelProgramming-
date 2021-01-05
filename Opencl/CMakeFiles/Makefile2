@@ -83,9 +83,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/run-opencl.dir/clean
 clean: CMakeFiles/sample.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run-opencl.dir
+
+# All Build rule for target.
+CMakeFiles/run-opencl.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-opencl.dir/build.make CMakeFiles/run-opencl.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-opencl.dir/build.make CMakeFiles/run-opencl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tmp/ParallelProgramming-/Opencl/CMakeFiles --progress-num= "Built target run-opencl"
+.PHONY : CMakeFiles/run-opencl.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run-opencl.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run-opencl.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/CMakeFiles 0
+.PHONY : CMakeFiles/run-opencl.dir/rule
+
+# Convenience name for target.
+run-opencl: CMakeFiles/run-opencl.dir/rule
+
+.PHONY : run-opencl
+
+# clean rule for target.
+CMakeFiles/run-opencl.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-opencl.dir/build.make CMakeFiles/run-opencl.dir/clean
+.PHONY : CMakeFiles/run-opencl.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sample.dir
@@ -94,12 +122,12 @@ clean: CMakeFiles/sample.dir/clean
 CMakeFiles/sample.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tmp/ParallelProgramming-/Opencl/CMakeFiles --progress-num=1,2,3,4,5 "Built target sample"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tmp/ParallelProgramming-/Opencl/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target sample"
 .PHONY : CMakeFiles/sample.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sample.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sample.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/CMakeFiles 0
 .PHONY : CMakeFiles/sample.dir/rule

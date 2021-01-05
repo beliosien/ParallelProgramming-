@@ -9,15 +9,16 @@ set(CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointe
 set(CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fsanitize=address")
 
 
-include_directories(include)
+include_directories(sample include)
 add_executable(sample)
-target_link_libraries(sample -lm -lpthread /usr/lib64/libOpenCL.so.1)
+target_link_libraries(sample -lm -lpthread -lpng /usr/lib64/libOpenCL.so.1)
 
 target_sources(sample PUBLIC
     source/main.c
     source/opencl.c
     source/image.c
     source/image-opencl.c
+    source/display.c
 )
 
 
@@ -69,3 +70,8 @@ endif()
 add_definitions(-D__KERNEL_FILE__="${PROJECT_SOURCE_DIR}/source/kernel/traitement.cl")
 add_definitions(-D__OPENCL_INCLUDE__="${PROJECT_SOURCE_DIR}/source/kernel")
 add_definitions(-DCL_TARGET_OPENCL_VERSION=220)
+
+add_custom_target(run-opencl
+    COMMAND time ${CMAKE_CURRENT_BINARY_DIR}/sample --directory ${PROJECT_SOURCE_DIR}/data --method opencl
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+)

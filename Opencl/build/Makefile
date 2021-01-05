@@ -71,7 +71,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/tmp/ParallelProgramming-/Opencl
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tmp/ParallelProgramming-/Opencl
+CMAKE_BINARY_DIR = /home/tmp/ParallelProgramming-/Opencl/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/CMakeFiles /home/tmp/ParallelProgramming-/Opencl/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named run-opencl
+
+# Build rule for target.
+run-opencl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run-opencl
+.PHONY : run-opencl
+
+# fast build rule for target.
+run-opencl/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-opencl.dir/build.make CMakeFiles/run-opencl.dir/build
+.PHONY : run-opencl/fast
+
+#=============================================================================
 # Target rules for targets named sample
 
 # Build rule for target.
@@ -142,6 +155,33 @@ sample: cmake_check_build_system
 sample/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/build
 .PHONY : sample/fast
+
+source/display.o: source/display.c.o
+
+.PHONY : source/display.o
+
+# target to build an object file
+source/display.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.c.o
+.PHONY : source/display.c.o
+
+source/display.i: source/display.c.i
+
+.PHONY : source/display.i
+
+# target to preprocess a source file
+source/display.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.c.i
+.PHONY : source/display.c.i
+
+source/display.s: source/display.c.s
+
+.PHONY : source/display.s
+
+# target to generate assembly for a file
+source/display.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.c.s
+.PHONY : source/display.c.s
 
 source/image-opencl.o: source/image-opencl.c.o
 
@@ -259,7 +299,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... run-opencl"
 	@echo "... sample"
+	@echo "... source/display.o"
+	@echo "... source/display.i"
+	@echo "... source/display.s"
 	@echo "... source/image-opencl.o"
 	@echo "... source/image-opencl.i"
 	@echo "... source/image-opencl.s"

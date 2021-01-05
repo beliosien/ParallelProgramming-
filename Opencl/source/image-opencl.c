@@ -2,7 +2,7 @@
 #include "image.h"
 
 
-int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, unsigned int width, unsigned int height)
+/*int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, unsigned int width, unsigned int height)
 {
     cl_int err = 0;
 
@@ -155,4 +155,4 @@ int image_opencl(image_t* image) {
 
 fail_exit:
     return -1;
-}
+}*/

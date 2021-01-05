@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/tmp/ParallelProgramming-/Opencl/source/display.c" "/home/tmp/ParallelProgramming-/Opencl/CMakeFiles/sample.dir/source/display.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/image-opencl.c" "/home/tmp/ParallelProgramming-/Opencl/CMakeFiles/sample.dir/source/image-opencl.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/image.c" "/home/tmp/ParallelProgramming-/Opencl/CMakeFiles/sample.dir/source/image.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/main.c" "/home/tmp/ParallelProgramming-/Opencl/CMakeFiles/sample.dir/source/main.c.o"

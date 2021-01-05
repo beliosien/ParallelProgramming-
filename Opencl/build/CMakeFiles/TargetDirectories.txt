@@ -1,0 +1,4 @@
+/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/rebuild_cache.dir
+/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/edit_cache.dir
+/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/run-opencl.dir
+/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir

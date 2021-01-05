@@ -9,7 +9,7 @@
 
 #include "image.h"
 
-int display_init(image_t* image);
+int display_init(image_dir_t* image_dir);
 void display_destroy();
 int display_open();
 

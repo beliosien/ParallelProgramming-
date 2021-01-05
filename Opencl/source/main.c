@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <GL/glut.h>
+
 #include "image.h"
 #include "log.h"
 #include "display.h"
@@ -30,21 +32,47 @@ static void fail_unknown_argument(const char* exec_name, const char* opt) {
     exit(1);
 }
 
-static void fail_unknown_pipeline_algorithm(const char* exec_name, const char* arg) {
+static void fail_unknown_method_algorithm(const char* exec_name, const char* arg) {
     fprintf(stderr, "%s: unrecognized argument '%s' for option `--method`\n", exec_name, arg);
     fprintf(stderr, "Try '%s --help' for more information.\n", exec_name);
     exit(1);
 }
 
-static void fail_multiple_pipeline(const char* exec_name) {
+/*static void fail_multiple_method(const char* exec_name) {
     fprintf(stderr, "%s: zero or one option `--method` must be specified\n", exec_name);
     fprintf(stderr, "Try '%s --help' for more information.\n", exec_name);
     exit(1);
+}*/
+
+
+static void run_viewer(image_dir_t* image_dir) {
+    if (display_init(image_dir) < 0) {
+        LOG_ERROR("failed to initialise display");
+        exit(1);
+    }
+
+    if (display_open() < 0) {
+        LOG_ERROR("failed to open display");
+        exit(1);
+    }
+
+    display_destroy();
 }
 
 static image_dir_t image_dir = {.load_current = 0, .stop = false};
 
+static void sigint_handler(int sig) {
+    printf("\n\rSIGINT received, stopping method algorithm\n");
+    image_dir.stop = true;
+}
+
 int main(int argc, char* argv[]) {
+
+    if (getenv("DISPLAY") != NULL) {
+        glutInit(&argc, argv);
+    }
+
+
     char* exec_name = argv[0];
     bool use_method_openmp = false;
     bool use_method_opencl = false;
@@ -66,7 +94,7 @@ int main(int argc, char* argv[]) {
             } else if (strcmp("opencl", argv[i + 1]) == 0) {
                 use_method_opencl = true; 
             } else {
-                fail_unknown_pipeline_algorithm(exec_name, argv[i + 1]);
+                fail_unknown_method_algorithm(exec_name, argv[i + 1]);
             }
 
             i++;
@@ -85,18 +113,18 @@ int main(int argc, char* argv[]) {
 
     printf("Starting viewing image, press CTRL+C to stop loading images\n");
 
-    int ret;
     if (use_method_openmp) {
         image_dir.save_prefix = "openmp";
        
     } else if (use_method_opencl) {
         image_dir.save_prefix = "opencl";
+        run_viewer(&image_dir);
        
     } else {
         LOG_ERROR("no method configured");
         exit(1);
     }
 
-    return (ret < 0) ? 1 : 0;
+    return 0;
 
 }
