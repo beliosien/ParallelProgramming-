@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "log.C": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }

@@ -144,6 +144,19 @@ run-opencl/fast:
 .PHONY : run-opencl/fast
 
 #=============================================================================
+# Target rules for targets named format
+
+# Build rule for target.
+format: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 format
+.PHONY : format
+
+# fast build rule for target.
+format/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/format.dir/build.make CMakeFiles/format.dir/build
+.PHONY : format/fast
+
+#=============================================================================
 # Target rules for targets named sample
 
 # Build rule for target.
@@ -299,6 +312,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... format"
 	@echo "... run-opencl"
 	@echo "... sample"
 	@echo "... source/display.o"

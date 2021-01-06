@@ -84,6 +84,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/run-opencl.dir/clean
+clean: CMakeFiles/format.dir/clean
 clean: CMakeFiles/sample.dir/clean
 
 .PHONY : clean
@@ -92,7 +93,7 @@ clean: CMakeFiles/sample.dir/clean
 # Target rules for target CMakeFiles/run-opencl.dir
 
 # All Build rule for target.
-CMakeFiles/run-opencl.dir/all:
+CMakeFiles/run-opencl.dir/all: CMakeFiles/sample.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-opencl.dir/build.make CMakeFiles/run-opencl.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-opencl.dir/build.make CMakeFiles/run-opencl.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num= "Built target run-opencl"
@@ -100,7 +101,7 @@ CMakeFiles/run-opencl.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run-opencl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run-opencl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles 0
 .PHONY : CMakeFiles/run-opencl.dir/rule
@@ -114,6 +115,33 @@ run-opencl: CMakeFiles/run-opencl.dir/rule
 CMakeFiles/run-opencl.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-opencl.dir/build.make CMakeFiles/run-opencl.dir/clean
 .PHONY : CMakeFiles/run-opencl.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/format.dir
+
+# All Build rule for target.
+CMakeFiles/format.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/format.dir/build.make CMakeFiles/format.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/format.dir/build.make CMakeFiles/format.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num= "Built target format"
+.PHONY : CMakeFiles/format.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/format.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/format.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles 0
+.PHONY : CMakeFiles/format.dir/rule
+
+# Convenience name for target.
+format: CMakeFiles/format.dir/rule
+
+.PHONY : format
+
+# clean rule for target.
+CMakeFiles/format.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/format.dir/build.make CMakeFiles/format.dir/clean
+.PHONY : CMakeFiles/format.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sample.dir

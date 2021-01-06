@@ -14,8 +14,8 @@
 #include "image.h"
 #include "display.h"
 
-#define WIDTH 512
-#define HEIGHT 512
+#define WIDTH 640
+#define HEIGHT 360
 
 
 typedef struct display
@@ -92,12 +92,17 @@ static int pre_display()
 
     gluOrtho2D(0.0, 1.0, 0.0, 1.0);
 
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     if (LOG_ERROR_OPENGL("glClearColor") < 0) {
         goto fail_exit;
     }
 
-    glClear(GL_COLOR_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     if (LOG_ERROR_OPENGL("glClear") < 0) {
         goto fail_exit;
     }
@@ -130,15 +135,21 @@ static int render()
         }
     }
 
-    while (display->enabled && !display->image_dir->stop) {
-        image_t* image = image_dir_load_next(display->image_dir);
+    image_t* image = NULL;
+    if (display->enabled && (image = image_dir_load_next(display->image_dir)) != NULL) {
+
+        if(image == NULL)
+        {
+            LOG_ERROR("image is null");
+            goto fail_exit;
+        }
 
         glBindTexture(GL_TEXTURE_2D, display->texture);
         if (LOG_ERROR_OPENGL("glBindTexture") < 0) {
             goto fail_exit;
         }
 
-        glTexImage2D(GL_TEXTURE_2D, 0, 3, image->width, image->height, 0, GL_RGB,
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->width, image->height, 0, GL_RGBA,
                      GL_UNSIGNED_BYTE, image->pixels);
         if (LOG_ERROR_OPENGL("glTexImage2D") < 0) {
             goto fail_exit;
@@ -150,6 +161,16 @@ static int render()
         }
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
+            goto fail_exit;
+        }
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+        if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
+            goto fail_exit;
+        }
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
         if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
             goto fail_exit;
         }
@@ -258,6 +279,7 @@ int display_open() {
     }
 
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
+    
 
     int x_pos = (glutGet(GLUT_SCREEN_WIDTH) - display->width) / 2;
     int y_pos = (glutGet(GLUT_SCREEN_HEIGHT) - display->height) / 2;
@@ -269,11 +291,13 @@ int display_open() {
     glutDisplayFunc(callback_display);
     glutIdleFunc(callback_idle);
     glutKeyboardFunc(callback_keyboard);
-    glutReshapeFunc(callback_reshape);
 
+    glutReshapeFunc(callback_reshape);
     glewInit();
     glXSwapIntervalMESA(0);
+
     glutMainLoop();
+    printf("7--------------- \n");
 
     return 0;
 
