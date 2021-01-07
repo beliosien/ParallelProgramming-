@@ -6,6 +6,7 @@ CMakeFiles/sample.dir/source/display.c.o
  ../include/image.h
  ../include/log.h
  ../include/pixel.h
+ ../include/texture.h
  /home/tmp/ParallelProgramming-/Opencl/source/display.c
 CMakeFiles/sample.dir/source/image-opencl.c.o
  ../include/image.h
@@ -27,9 +28,9 @@ CMakeFiles/sample.dir/source/opencl.c.o
  ../include/log.h
  ../include/opencl.h
  /home/tmp/ParallelProgramming-/Opencl/source/opencl.c
-CMakeFiles/sample.dir/source/texture.cpp.o
+CMakeFiles/sample.dir/source/texture.c.o
  ../include/image.h
  ../include/log.h
  ../include/pixel.h
  ../include/texture.h
- /home/tmp/ParallelProgramming-/Opencl/source/texture.cpp
+ /home/tmp/ParallelProgramming-/Opencl/source/texture.c

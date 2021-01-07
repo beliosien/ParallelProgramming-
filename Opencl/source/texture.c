@@ -3,7 +3,7 @@
 
 texture_t* init_texture(image_t* image)
 {
-    texture_t* texture = malloc(sizeof(texture_t)):
+    texture_t* texture = malloc(sizeof(texture_t));
 
     if(image == NULL)
     {

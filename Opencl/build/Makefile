@@ -304,32 +304,32 @@ source/opencl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/opencl.c.s
 .PHONY : source/opencl.c.s
 
-source/texture.o: source/texture.cpp.o
+source/texture.o: source/texture.c.o
 
 .PHONY : source/texture.o
 
 # target to build an object file
-source/texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.cpp.o
-.PHONY : source/texture.cpp.o
+source/texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.c.o
+.PHONY : source/texture.c.o
 
-source/texture.i: source/texture.cpp.i
+source/texture.i: source/texture.c.i
 
 .PHONY : source/texture.i
 
 # target to preprocess a source file
-source/texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.cpp.i
-.PHONY : source/texture.cpp.i
+source/texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.c.i
+.PHONY : source/texture.c.i
 
-source/texture.s: source/texture.cpp.s
+source/texture.s: source/texture.c.s
 
 .PHONY : source/texture.s
 
 # target to generate assembly for a file
-source/texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.cpp.s
-.PHONY : source/texture.cpp.s
+source/texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.c.s
+.PHONY : source/texture.c.s
 
 # Help Target
 help:

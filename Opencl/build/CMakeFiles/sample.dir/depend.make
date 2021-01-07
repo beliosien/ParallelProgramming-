@@ -5,6 +5,7 @@ CMakeFiles/sample.dir/source/display.c.o: ../include/display.h
 CMakeFiles/sample.dir/source/display.c.o: ../include/image.h
 CMakeFiles/sample.dir/source/display.c.o: ../include/log.h
 CMakeFiles/sample.dir/source/display.c.o: ../include/pixel.h
+CMakeFiles/sample.dir/source/display.c.o: ../include/texture.h
 CMakeFiles/sample.dir/source/display.c.o: ../source/display.c
 
 CMakeFiles/sample.dir/source/image-opencl.c.o: ../include/image.h
@@ -27,9 +28,9 @@ CMakeFiles/sample.dir/source/opencl.c.o: ../include/log.h
 CMakeFiles/sample.dir/source/opencl.c.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/opencl.c.o: ../source/opencl.c
 
-CMakeFiles/sample.dir/source/texture.cpp.o: ../include/image.h
-CMakeFiles/sample.dir/source/texture.cpp.o: ../include/log.h
-CMakeFiles/sample.dir/source/texture.cpp.o: ../include/pixel.h
-CMakeFiles/sample.dir/source/texture.cpp.o: ../include/texture.h
-CMakeFiles/sample.dir/source/texture.cpp.o: ../source/texture.cpp
+CMakeFiles/sample.dir/source/texture.c.o: ../include/image.h
+CMakeFiles/sample.dir/source/texture.c.o: ../include/log.h
+CMakeFiles/sample.dir/source/texture.c.o: ../include/pixel.h
+CMakeFiles/sample.dir/source/texture.c.o: ../include/texture.h
+CMakeFiles/sample.dir/source/texture.c.o: ../source/texture.c
 

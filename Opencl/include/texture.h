@@ -31,8 +31,4 @@ int Bind(unsigned int slot, texture_t* texture);
 int UnBind();
 
 
-static inline size_t GetWidth()  { return  width;};
-static inline size_t GetHeight()  { return  height;};
-
-
 #endif /*INCLUDE_TEXTURE_H_*/

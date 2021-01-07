@@ -151,6 +151,12 @@ static int render()
             goto fail_exit;
         }
 
+        if(Bind(0, display->texture) < 0)
+        {
+            LOG_ERROR("error binding the texture");
+            goto fail_to_bind;
+        }
+
 
         /*glBindTexture(GL_TEXTURE_2D, display->texture);
         if (LOG_ERROR_OPENGL("glBindTexture") < 0) {
@@ -211,6 +217,10 @@ static int render()
 
     return 0;
 
+fail_to_bind:
+    destroy_texture(display->texture);
+    display->texture = NULL;
+    
 fail_exit:
     return -1;
 }
