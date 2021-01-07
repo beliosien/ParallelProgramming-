@@ -27,3 +27,9 @@ CMakeFiles/sample.dir/source/opencl.c.o
  ../include/log.h
  ../include/opencl.h
  /home/tmp/ParallelProgramming-/Opencl/source/opencl.c
+CMakeFiles/sample.dir/source/texture.cpp.o
+ ../include/image.h
+ ../include/log.h
+ ../include/pixel.h
+ ../include/texture.h
+ /home/tmp/ParallelProgramming-/Opencl/source/texture.cpp

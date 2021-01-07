@@ -304,6 +304,33 @@ source/opencl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/opencl.c.s
 .PHONY : source/opencl.c.s
 
+source/texture.o: source/texture.cpp.o
+
+.PHONY : source/texture.o
+
+# target to build an object file
+source/texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.cpp.o
+.PHONY : source/texture.cpp.o
+
+source/texture.i: source/texture.cpp.i
+
+.PHONY : source/texture.i
+
+# target to preprocess a source file
+source/texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.cpp.i
+.PHONY : source/texture.cpp.i
+
+source/texture.s: source/texture.cpp.s
+
+.PHONY : source/texture.s
+
+# target to generate assembly for a file
+source/texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.cpp.s
+.PHONY : source/texture.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -330,6 +357,9 @@ help:
 	@echo "... source/opencl.o"
 	@echo "... source/opencl.i"
 	@echo "... source/opencl.s"
+	@echo "... source/texture.o"
+	@echo "... source/texture.i"
+	@echo "... source/texture.s"
 .PHONY : help
 
 

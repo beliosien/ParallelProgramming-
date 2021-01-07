@@ -13,6 +13,7 @@
 #include "log.h"
 #include "image.h"
 #include "display.h"
+#include "texture.h"
 
 #define WIDTH 640
 #define HEIGHT 360
@@ -25,7 +26,7 @@ typedef struct display
     unsigned int window_id;
 
     image_dir_t* image_dir;
-    GLuint  texture;
+    texture_t*  texture;
     bool enabled;
 
 } display_t;
@@ -49,7 +50,7 @@ int display_init(image_dir_t* image_dir)
     display->window_id = 0;
 
     display->image_dir = image_dir;
-    display->texture = 0;
+    display->texture = malloc(sizeof(texture_t));
     display->enabled = true;
 
     return 0;
@@ -92,17 +93,16 @@ static int pre_display()
 
     gluOrtho2D(0.0, 1.0, 0.0, 1.0);
 
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     if (LOG_ERROR_OPENGL("glClearColor") < 0) {
         goto fail_exit;
     }
 
-    glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     if (LOG_ERROR_OPENGL("glClear") < 0) {
         goto fail_exit;
     }
@@ -128,23 +128,31 @@ static int render()
     }
 
 
-     if (display->texture == 0) {
+     /*if (display->texture == 0) {
         glGenTextures(1, &display->texture);
         if (LOG_ERROR_OPENGL("glGenTextures") < 0) {
             goto fail_exit;
         }
-    }
+    }*/
 
     image_t* image = NULL;
     if (display->enabled && (image = image_dir_load_next(display->image_dir)) != NULL) {
 
         if(image == NULL)
         {
-            LOG_ERROR("image is null");
+            LOG_ERROR_NULL_PTR();
             goto fail_exit;
         }
 
-        glBindTexture(GL_TEXTURE_2D, display->texture);
+        display->texture = init_texture(image);
+        if(display->texture == NULL)
+        {
+            LOG_ERROR_NULL_PTR();
+            goto fail_exit;
+        }
+
+
+        /*glBindTexture(GL_TEXTURE_2D, display->texture);
         if (LOG_ERROR_OPENGL("glBindTexture") < 0) {
             goto fail_exit;
         }
@@ -173,7 +181,7 @@ static int render()
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
         if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
             goto fail_exit;
-        }
+        }*/
 
         glEnable(GL_TEXTURE_2D);
         if (LOG_ERROR_OPENGL("glEnable") < 0) {

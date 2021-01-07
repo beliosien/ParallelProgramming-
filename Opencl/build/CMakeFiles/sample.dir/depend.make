@@ -27,3 +27,9 @@ CMakeFiles/sample.dir/source/opencl.c.o: ../include/log.h
 CMakeFiles/sample.dir/source/opencl.c.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/opencl.c.o: ../source/opencl.c
 
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/image.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/log.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/pixel.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/texture.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../source/texture.cpp
+

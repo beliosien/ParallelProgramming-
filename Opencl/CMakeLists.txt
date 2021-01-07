@@ -10,6 +10,7 @@ target_sources(sample PUBLIC
     source/image.c
     source/image-opencl.c
     source/display.c
+    source/texture.c
 )
 
 add_custom_target(format
