@@ -34,3 +34,11 @@ CMakeFiles/sample.dir/source/texture.c.o
  ../include/pixel.h
  ../include/texture.h
  /home/tmp/ParallelProgramming-/Opencl/source/texture.c
+CMakeFiles/sample.dir/source/indexBuffer.cpp.o
+ ../include/indexBuffer.h
+ ../include/log.h
+ /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp
+CMakeFiles/sample.dir/source/vertexBuffer.cpp.o
+ ../include/log.h
+ ../include/vertexBuffer.h
+ /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp

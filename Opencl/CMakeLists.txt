@@ -11,6 +11,8 @@ target_sources(sample PUBLIC
     source/image-opencl.c
     source/display.c
     source/texture.c
+    source/vertexBuffer.cpp
+    source/indexBuffer.cpp
 )
 
 add_custom_target(format

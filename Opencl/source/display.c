@@ -127,14 +127,6 @@ static int render()
         goto fail_exit;
     }
 
-
-     /*if (display->texture == 0) {
-        glGenTextures(1, &display->texture);
-        if (LOG_ERROR_OPENGL("glGenTextures") < 0) {
-            goto fail_exit;
-        }
-    }*/
-
     image_t* image = NULL;
     if (display->enabled && (image = image_dir_load_next(display->image_dir)) != NULL) {
 
@@ -156,38 +148,6 @@ static int render()
             LOG_ERROR("error binding the texture");
             goto fail_to_bind;
         }
-
-
-        /*glBindTexture(GL_TEXTURE_2D, display->texture);
-        if (LOG_ERROR_OPENGL("glBindTexture") < 0) {
-            goto fail_exit;
-        }
-
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->width, image->height, 0, GL_RGBA,
-                     GL_UNSIGNED_BYTE, image->pixels);
-        if (LOG_ERROR_OPENGL("glTexImage2D") < 0) {
-            goto fail_exit;
-        }
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
-            goto fail_exit;
-        }
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
-            goto fail_exit;
-        }
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-        if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
-            goto fail_exit;
-        }
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-        if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
-            goto fail_exit;
-        }*/
 
         glEnable(GL_TEXTURE_2D);
         if (LOG_ERROR_OPENGL("glEnable") < 0) {
@@ -220,7 +180,7 @@ static int render()
 fail_to_bind:
     destroy_texture(display->texture);
     display->texture = NULL;
-    
+
 fail_exit:
     return -1;
 }

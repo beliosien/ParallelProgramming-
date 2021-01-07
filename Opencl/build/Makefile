@@ -250,6 +250,33 @@ source/image.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/image.c.s
 .PHONY : source/image.c.s
 
+source/indexBuffer.o: source/indexBuffer.cpp.o
+
+.PHONY : source/indexBuffer.o
+
+# target to build an object file
+source/indexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/indexBuffer.cpp.o
+.PHONY : source/indexBuffer.cpp.o
+
+source/indexBuffer.i: source/indexBuffer.cpp.i
+
+.PHONY : source/indexBuffer.i
+
+# target to preprocess a source file
+source/indexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/indexBuffer.cpp.i
+.PHONY : source/indexBuffer.cpp.i
+
+source/indexBuffer.s: source/indexBuffer.cpp.s
+
+.PHONY : source/indexBuffer.s
+
+# target to generate assembly for a file
+source/indexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/indexBuffer.cpp.s
+.PHONY : source/indexBuffer.cpp.s
+
 source/main.o: source/main.c.o
 
 .PHONY : source/main.o
@@ -331,6 +358,33 @@ source/texture.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.c.s
 .PHONY : source/texture.c.s
 
+source/vertexBuffer.o: source/vertexBuffer.cpp.o
+
+.PHONY : source/vertexBuffer.o
+
+# target to build an object file
+source/vertexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/vertexBuffer.cpp.o
+.PHONY : source/vertexBuffer.cpp.o
+
+source/vertexBuffer.i: source/vertexBuffer.cpp.i
+
+.PHONY : source/vertexBuffer.i
+
+# target to preprocess a source file
+source/vertexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/vertexBuffer.cpp.i
+.PHONY : source/vertexBuffer.cpp.i
+
+source/vertexBuffer.s: source/vertexBuffer.cpp.s
+
+.PHONY : source/vertexBuffer.s
+
+# target to generate assembly for a file
+source/vertexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/vertexBuffer.cpp.s
+.PHONY : source/vertexBuffer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -351,6 +405,9 @@ help:
 	@echo "... source/image.o"
 	@echo "... source/image.i"
 	@echo "... source/image.s"
+	@echo "... source/indexBuffer.o"
+	@echo "... source/indexBuffer.i"
+	@echo "... source/indexBuffer.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
@@ -360,6 +417,9 @@ help:
 	@echo "... source/texture.o"
 	@echo "... source/texture.i"
 	@echo "... source/texture.s"
+	@echo "... source/vertexBuffer.o"
+	@echo "... source/vertexBuffer.i"
+	@echo "... source/vertexBuffer.s"
 .PHONY : help
 
 
