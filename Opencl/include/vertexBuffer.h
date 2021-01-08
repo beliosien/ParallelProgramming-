@@ -1,13 +1,13 @@
 
 #pragma once
 
-class VertexBuffer
+class vertexBuffer
 {
 private:
     unsigned int m_rendererID;
 public:
-    VertexBuffer(const void* data, unsigned int size);
-    ~VertexBuffer();
+    vertexBuffer(const void* data, unsigned int size);
+    ~vertexBuffer();
 
     void Bind() const;
     void Unbind() const;

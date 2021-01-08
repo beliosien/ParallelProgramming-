@@ -275,7 +275,6 @@ int display_open() {
     glXSwapIntervalMESA(0);
 
     glutMainLoop();
-    printf("7--------------- \n");
 
     return 0;
 

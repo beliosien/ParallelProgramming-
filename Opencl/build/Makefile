@@ -331,6 +331,33 @@ source/opencl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/opencl.c.s
 .PHONY : source/opencl.c.s
 
+source/shader.o: source/shader.cpp.o
+
+.PHONY : source/shader.o
+
+# target to build an object file
+source/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/shader.cpp.o
+.PHONY : source/shader.cpp.o
+
+source/shader.i: source/shader.cpp.i
+
+.PHONY : source/shader.i
+
+# target to preprocess a source file
+source/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/shader.cpp.i
+.PHONY : source/shader.cpp.i
+
+source/shader.s: source/shader.cpp.s
+
+.PHONY : source/shader.s
+
+# target to generate assembly for a file
+source/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/shader.cpp.s
+.PHONY : source/shader.cpp.s
+
 source/texture.o: source/texture.c.o
 
 .PHONY : source/texture.o
@@ -357,6 +384,33 @@ source/texture.s: source/texture.c.s
 source/texture.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/texture.c.s
 .PHONY : source/texture.c.s
+
+source/vertexArray.o: source/vertexArray.cpp.o
+
+.PHONY : source/vertexArray.o
+
+# target to build an object file
+source/vertexArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/vertexArray.cpp.o
+.PHONY : source/vertexArray.cpp.o
+
+source/vertexArray.i: source/vertexArray.cpp.i
+
+.PHONY : source/vertexArray.i
+
+# target to preprocess a source file
+source/vertexArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/vertexArray.cpp.i
+.PHONY : source/vertexArray.cpp.i
+
+source/vertexArray.s: source/vertexArray.cpp.s
+
+.PHONY : source/vertexArray.s
+
+# target to generate assembly for a file
+source/vertexArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/vertexArray.cpp.s
+.PHONY : source/vertexArray.cpp.s
 
 source/vertexBuffer.o: source/vertexBuffer.cpp.o
 
@@ -414,9 +468,15 @@ help:
 	@echo "... source/opencl.o"
 	@echo "... source/opencl.i"
 	@echo "... source/opencl.s"
+	@echo "... source/shader.o"
+	@echo "... source/shader.i"
+	@echo "... source/shader.s"
 	@echo "... source/texture.o"
 	@echo "... source/texture.i"
 	@echo "... source/texture.s"
+	@echo "... source/vertexArray.o"
+	@echo "... source/vertexArray.i"
+	@echo "... source/vertexArray.s"
 	@echo "... source/vertexBuffer.o"
 	@echo "... source/vertexBuffer.i"
 	@echo "... source/vertexBuffer.s"

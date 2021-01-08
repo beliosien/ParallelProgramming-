@@ -3,15 +3,10 @@
 
 #include <stdlib.h>
 #include <time.h>
-
 #include <GL/glew.h>
-#include <GL/glut.h>
-#include <GL/glxew.h>
-
-#include <GL/freeglut_ext.h>
 
 
-VertexBuffer::VertexBuffer(const void* data, unsigned int size)
+vertexBuffer::vertexBuffer(const void* data, unsigned int size)
 {
     glGenBuffers(1, &m_rendererID);
     if(LOG_ERROR_OPENGL("glGenBuffer") < 0)
@@ -33,7 +28,7 @@ VertexBuffer::VertexBuffer(const void* data, unsigned int size)
 }
 
 
-VertexBuffer::~VertexBuffer()
+vertexBuffer::~vertexBuffer()
 {
     glDeleteBuffers(1, &m_rendererID);
     if(LOG_ERROR_OPENGL("glDeleteBuffers") < 0)
@@ -43,7 +38,7 @@ VertexBuffer::~VertexBuffer()
 }
 
 
-void VertexBuffer::Bind() const
+void vertexBuffer::Bind() const
 {
     glBindBuffer(GL_ARRAY_BUFFER, m_rendererID);
     if(LOG_ERROR_OPENGL("glBindBuffer") < 0)
@@ -52,7 +47,7 @@ void VertexBuffer::Bind() const
     }
 }
 
-void VertexBuffer::Unbind() const
+void vertexBuffer::Unbind() const
 {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     if(LOG_ERROR_OPENGL("glBindBuffer") < 0)

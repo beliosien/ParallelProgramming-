@@ -10,7 +10,7 @@
 #include <GL/freeglut_ext.h>
 
 
-IndexBuffer::IndexBuffer(const unsigned int* data, unsigned int count)
+indexBuffer::indexBuffer(const unsigned int* data, unsigned int count)
 : m_count(count)
 {
     glGenBuffers(1, &m_rendererID);
@@ -33,7 +33,7 @@ IndexBuffer::IndexBuffer(const unsigned int* data, unsigned int count)
 }
 
 
-IndexBuffer::~IndexBuffer()
+indexBuffer::~indexBuffer()
 {
     glDeleteBuffers(1, &m_rendererID);
     if(LOG_ERROR_OPENGL("glDeleteBuffers") < 0)
@@ -43,7 +43,7 @@ IndexBuffer::~IndexBuffer()
 }
 
 
-void IndexBuffer::Bind() const
+void indexBuffer::Bind() const
 {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_rendererID);
     if(LOG_ERROR_OPENGL("glBindBuffer") < 0)
@@ -52,7 +52,7 @@ void IndexBuffer::Bind() const
     }
 }
 
-void IndexBuffer::Unbind() const
+void indexBuffer::Unbind() const
 {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     if(LOG_ERROR_OPENGL("glBindBuffer") < 0)

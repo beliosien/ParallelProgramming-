@@ -38,6 +38,15 @@ CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../include/indexBuffer.h
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../include/log.h
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../source/indexBuffer.cpp
 
+CMakeFiles/sample.dir/source/shader.cpp.o: ../include/shader.h
+CMakeFiles/sample.dir/source/shader.cpp.o: ../source/shader.cpp
+
+CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../include/log.h
+CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../include/vertexArray.h
+CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../include/vertexBuffer.h
+CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../include/vertexBufferLayout.h
+CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../source/vertexArray.cpp
+
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.o: ../include/log.h
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.o: ../include/vertexBuffer.h
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.o: ../source/vertexBuffer.cpp

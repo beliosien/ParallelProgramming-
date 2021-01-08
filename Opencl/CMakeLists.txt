@@ -13,6 +13,9 @@ target_sources(sample PUBLIC
     source/texture.c
     source/vertexBuffer.cpp
     source/indexBuffer.cpp
+    source/vertexArray.cpp
+    source/shader.cpp
+    source/renderer.cpp
 )
 
 add_custom_target(format

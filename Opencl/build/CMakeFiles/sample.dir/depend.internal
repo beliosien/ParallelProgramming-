@@ -38,6 +38,15 @@ CMakeFiles/sample.dir/source/indexBuffer.cpp.o
  ../include/indexBuffer.h
  ../include/log.h
  /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp
+CMakeFiles/sample.dir/source/shader.cpp.o
+ ../include/shader.h
+ /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp
+CMakeFiles/sample.dir/source/vertexArray.cpp.o
+ ../include/log.h
+ ../include/vertexArray.h
+ ../include/vertexBuffer.h
+ ../include/vertexBufferLayout.h
+ /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.o
  ../include/log.h
  ../include/vertexBuffer.h

@@ -6,31 +6,25 @@
 
 #IncludeRegexTransform: 
 
-../include/indexBuffer.h
-
-../include/log.h
-errno.h
+../include/shader.h
+string
 -
-stdio.h
+iostream
 -
-string.h
+fstream
 -
-
-/home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp
-indexBuffer.h
-/home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.h
-log.h
-/home/tmp/ParallelProgramming-/Opencl/source/log.h
-stdlib.h
--
-time.h
+sstream
 -
 GL/glew.h
 -
-GL/glut.h
+stdio.h
 -
-GL/glxew.h
+malloc.h
 -
-GL/freeglut_ext.h
+unordered_map
 -
+
+/home/tmp/ParallelProgramming-/Opencl/source/shader.cpp
+shader.h
+/home/tmp/ParallelProgramming-/Opencl/source/shader.h
 
