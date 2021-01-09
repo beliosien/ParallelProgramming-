@@ -12,4 +12,4 @@ private:
 
 public:
     void Draw(const vertexArray& va, const indexBuffer& ib, const shader& shader) const;
-}
+};

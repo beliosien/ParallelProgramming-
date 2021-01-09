@@ -331,6 +331,33 @@ source/opencl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/opencl.c.s
 .PHONY : source/opencl.c.s
 
+source/renderer.o: source/renderer.cpp.o
+
+.PHONY : source/renderer.o
+
+# target to build an object file
+source/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/renderer.cpp.o
+.PHONY : source/renderer.cpp.o
+
+source/renderer.i: source/renderer.cpp.i
+
+.PHONY : source/renderer.i
+
+# target to preprocess a source file
+source/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/renderer.cpp.i
+.PHONY : source/renderer.cpp.i
+
+source/renderer.s: source/renderer.cpp.s
+
+.PHONY : source/renderer.s
+
+# target to generate assembly for a file
+source/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/renderer.cpp.s
+.PHONY : source/renderer.cpp.s
+
 source/shader.o: source/shader.cpp.o
 
 .PHONY : source/shader.o
@@ -468,6 +495,9 @@ help:
 	@echo "... source/opencl.o"
 	@echo "... source/opencl.i"
 	@echo "... source/opencl.s"
+	@echo "... source/renderer.o"
+	@echo "... source/renderer.i"
+	@echo "... source/renderer.s"
 	@echo "... source/shader.o"
 	@echo "... source/shader.i"
 	@echo "... source/shader.s"

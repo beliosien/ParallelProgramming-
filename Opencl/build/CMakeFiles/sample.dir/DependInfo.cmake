@@ -28,6 +28,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/indexBuffer.cpp.o"
+  "/home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/renderer.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/shader.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/shader.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/vertexArray.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/vertexBuffer.cpp.o"

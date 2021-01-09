@@ -5,6 +5,7 @@ CMakeFiles/sample.dir/source/display.c.o: ../include/display.h
 CMakeFiles/sample.dir/source/display.c.o: ../include/image.h
 CMakeFiles/sample.dir/source/display.c.o: ../include/log.h
 CMakeFiles/sample.dir/source/display.c.o: ../include/pixel.h
+CMakeFiles/sample.dir/source/display.c.o: ../include/shader.h
 CMakeFiles/sample.dir/source/display.c.o: ../include/texture.h
 CMakeFiles/sample.dir/source/display.c.o: ../source/display.c
 
@@ -37,6 +38,14 @@ CMakeFiles/sample.dir/source/texture.c.o: ../source/texture.c
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../include/indexBuffer.h
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../include/log.h
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../source/indexBuffer.cpp
+
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../include/indexBuffer.h
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../include/renderer.h
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../include/shader.h
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../include/vertexArray.h
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../include/vertexBuffer.h
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../include/vertexBufferLayout.h
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../source/renderer.cpp
 
 CMakeFiles/sample.dir/source/shader.cpp.o: ../include/shader.h
 CMakeFiles/sample.dir/source/shader.cpp.o: ../source/shader.cpp

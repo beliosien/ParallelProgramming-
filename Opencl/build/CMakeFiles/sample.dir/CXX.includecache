@@ -6,9 +6,17 @@
 
 #IncludeRegexTransform: 
 
+../include/indexBuffer.h
+
+../include/renderer.h
+vertexArray.h
+../include/vertexArray.h
+indexBuffer.h
+../include/indexBuffer.h
+shader.h
 ../include/shader.h
-string
--
+
+../include/shader.h
 iostream
 -
 fstream
@@ -21,8 +29,28 @@ stdio.h
 -
 malloc.h
 -
+string
+-
 unordered_map
 -
+
+../include/vertexArray.h
+vertexBuffer.h
+../include/vertexBuffer.h
+vertexBufferLayout.h
+../include/vertexBufferLayout.h
+
+../include/vertexBuffer.h
+
+../include/vertexBufferLayout.h
+vector
+-
+GL/glew.h
+-
+
+/home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp
+renderer.h
+/home/tmp/ParallelProgramming-/Opencl/source/renderer.h
 
 /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp
 shader.h

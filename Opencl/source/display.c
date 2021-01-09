@@ -13,7 +13,9 @@
 #include "log.h"
 #include "image.h"
 #include "display.h"
+#include "shader.h"
 #include "texture.h"
+
 
 #define WIDTH 640
 #define HEIGHT 360
@@ -113,7 +115,7 @@ fail_exit:
     return -1;
 }
 
-static int render()
+/*static int render()
 {
     if (display == NULL)
     {
@@ -180,6 +182,42 @@ static int render()
 fail_to_bind:
     destroy_texture(display->texture);
     display->texture = NULL;
+
+fail_exit:
+    return -1;
+}*/
+
+
+static int render()
+{
+    float positions[8] = {
+        0.0, 0.0,
+        1.0, 0.0,
+        1.0, 1.0,
+        0.0, 1.0
+    };
+
+    unsigned int buffer;
+    glGenBuffers(1, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, 8 * sizeof(float), positions, GL_STATIC_DRAW);
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float)* 2, 0);
+
+
+    shader myShader("res/shaders/basic.shader");
+
+    if(display->enabled)
+    {
+
+        glDrawArrays(GL_QUADS, 0, 4);
+        glClear(GL_COLOR_BUFFER_BIT);
+        if (LOG_ERROR_OPENGL("glClear") < 0) {
+            goto fail_exit;
+        }
+    }
+
 
 fail_exit:
     return -1;

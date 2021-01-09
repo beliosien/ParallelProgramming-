@@ -158,54 +158,67 @@ CMakeFiles/sample.dir/source/texture.c.s: cmake_force
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.o: CMakeFiles/sample.dir/flags.make
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.o: ../source/vertexBuffer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/sample.dir/source/vertexBuffer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/vertexBuffer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/vertexBuffer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp
 
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/source/vertexBuffer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp > CMakeFiles/sample.dir/source/vertexBuffer.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp > CMakeFiles/sample.dir/source/vertexBuffer.cpp.i
 
 CMakeFiles/sample.dir/source/vertexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/source/vertexBuffer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp -o CMakeFiles/sample.dir/source/vertexBuffer.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp -o CMakeFiles/sample.dir/source/vertexBuffer.cpp.s
 
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: CMakeFiles/sample.dir/flags.make
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../source/indexBuffer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/sample.dir/source/indexBuffer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/indexBuffer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/indexBuffer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp
 
 CMakeFiles/sample.dir/source/indexBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/source/indexBuffer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp > CMakeFiles/sample.dir/source/indexBuffer.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp > CMakeFiles/sample.dir/source/indexBuffer.cpp.i
 
 CMakeFiles/sample.dir/source/indexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/source/indexBuffer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp -o CMakeFiles/sample.dir/source/indexBuffer.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp -o CMakeFiles/sample.dir/source/indexBuffer.cpp.s
 
 CMakeFiles/sample.dir/source/vertexArray.cpp.o: CMakeFiles/sample.dir/flags.make
 CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../source/vertexArray.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/sample.dir/source/vertexArray.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/vertexArray.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/vertexArray.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp
 
 CMakeFiles/sample.dir/source/vertexArray.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/source/vertexArray.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp > CMakeFiles/sample.dir/source/vertexArray.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp > CMakeFiles/sample.dir/source/vertexArray.cpp.i
 
 CMakeFiles/sample.dir/source/vertexArray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/source/vertexArray.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp -o CMakeFiles/sample.dir/source/vertexArray.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp -o CMakeFiles/sample.dir/source/vertexArray.cpp.s
 
 CMakeFiles/sample.dir/source/shader.cpp.o: CMakeFiles/sample.dir/flags.make
 CMakeFiles/sample.dir/source/shader.cpp.o: ../source/shader.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/sample.dir/source/shader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/shader.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/shader.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp
 
 CMakeFiles/sample.dir/source/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/source/shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp > CMakeFiles/sample.dir/source/shader.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp > CMakeFiles/sample.dir/source/shader.cpp.i
 
 CMakeFiles/sample.dir/source/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/source/shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp -o CMakeFiles/sample.dir/source/shader.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp -o CMakeFiles/sample.dir/source/shader.cpp.s
+
+CMakeFiles/sample.dir/source/renderer.cpp.o: CMakeFiles/sample.dir/flags.make
+CMakeFiles/sample.dir/source/renderer.cpp.o: ../source/renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/sample.dir/source/renderer.cpp.o"
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample.dir/source/renderer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp
+
+CMakeFiles/sample.dir/source/renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/source/renderer.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp > CMakeFiles/sample.dir/source/renderer.cpp.i
+
+CMakeFiles/sample.dir/source/renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/source/renderer.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp -o CMakeFiles/sample.dir/source/renderer.cpp.s
 
 # Object files for target sample
 sample_OBJECTS = \
@@ -218,7 +231,8 @@ sample_OBJECTS = \
 "CMakeFiles/sample.dir/source/vertexBuffer.cpp.o" \
 "CMakeFiles/sample.dir/source/indexBuffer.cpp.o" \
 "CMakeFiles/sample.dir/source/vertexArray.cpp.o" \
-"CMakeFiles/sample.dir/source/shader.cpp.o"
+"CMakeFiles/sample.dir/source/shader.cpp.o" \
+"CMakeFiles/sample.dir/source/renderer.cpp.o"
 
 # External object files for target sample
 sample_EXTERNAL_OBJECTS =
@@ -233,6 +247,7 @@ sample: CMakeFiles/sample.dir/source/vertexBuffer.cpp.o
 sample: CMakeFiles/sample.dir/source/indexBuffer.cpp.o
 sample: CMakeFiles/sample.dir/source/vertexArray.cpp.o
 sample: CMakeFiles/sample.dir/source/shader.cpp.o
+sample: CMakeFiles/sample.dir/source/renderer.cpp.o
 sample: CMakeFiles/sample.dir/build.make
 sample: /usr/lib64/libOpenCL.so.1
 sample: /usr/lib64/libOpenGL.so
@@ -244,7 +259,7 @@ sample: /usr/lib64/libXi.so
 sample: /usr/lib64/libGLEW.so
 sample: /usr/lib64/libGLEW.so
 sample: CMakeFiles/sample.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable sample"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable sample"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sample.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
