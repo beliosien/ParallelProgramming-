@@ -3,11 +3,8 @@
 #ifndef INCLUDE_PIXEL_H_
 #define INCLUDE_PIXEL_H_
 
-
 typedef struct pixel {
     unsigned char bytes[4];
 } pixel_t;
-
-
 
 #endif /* INCLUDE_PIXEL_H_ */

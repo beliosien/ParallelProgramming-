@@ -5,7 +5,7 @@
 
 /***
  * display helps us to see any kind of image
-*/
+ */
 
 #include "image.h"
 

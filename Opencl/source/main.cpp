@@ -8,9 +8,9 @@
 
 #include <GL/glut.h>
 
+#include "display.h"
 #include "image.h"
 #include "log.h"
-#include "display.h"
 
 static void show_help(FILE* f, const char* exec_name) {
     fprintf(f, "Usage: %s [OPTION]...\n", exec_name);
@@ -44,7 +44,6 @@ static void fail_unknown_method_algorithm(const char* exec_name, const char* arg
     exit(1);
 }*/
 
-
 static void run_viewer(image_dir_t* image_dir) {
     if (display_init(image_dir) < 0) {
         LOG_ERROR("failed to initialise display");
@@ -67,13 +66,11 @@ static void sigint_handler(int sig) {
 }
 
 int main(int argc, char* argv[]) {
-
     if (getenv("DISPLAY") != NULL) {
         glutInit(&argc, argv);
     }
 
-
-    char* exec_name = argv[0];
+    char* exec_name        = argv[0];
     bool use_method_openmp = false;
     bool use_method_opencl = false;
 
@@ -92,7 +89,7 @@ int main(int argc, char* argv[]) {
             if (strcmp("openmp", argv[i + 1]) == 0) {
                 use_method_openmp = true;
             } else if (strcmp("opencl", argv[i + 1]) == 0) {
-                use_method_opencl = true; 
+                use_method_opencl = true;
             } else {
                 fail_unknown_method_algorithm(exec_name, argv[i + 1]);
             }
@@ -115,16 +112,15 @@ int main(int argc, char* argv[]) {
 
     if (use_method_openmp) {
         image_dir.save_prefix = "openmp";
-       
+
     } else if (use_method_opencl) {
         image_dir.save_prefix = "opencl";
         run_viewer(&image_dir);
-       
+
     } else {
         LOG_ERROR("no method configured");
         exit(1);
     }
 
     return 0;
-
 }

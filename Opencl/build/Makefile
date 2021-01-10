@@ -169,32 +169,32 @@ sample/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/build
 .PHONY : sample/fast
 
-source/display.o: source/display.c.o
+source/display.o: source/display.cpp.o
 
 .PHONY : source/display.o
 
 # target to build an object file
-source/display.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.c.o
-.PHONY : source/display.c.o
+source/display.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.cpp.o
+.PHONY : source/display.cpp.o
 
-source/display.i: source/display.c.i
+source/display.i: source/display.cpp.i
 
 .PHONY : source/display.i
 
 # target to preprocess a source file
-source/display.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.c.i
-.PHONY : source/display.c.i
+source/display.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.cpp.i
+.PHONY : source/display.cpp.i
 
-source/display.s: source/display.c.s
+source/display.s: source/display.cpp.s
 
 .PHONY : source/display.s
 
 # target to generate assembly for a file
-source/display.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.c.s
-.PHONY : source/display.c.s
+source/display.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/display.cpp.s
+.PHONY : source/display.cpp.s
 
 source/image-opencl.o: source/image-opencl.c.o
 
@@ -277,32 +277,32 @@ source/indexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/indexBuffer.cpp.s
 .PHONY : source/indexBuffer.cpp.s
 
-source/main.o: source/main.c.o
+source/main.o: source/main.cpp.o
 
 .PHONY : source/main.o
 
 # target to build an object file
-source/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/main.c.o
-.PHONY : source/main.c.o
+source/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/main.cpp.o
+.PHONY : source/main.cpp.o
 
-source/main.i: source/main.c.i
+source/main.i: source/main.cpp.i
 
 .PHONY : source/main.i
 
 # target to preprocess a source file
-source/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/main.c.i
-.PHONY : source/main.c.i
+source/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/main.cpp.i
+.PHONY : source/main.cpp.i
 
-source/main.s: source/main.c.s
+source/main.s: source/main.cpp.s
 
 .PHONY : source/main.s
 
 # target to generate assembly for a file
-source/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/main.c.s
-.PHONY : source/main.c.s
+source/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/main.cpp.s
+.PHONY : source/main.cpp.s
 
 source/opencl.o: source/opencl.c.o
 

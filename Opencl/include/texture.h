@@ -13,22 +13,17 @@
 #include "image.h"
 #include "pixel.h"
 
-
-typedef struct texture
-{
-
+typedef struct texture {
     GLuint texture_id;
     pixel_t* pixels;
     size_t width;
     size_t height;
 } texture_t;
 
-
 texture_t* init_texture(image_t* image);
 void destroy_texture(texture_t* texture);
 
 int Bind(unsigned int slot, texture_t* texture);
 int UnBind();
-
 
 #endif /*INCLUDE_TEXTURE_H_*/

@@ -5,10 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/tmp/ParallelProgramming-/Opencl/source/display.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/display.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/image-opencl.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/image-opencl.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/image.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/image.c.o"
-  "/home/tmp/ParallelProgramming-/Opencl/source/main.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/main.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/opencl.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/opencl.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/texture.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/texture.c.o"
   )
@@ -25,9 +23,12 @@ set(CMAKE_TARGET_DEFINITIONS_C
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../sample"
   "../include"
+  "../res"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/tmp/ParallelProgramming-/Opencl/source/display.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/display.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/indexBuffer.cpp.o"
+  "/home/tmp/ParallelProgramming-/Opencl/source/main.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/main.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/renderer.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/shader.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/shader.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/vertexArray.cpp.o"
@@ -46,6 +47,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../sample"
   "../include"
+  "../res"
   )
 
 # Targets to which this target links.

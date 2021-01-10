@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sample.dir/source/display.c.o"
+  "CMakeFiles/sample.dir/source/display.cpp.o"
   "CMakeFiles/sample.dir/source/image-opencl.c.o"
   "CMakeFiles/sample.dir/source/image.c.o"
   "CMakeFiles/sample.dir/source/indexBuffer.cpp.o"
-  "CMakeFiles/sample.dir/source/main.c.o"
+  "CMakeFiles/sample.dir/source/main.cpp.o"
   "CMakeFiles/sample.dir/source/opencl.c.o"
   "CMakeFiles/sample.dir/source/renderer.cpp.o"
   "CMakeFiles/sample.dir/source/shader.cpp.o"

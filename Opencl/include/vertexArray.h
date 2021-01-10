@@ -3,12 +3,11 @@
 #include "vertexBuffer.h"
 #include "vertexBufferLayout.h"
 
-
-class vertexArray
-{
-private:
+class vertexArray {
+   private:
     unsigned int m_rendererID;
-public:
+
+   public:
     vertexArray();
     ~vertexArray();
 
@@ -17,4 +16,3 @@ public:
     void Bind() const;
     void Unbind() const;
 };
-

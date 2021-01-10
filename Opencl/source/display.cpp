@@ -10,50 +10,45 @@
 
 #include <GL/freeglut_ext.h>
 
-#include "log.h"
-#include "image.h"
 #include "display.h"
+#include "image.h"
+#include "log.h"
 #include "shader.h"
 #include "texture.h"
-
+#include "vertexArray.h"
+#include "vertexBuffer.h"
 
 #define WIDTH 640
 #define HEIGHT 360
 
-
-typedef struct display
-{
+typedef struct display {
     unsigned int width;
     unsigned int height;
     unsigned int window_id;
 
     image_dir_t* image_dir;
-    texture_t*  texture;
+    texture_t* texture;
     bool enabled;
 
 } display_t;
 
+static display_t* display = NULL;
 
-static display_t* display =  NULL;
-
-
-int display_init(image_dir_t* image_dir)
-{
-    if (display != NULL)
-    {
+int display_init(image_dir_t* image_dir) {
+    if (display != NULL) {
         LOG_ERROR("display has already been initialised");
         goto fail_exit;
     }
 
-    display = malloc(sizeof(display_t));
+    display = (display_t*) malloc(sizeof(display_t));
 
-    display->width = WIDTH;
-    display->height = HEIGHT;
+    display->width     = WIDTH;
+    display->height    = HEIGHT;
     display->window_id = 0;
 
     display->image_dir = image_dir;
-    display->texture = malloc(sizeof(texture_t));
-    display->enabled = true;
+    display->texture   = (texture_t*) malloc(sizeof(texture_t));
+    display->enabled   = true;
 
     return 0;
 
@@ -61,19 +56,15 @@ fail_exit:
     return -1;
 }
 
-void display_destroy()
-{
-    if (display != NULL)
-    {
+void display_destroy() {
+    if (display != NULL) {
         free(display);
         display = NULL;
     }
 }
 
-static int pre_display()
-{
-    if (display == NULL)
-    {
+static int pre_display() {
+    if (display == NULL) {
         LOG_ERROR("display has not been initialised");
         goto fail_exit;
     }
@@ -102,7 +93,6 @@ static int pre_display()
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
 
     glClear(GL_COLOR_BUFFER_BIT);
     if (LOG_ERROR_OPENGL("glClear") < 0) {
@@ -187,42 +177,46 @@ fail_exit:
     return -1;
 }*/
 
-
-static int render()
-{
-    float positions[8] = {
-        0.0, 0.0,
-        1.0, 0.0,
-        1.0, 1.0,
+static int render() {
+    /*float positions[8] = {
+        0.0, 0.0, 
+        1.0, 0.0, 
+        1.0, 1.0, 
         0.0, 1.0
+    };*/
+
+    
+
+    float positions[6] = {
+       -0.5f, 0.5f,
+       0.0f, 0.0f,
+       0.5f, 0.5f
     };
 
     unsigned int buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
-    glBufferData(GL_ARRAY_BUFFER, 8 * sizeof(float), positions, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float)* 2, 0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
+    shader myShader("res/shaders/basic.glsl");
+    myShader.Bind();
 
-    shader myShader("res/shaders/basic.shader");
-
-    if(display->enabled)
-    {
-
-        glDrawArrays(GL_QUADS, 0, 4);
+    if(display->enabled) {
+       
+        glDrawArrays(GL_TRIANGLES, 0, 3);
         glClear(GL_COLOR_BUFFER_BIT);
         if (LOG_ERROR_OPENGL("glClear") < 0) {
             goto fail_exit;
         }
-    }
 
+    }
 
 fail_exit:
     return -1;
 }
-
 
 static inline void post_display() {
     glutSwapBuffers();
@@ -244,7 +238,6 @@ static void callback_idle() {
     glutSetWindow(display->window_id);
     glutPostRedisplay();
 }
-
 
 void callback_keyboard(unsigned char key, int x, int y) {
     if (display == NULL) {
@@ -269,7 +262,7 @@ void callback_keyboard(unsigned char key, int x, int y) {
     case '3':
         printf("Selected opencl implementation\n");
         break;
-        
+
     case ' ':
         printf("Rendering %s\n", display->enabled ? "disabled" : "enabled");
         display->enabled = !display->enabled;
@@ -291,11 +284,10 @@ static void callback_reshape(int width, int height) {
 int display_open() {
     if (display == NULL) {
         LOG_ERROR("display has not been initialised");
-        goto fail_exit;
+        return -1;
     }
 
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
-    
 
     int x_pos = (glutGet(GLUT_SCREEN_WIDTH) - display->width) / 2;
     int y_pos = (glutGet(GLUT_SCREEN_HEIGHT) - display->height) / 2;
@@ -305,10 +297,10 @@ int display_open() {
     display->window_id = glutCreateWindow("image_resultat");
 
     glutDisplayFunc(callback_display);
-    glutIdleFunc(callback_idle);
+    //glutIdleFunc(callback_idle);
     glutKeyboardFunc(callback_keyboard);
 
-    glutReshapeFunc(callback_reshape);
+    //glutReshapeFunc(callback_reshape);
     glewInit();
     glXSwapIntervalMESA(0);
 

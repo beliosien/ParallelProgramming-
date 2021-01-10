@@ -1,19 +1,17 @@
 cmake_minimum_required(VERSION 3.13.5)
 project(Opencl LANGUAGES C CXX)
 
-set(CMAKE_CXX_COMPILER "clang++")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
 
-include_directories(sample include)
+include_directories(sample include res)
 add_executable(sample)
-target_link_libraries(sample -lm -lpthread -lpng -stdlib=libc++ /usr/lib64/libOpenCL.so.1)
+target_link_libraries(sample -lm -lpthread -lpng  /usr/lib64/libOpenCL.so.1)
 target_sources(sample PUBLIC
-    source/main.c
+    source/main.cpp
     source/opencl.c
     source/image.c
     source/image-opencl.c
-    source/display.c
     source/texture.c
+    source/display.cpp
     source/vertexBuffer.cpp
     source/indexBuffer.cpp
     source/vertexArray.cpp

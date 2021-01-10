@@ -8,9 +8,8 @@
 #include "log.h"
 
 image_t* image_create(size_t id, size_t width, size_t height) {
-    
     image_t* image = calloc(1, sizeof(*image));
-    
+
     if (image == NULL) {
         LOG_ERROR_ERRNO("calloc");
         goto fail_exit;
@@ -43,7 +42,7 @@ image_t* image_create_from_png(char* filename) {
     /* source: https://gist.github.com/niw/5963798 */
 
     FILE* file = fopen(filename, "rb");
-    
+
     if (file == NULL) {
         LOG_ERROR_ERRNO("fopen");
         goto fail_exit;
@@ -65,17 +64,14 @@ image_t* image_create_from_png(char* filename) {
         goto fail_free_png_info;
     }
 
-    
     png_init_io(png, file);
     png_read_info(png, info);
 
-    
     image_t* image = image_create(0, png_get_image_width(png, info), png_get_image_height(png, info));
     if (image == NULL) {
         goto fail_free_png_info;
     }
 
-    
     png_byte color = png_get_color_type(png, info);
     png_byte depth = png_get_color_type(png, info);
 
@@ -110,12 +106,11 @@ image_t* image_create_from_png(char* filename) {
     }
 
     png_read_update_info(png, info);
-    
 
     /* read image data */
 
     png_bytep* row_pointers = calloc(image->height, sizeof(*row_pointers));
-    
+
     if (row_pointers == NULL) {
         goto fail_free_image;
     }
@@ -309,14 +304,12 @@ image_t* image_dir_load_next(image_dir_t* image_dir) {
     if (image_dir->stop) {
         goto stop_exit;
     }
-    
 
     int count = snprintf(buffer, buffer_size, "%s/%04ld.png", image_dir->name, image_dir->load_current);
     if (count >= buffer_size - 1) {
         LOG_ERROR("buffer too small");
         goto fail_exit;
     }
-    
 
     if (access(buffer, F_OK) < 0) {
         if (image_dir->load_current == 0) {
@@ -324,7 +317,6 @@ image_t* image_dir_load_next(image_dir_t* image_dir) {
         }
         goto fail_exit;
     }
-    
 
     image_t* image = image_create_from_png(buffer);
     if (image == NULL) {

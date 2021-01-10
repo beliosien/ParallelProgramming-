@@ -12,5 +12,4 @@ int opencl_get_device_id(unsigned int platform_index, unsigned int device_index,
 int opencl_print_device_info(cl_device_id device_id);
 int opencl_print_build_log(cl_program program, cl_device_id device_id);
 
-
 #endif /* INCLUDE_OPENCL_H_ */
