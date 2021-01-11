@@ -26,4 +26,21 @@ void destroy_texture(texture_t* texture);
 int Bind(unsigned int slot, texture_t* texture);
 int UnBind();
 
+
+/*class Texture 
+{
+private:
+    unsigned int texture_id;
+    pixels_t* pixels;
+    unsigned int width;
+    unsigned int height;
+
+public:
+    Texture(image_t* image);
+    ~Texture();
+
+    void Bind(unsigned int slot, texture_t* texture) const;
+    void UnBind() const;
+}*/
+
 #endif /*INCLUDE_TEXTURE_H_*/

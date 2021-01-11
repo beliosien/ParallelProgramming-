@@ -23,6 +23,7 @@ CMakeFiles/sample.dir/source/texture.c.o: ../source/texture.c
 
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/display.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/image.h
+CMakeFiles/sample.dir/source/display.cpp.o: ../include/indexBuffer.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/log.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/pixel.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/shader.h

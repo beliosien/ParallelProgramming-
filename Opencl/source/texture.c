@@ -51,12 +51,12 @@ int Bind(unsigned int slot, texture_t* texture) {
         goto fail_exit;
     }
 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
         goto fail_exit;
     }
 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
         goto fail_exit;
     }
