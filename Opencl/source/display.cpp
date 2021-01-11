@@ -19,7 +19,7 @@
 #include "vertexBuffer.h"
 
 #define WIDTH 640
-#define HEIGHT 360
+#define HEIGHT 480
 
 typedef struct display {
     unsigned int width;
@@ -74,7 +74,7 @@ static int pre_display() {
         goto fail_exit;
     }
 
-    glMatrixMode(GL_PROJECTION);
+    /*glMatrixMode(GL_PROJECTION);
     if (LOG_ERROR_OPENGL("glMatrixMode") < 0) {
         goto fail_exit;
     }
@@ -84,15 +84,13 @@ static int pre_display() {
         goto fail_exit;
     }
 
-    gluOrtho2D(0.0, 1.0, 0.0, 1.0);
+    gluOrtho2D(0.0, 1.0, 0.0, 1.0);*/
 
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     if (LOG_ERROR_OPENGL("glClearColor") < 0) {
         goto fail_exit;
     }
 
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     glClear(GL_COLOR_BUFFER_BIT);
     if (LOG_ERROR_OPENGL("glClear") < 0) {
@@ -187,32 +185,36 @@ static int render() {
 
     
 
-    float positions[6] = {
-       -0.5f, 0.5f,
-       0.0f, 0.0f,
-       0.5f, 0.5f
+    float positions[] = {
+        -0.5f, -0.5f, 0.0f,
+        0.0f, 0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f
     };
 
-    unsigned int buffer;
-    glGenBuffers(1, &buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, buffer);
-    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
+    unsigned int VBO;
+    unsigned int VAO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
 
+    glBindVertexArray(VAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(positions), positions, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(VAO);
     shader myShader("res/shaders/basic.glsl");
     myShader.Bind();
 
     if(display->enabled) {
        
         glDrawArrays(GL_TRIANGLES, 0, 3);
-        glClear(GL_COLOR_BUFFER_BIT);
-        if (LOG_ERROR_OPENGL("glClear") < 0) {
-            goto fail_exit;
-        }
-
     }
+
+    return 0;
 
 fail_exit:
     return -1;

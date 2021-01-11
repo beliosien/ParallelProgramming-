@@ -72,7 +72,7 @@ endif()
 #set_source_files_properties(source/sinoscope-openmp.c PROPERTIES COMPILE_FLAGS -fopenmp)
 add_definitions(-D__KERNEL_FILE__="${PROJECT_SOURCE_DIR}/source/kernel/traitement.cl")
 add_definitions(-D__OPENCL_INCLUDE__="${PROJECT_SOURCE_DIR}/source/kernel")
-add_definitions(-DCL_TARGET_OPENCL_VERSION=220)
+add_definitions(-DCL_TARGET_OPENCL_VERSION=410)
 
 
 add_custom_target(run-opencl
