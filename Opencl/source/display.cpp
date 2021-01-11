@@ -206,6 +206,7 @@ static int render() {
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(VAO);
+    
     shader myShader("res/shaders/basic.glsl");
     myShader.Bind();
 
@@ -309,7 +310,4 @@ int display_open() {
     glutMainLoop();
 
     return 0;
-
-fail_exit:
-    return -1;
 }

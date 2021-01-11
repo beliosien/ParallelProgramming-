@@ -7,6 +7,7 @@
 #include <string.h>
 
 #include <GL/glut.h>
+#include <GL/freeglut.h>
 
 #include "display.h"
 #include "image.h"
@@ -67,6 +68,8 @@ static void sigint_handler(int sig) {
 
 int main(int argc, char* argv[]) {
     if (getenv("DISPLAY") != NULL) {
+        glutInitContextVersion(3,3);
+        glutInitContextProfile(GLUT_CORE_PROFILE);
         glutInit(&argc, argv);
     }
 

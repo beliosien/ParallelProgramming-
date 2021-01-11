@@ -8,6 +8,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <vector>
 
 struct shaderProgramSource {
     std::string VertexSource;

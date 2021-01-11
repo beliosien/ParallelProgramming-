@@ -16,21 +16,17 @@ unsigned int shader::CompileShader(unsigned int type, const std::string& source)
     glShaderSource(id, 1, &src, nullptr);
     glCompileShader(id);
 
-    //int result;
-    /*glGetShaderiv(id, GL_COMPILE_STATUS, &result);
-    if (result == GL_FALSE) {
-        int length;
-        glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
-        char* message = (char*)malloc(length * sizeof(char*));
-        glGetShaderInfoLog(id, length, &length, message);
-        std::cout << "Failed to compile " << (type == GL_VERTEX_SHADER ? "vertex " : "fragment ") << "shader!"
-                  << std::endl;
-        
-        std::cout << message << std::endl;
-        glDeleteShader(id);
-        free(message);
+    int result;
+    int InfoLogLength;
+
+    glGetShaderiv(id, GL_COMPILE_STATUS, &result);
+    glGetShaderiv(id, GL_INFO_LOG_LENGTH, &InfoLogLength);
+    if ( InfoLogLength > 0 ){
+		std::vector<char> VertexShaderErrorMessage(InfoLogLength+1);
+		glGetShaderInfoLog(id, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
+		printf("%s\n", &VertexShaderErrorMessage[0]);
         return 0;
-    }*/
+	}
 
     return id;
 }
