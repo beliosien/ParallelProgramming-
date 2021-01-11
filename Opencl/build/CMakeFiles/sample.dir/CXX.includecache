@@ -45,6 +45,8 @@ sstream
 -
 iostream
 -
+vector
+-
 
 ../include/texture.h
 GL/glew.h
@@ -103,4 +105,24 @@ vertexArray.h
 /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.h
 vertexBuffer.h
 /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.h
+
+/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp
+vertexArray.h
+/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.h
+GL/glew.h
+-
+log.h
+/home/tmp/ParallelProgramming-/Opencl/source/log.h
+
+/home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp
+vertexBuffer.h
+/home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.h
+log.h
+/home/tmp/ParallelProgramming-/Opencl/source/log.h
+GL/glew.h
+-
+stdlib.h
+-
+time.h
+-
 

@@ -14,7 +14,7 @@ set(CMAKE_C_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "CL_TARGET_OPENCL_VERSION=410"
+  "CL_TARGET_OPENCL_VERSION=220"
   "__KERNEL_FILE__=\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\""
   "__OPENCL_INCLUDE__=\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\""
   )
@@ -38,7 +38,7 @@ set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "CL_TARGET_OPENCL_VERSION=410"
+  "CL_TARGET_OPENCL_VERSION=220"
   "__KERNEL_FILE__=\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\""
   "__OPENCL_INCLUDE__=\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\""
   )

@@ -100,7 +100,7 @@
 			[
 				{
 					"backtrace" : 6,
-					"define" : "CL_TARGET_OPENCL_VERSION=410"
+					"define" : "CL_TARGET_OPENCL_VERSION=220"
 				},
 				{
 					"backtrace" : 7,
@@ -149,7 +149,7 @@
 			[
 				{
 					"backtrace" : 6,
-					"define" : "CL_TARGET_OPENCL_VERSION=410"
+					"define" : "CL_TARGET_OPENCL_VERSION=220"
 				},
 				{
 					"backtrace" : 7,
