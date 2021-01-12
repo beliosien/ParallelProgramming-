@@ -8,6 +8,10 @@
 #include <GL/glew.h>
 #include "image.h"
 #include "pixel.h"
+#include "log.h"
+#include <time.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
 class Texture 
 {
@@ -16,12 +20,13 @@ private:
     pixel_t* pixels;
     unsigned int width;
     unsigned int height;
+    unsigned char* buffer;
 
 public:
     Texture(image_t* image);
     ~Texture();
 
-    int Bind(unsigned int slot) const;
+    int Bind(unsigned int slot = 0) const;
     void Unbind() const;
 };
 

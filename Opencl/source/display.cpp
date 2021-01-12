@@ -52,7 +52,7 @@ int display_init(image_dir_t* image_dir) {
     display->window_id = 0;
 
     display->image_dir = image_dir;
-    //display->texture   = (texture_t*) malloc(sizeof(texture_t));
+    display->texture   = nullptr;
     display->enabled   = true;
 
     return 0;
@@ -107,79 +107,6 @@ static int pre_display() {
 fail_exit:
     return -1;
 }
-
-/*static int render()
-{
-    if (display == NULL)
-    {
-        LOG_ERROR("display has not been initialised");
-        goto fail_exit;
-    }
-
-    if (display->image_dir == NULL)
-    {
-        LOG_ERROR_NULL_PTR();
-        goto fail_exit;
-    }
-
-    image_t* image = NULL;
-    if (display->enabled && (image = image_dir_load_next(display->image_dir)) != NULL) {
-
-        if(image == NULL)
-        {
-            LOG_ERROR_NULL_PTR();
-            goto fail_exit;
-        }
-
-        display->texture = init_texture(image);
-        if(display->texture == NULL)
-        {
-            LOG_ERROR_NULL_PTR();
-            goto fail_exit;
-        }
-
-        if(Bind(0, display->texture) < 0)
-        {
-            LOG_ERROR("error binding the texture");
-            goto fail_to_bind;
-        }
-
-        glEnable(GL_TEXTURE_2D);
-        if (LOG_ERROR_OPENGL("glEnable") < 0) {
-            goto fail_exit;
-        }
-
-        glBegin(GL_QUADS);
-        glTexCoord2d(0.0, 0.0);
-        glVertex2d(0.0, 0.0);
-        glTexCoord2d(1.0, 0.0);
-        glVertex2d(1.0, 0.0);
-        glTexCoord2d(1.0, 1.0);
-        glVertex2d(1.0, 1.0);
-        glTexCoord2d(0.0, 1.0);
-        glVertex2d(0.0, 1.0);
-        glEnd();
-
-        if (LOG_ERROR_OPENGL("glBegin / glEnd") < 0) {
-            goto fail_exit;
-        }
-
-        glClear(GL_COLOR_BUFFER_BIT);
-        if (LOG_ERROR_OPENGL("glClear") < 0) {
-            goto fail_exit;
-        }
-    }
-
-    return 0;
-
-fail_to_bind:
-    destroy_texture(display->texture);
-    display->texture = NULL;
-
-fail_exit:
-    return -1;
-}*/
-
  
 static int render() {
     float positions[] = {
@@ -188,8 +115,6 @@ static int render() {
         0.5f, 0.5f, 1.0f, 1.0f, 
        -0.5f, 0.5f, 0.0f, 1.0f  
     };
-
-
 
     unsigned int indices[] = {
         0, 1, 2,
@@ -208,30 +133,54 @@ static int render() {
     
     shader myShader("res/shaders/basic.glsl");
     myShader.Bind();
-    myShader.SetUniform4f("u_color", 0.2f, 0.3f, 0.8f, 1.0f);
-
+    //myShader.SetUniform4f("u_color", 0.2f, 0.3f, 0.8f, 1.0f);
 
     image_t* image = NULL;
+
+    if (display == NULL)
+    {
+        LOG_ERROR("display has not been initialised");
+        goto fail_exit;
+    }
+
+    if (display->image_dir == NULL)
+    {
+        LOG_ERROR_NULL_PTR();
+        goto fail_exit;
+    }
+
+    
     if (display->enabled && (image = image_dir_load_next(display->image_dir)) != NULL) {
-        Texture texture(image);
 
-       /* if(texture == NULL)
+        if (image == NULL)
         {
-            LOG_ERROR_NULL_PTR();
+            LOG_ERROR("Image is NULL");
             goto fail_exit;
-        }*/
+        }
+        
+       if(display->texture != nullptr)
+        {
+            display->texture = nullptr;
+        }
 
-        if(texture.Bind(0) < 0)
+        display->texture = new Texture(image);
+
+        if(display->texture->Bind(0) < 0)
         {
             LOG_ERROR("Error binding the texture");
             goto fail_exit;
         }
         myShader.SetUniform1i("u_Texture", 0);
 
-        glEnable(GL_TEXTURE_2D);
+        va.Unbind();
+        vb.Unbind();
+        ib.Unbind();
+        myShader.Unbind();
+
+        /*glEnable(GL_TEXTURE_2D);
         if (LOG_ERROR_OPENGL("glEnable") < 0) {
             goto fail_exit;
-        }
+        }*/
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
