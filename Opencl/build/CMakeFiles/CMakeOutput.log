@@ -1,6 +1,6 @@
 The system is: Linux - 5.7.11-200.fc32.x86_64 - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/cc 
+Compiler: /bin/clang-10 
 Build flags: 
 Id flags:  
 
@@ -10,10 +10,10 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/3.17.3/CompilerIdC/a.out"
+The C compiler identification is Clang, found in "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/3.17.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /usr/bin/c++ 
+Compiler: /bin/clang++-10 
 Build flags: 
 Id flags:  
 
@@ -23,18 +23,18 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/3.17.3/CompilerIdCXX/a.out"
+The CXX compiler identification is Clang, found in "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/3.17.3/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_04877/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_04877.dir/build.make CMakeFiles/cmTC_04877.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_da97d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_da97d.dir/build.make CMakeFiles/cmTC_da97d.dir/build
 gmake[1] : on entre dans le répertoire « /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_04877.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_04877.dir/testCCompiler.c.o   -c /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_04877
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04877.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_04877.dir/testCCompiler.c.o  -o cmTC_04877 
+Building C object CMakeFiles/cmTC_da97d.dir/testCCompiler.c.o
+/bin/clang-10    -o CMakeFiles/cmTC_da97d.dir/testCCompiler.c.o   -c /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_da97d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da97d.dir/link.txt --verbose=1
+/bin/clang-10      CMakeFiles/cmTC_da97d.dir/testCCompiler.c.o  -o cmTC_da97d 
 gmake[1] : on quitte le répertoire « /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp »
 
 
@@ -42,62 +42,46 @@ gmake[1] : on quitte le répertoire « /home/tmp/ParallelProgramming-/Opencl/b
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_29556/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29556.dir/build.make CMakeFiles/cmTC_29556.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_49ade/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_49ade.dir/build.make CMakeFiles/cmTC_49ade.dir/build
 gmake[1]: Entering directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
-Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-redhat-linux
-Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Building C object CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o
+/bin/clang-10   -v -o CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+clang version 10.0.0 (Fedora 10.0.0-2.fc32)
+Target: x86_64-unknown-linux-gnu
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /usr/libexec/gcc/x86_64-redhat-linux/10/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o -version -o /tmp/cch12cMi.s
-GNU C17 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)
-	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1), GMP version 6.1.2, MPFR version 4.0.2-p9, MPC version 1.1.0, isl version isl-0.16.1-GMP
-
-GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/include-fixed"
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/include"
+InstalledDir: /bin
+Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10
+Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Selected multilib: .;@m64
+Found CUDA installation: /opt/cuda-10.2, version 10.1
+ (in-process)
+ "/usr/bin/clang-10" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mframe-pointer=all -fmath-errno -fno-rounding-math -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /usr/lib64/clang/10.0.0 -internal-isystem /usr/local/include -internal-isystem /usr/lib64/clang/10.0.0/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gcc -fdiagnostics-show-option -faddrsig -o CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /usr/lib/gcc/x86_64-redhat-linux/10/include
  /usr/local/include
+ /usr/lib64/clang/10.0.0/include
  /usr/include
 End of search list.
-GNU C17 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)
-	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1), GMP version 6.1.2, MPFR version 4.0.2-p9, MPC version 1.1.0, isl version isl-0.16.1-GMP
-
-GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: f0854f6113f296a2ef10a437ae064ca7
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o /tmp/cch12cMi.s
-GNU assembler version 2.34 (x86_64-redhat-linux) using BFD version version 2.34-4.fc32
-COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_29556
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29556.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o  -o cmTC_29556 
-Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
-COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-redhat-linux
-Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Linking C executable cmTC_49ade
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49ade.dir/link.txt --verbose=1
+/bin/clang-10     -v CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o  -o cmTC_49ade 
+clang version 10.0.0 (Fedora 10.0.0-2.fc32)
+Target: x86_64-unknown-linux-gnu
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) 
-COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_29556' '-mtune=generic' '-march=x86-64'
- /usr/libexec/gcc/x86_64-redhat-linux/10/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccOA6tDE.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_29556 /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/10 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../.. CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/10/crtend.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_29556' '-mtune=generic' '-march=x86-64'
+InstalledDir: /bin
+Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10
+Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Selected multilib: .;@m64
+Found CUDA installation: /opt/cuda-10.2, version 10.1
+ "/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_49ade /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /bin/../lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/bin/../lib/gcc/x86_64-redhat-linux/10 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/usr/bin/../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../.. -L/usr/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /bin/../lib/gcc/x86_64-redhat-linux/10/crtend.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o
 gmake[1]: Leaving directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp'
 
 
@@ -105,137 +89,124 @@ gmake[1]: Leaving directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFi
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/usr/lib/gcc/x86_64-redhat-linux/10/include]
     add: [/usr/local/include]
+    add: [/usr/lib64/clang/10.0.0/include]
     add: [/usr/include]
   end of search list found
-  collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/10/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/10/include]
   collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/lib64/clang/10.0.0/include] ==> [/usr/lib64/clang/10.0.0/include]
   collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/10/include;/usr/local/include;/usr/include]
+  implicit include dirs: [/usr/local/include;/usr/lib64/clang/10.0.0/include;/usr/include]
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_29556/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29556.dir/build.make CMakeFiles/cmTC_29556.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_49ade/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_49ade.dir/build.make CMakeFiles/cmTC_49ade.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-redhat-linux]
-  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Building C object CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/bin/clang-10   -v -o CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang version 10.0.0 (Fedora 10.0.0-2.fc32)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/10/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o -version -o /tmp/cch12cMi.s]
-  ignore line: [GNU C17 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)]
-  ignore line: [	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1)  GMP version 6.1.2  MPFR version 4.0.2-p9  MPC version 1.1.0  isl version isl-0.16.1-GMP]
-  ignore line: []
-  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/include-fixed"]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/include"]
+  ignore line: [InstalledDir: /bin]
+  ignore line: [Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /opt/cuda-10.2  version 10.1]
+  ignore line: [ (in-process)]
+  ignore line: [ "/usr/bin/clang-10" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mframe-pointer=all -fmath-errno -fno-rounding-math -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /usr/lib64/clang/10.0.0 -internal-isystem /usr/local/include -internal-isystem /usr/lib64/clang/10.0.0/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gcc -fdiagnostics-show-option -faddrsig -o CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/10/include]
   ignore line: [ /usr/local/include]
+  ignore line: [ /usr/lib64/clang/10.0.0/include]
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C17 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)]
-  ignore line: [	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1)  GMP version 6.1.2  MPFR version 4.0.2-p9  MPC version 1.1.0  isl version isl-0.16.1-GMP]
-  ignore line: []
-  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: f0854f6113f296a2ef10a437ae064ca7]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o /tmp/cch12cMi.s]
-  ignore line: [GNU assembler version 2.34 (x86_64-redhat-linux) using BFD version version 2.34-4.fc32]
-  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_29556]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29556.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o  -o cmTC_29556 ]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-redhat-linux]
-  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Linking C executable cmTC_49ade]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49ade.dir/link.txt --verbose=1]
+  ignore line: [/bin/clang-10     -v CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o  -o cmTC_49ade ]
+  ignore line: [clang version 10.0.0 (Fedora 10.0.0-2.fc32)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) ]
-  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_29556' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/10/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccOA6tDE.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_29556 /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/10 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../.. CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/10/crtend.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o]
-    arg [/usr/libexec/gcc/x86_64-redhat-linux/10/collect2] ==> ignore
-    arg [-plugin] ==> ignore
-    arg [/usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccOA6tDE.res] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [--build-id] ==> ignore
-    arg [--no-add-needed] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
+  ignore line: [InstalledDir: /bin]
+  ignore line: [Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /opt/cuda-10.2  version 10.1]
+  link line: [ "/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_49ade /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /bin/../lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/bin/../lib/gcc/x86_64-redhat-linux/10 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/usr/bin/../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../.. -L/usr/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /bin/../lib/gcc/x86_64-redhat-linux/10/crtend.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o]
+    arg [/bin/ld] ==> ignore
     arg [--hash-style=gnu] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_29556] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-redhat-linux/10] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/10]
-    arg [-L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64]
+    arg [cmTC_49ade] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/crtbegin.o] ==> ignore
+    arg [-L/bin/../lib/gcc/x86_64-redhat-linux/10] ==> dir [/bin/../lib/gcc/x86_64-redhat-linux/10]
+    arg [-L/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64]
+    arg [-L/usr/bin/../lib64] ==> dir [/usr/bin/../lib64]
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
-    arg [-L/usr/lib/gcc/x86_64-redhat-linux/10/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../..]
-    arg [CMakeFiles/cmTC_29556.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-L/bin/../lib/gcc/x86_64-redhat-linux/10/../../..] ==> dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../..]
+    arg [-L/usr/bin/../lib] ==> dir [/usr/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_49ade.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
-    arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--pop-state] ==> ignore
+    arg [--no-as-needed] ==> ignore
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
-    arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--pop-state] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/crtend.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o] ==> ignore
-  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/10] ==> [/usr/lib/gcc/x86_64-redhat-linux/10]
-  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> [/usr/lib64]
+    arg [--no-as-needed] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/crtend.o] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o] ==> ignore
+  collapse library dir [/bin/../lib/gcc/x86_64-redhat-linux/10] ==> [/lib/gcc/x86_64-redhat-linux/10]
+  collapse library dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> [/lib64]
+  collapse library dir [/usr/bin/../lib64] ==> [/usr/lib64]
   collapse library dir [/lib/../lib64] ==> [/lib64]
   collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
-  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../..] ==> [/usr/lib]
+  collapse library dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../..] ==> [/lib]
+  collapse library dir [/usr/bin/../lib] ==> [/usr/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
   implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
-  implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/10;/usr/lib64;/lib64;/usr/lib]
+  implicit dirs: [/lib/gcc/x86_64-redhat-linux/10;/lib64;/usr/lib64;/lib;/usr/lib]
   implicit fwks: []
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_bb2b0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bb2b0.dir/build.make CMakeFiles/cmTC_bb2b0.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_5adfb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5adfb.dir/build.make CMakeFiles/cmTC_5adfb.dir/build
 gmake[1] : on entre dans le répertoire « /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_bb2b0.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_bb2b0.dir/testCXXCompiler.cxx.o -c /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_bb2b0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb2b0.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_bb2b0.dir/testCXXCompiler.cxx.o  -o cmTC_bb2b0 
+Building CXX object CMakeFiles/cmTC_5adfb.dir/testCXXCompiler.cxx.o
+/bin/clang++-10     -o CMakeFiles/cmTC_5adfb.dir/testCXXCompiler.cxx.o -c /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_5adfb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5adfb.dir/link.txt --verbose=1
+/bin/clang++-10       CMakeFiles/cmTC_5adfb.dir/testCXXCompiler.cxx.o  -o cmTC_5adfb 
 gmake[1] : on quitte le répertoire « /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp »
 
 
@@ -243,65 +214,49 @@ gmake[1] : on quitte le répertoire « /home/tmp/ParallelProgramming-/Opencl/b
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_8c65b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8c65b.dir/build.make CMakeFiles/cmTC_8c65b.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_d1f26/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d1f26.dir/build.make CMakeFiles/cmTC_d1f26.dir/build
 gmake[1]: Entering directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++    -v -o CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-redhat-linux
-Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Building CXX object CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o
+/bin/clang++-10    -v -o CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+clang version 10.0.0 (Fedora 10.0.0-2.fc32)
+Target: x86_64-unknown-linux-gnu
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/libexec/gcc/x86_64-redhat-linux/10/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccHfYedW.s
-GNU C++14 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)
-	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1), GMP version 6.1.2, MPFR version 4.0.2-p9, MPC version 1.1.0, isl version isl-0.16.1-GMP
-
-GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/include-fixed"
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/include"
+InstalledDir: /bin
+Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10
+Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Selected multilib: .;@m64
+Found CUDA installation: /opt/cuda-10.2, version 10.1
+ (in-process)
+ "/usr/bin/clang-10" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mframe-pointer=all -fmath-errno -fno-rounding-math -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /usr/lib64/clang/10.0.0 -internal-isystem /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10 -internal-isystem /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux -internal-isystem /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward -internal-isystem /usr/local/include -internal-isystem /usr/lib64/clang/10.0.0/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -faddrsig -o CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10
- /usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux
- /usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward
- /usr/lib/gcc/x86_64-redhat-linux/10/include
+ /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10
+ /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux
+ /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward
  /usr/local/include
+ /usr/lib64/clang/10.0.0/include
  /usr/include
 End of search list.
-GNU C++14 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)
-	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1), GMP version 6.1.2, MPFR version 4.0.2-p9, MPC version 1.1.0, isl version isl-0.16.1-GMP
-
-GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: 61a79f744777569dee61fe7e7cf9806a
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccHfYedW.s
-GNU assembler version 2.34 (x86_64-redhat-linux) using BFD version version 2.34-4.fc32
-COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_8c65b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c65b.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8c65b 
-Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
-COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-redhat-linux
-Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Linking CXX executable cmTC_d1f26
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1f26.dir/link.txt --verbose=1
+/bin/clang++-10      -v CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_d1f26 
+clang version 10.0.0 (Fedora 10.0.0-2.fc32)
+Target: x86_64-unknown-linux-gnu
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) 
-COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c65b' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/libexec/gcc/x86_64-redhat-linux/10/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGmjXAj.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8c65b /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/10 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../.. CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/10/crtend.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c65b' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+InstalledDir: /bin
+Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10
+Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Selected multilib: .;@m64
+Found CUDA installation: /opt/cuda-10.2, version 10.1
+ "/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_d1f26 /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /bin/../lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/bin/../lib/gcc/x86_64-redhat-linux/10 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/usr/bin/../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../.. -L/usr/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /bin/../lib/gcc/x86_64-redhat-linux/10/crtend.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o
 gmake[1]: Leaving directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp'
 
 
@@ -309,113 +264,98 @@ gmake[1]: Leaving directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFi
 Parsed CXX implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10]
-    add: [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux]
-    add: [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward]
-    add: [/usr/lib/gcc/x86_64-redhat-linux/10/include]
+    add: [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10]
+    add: [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux]
+    add: [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward]
     add: [/usr/local/include]
+    add: [/usr/lib64/clang/10.0.0/include]
     add: [/usr/include]
   end of search list found
-  collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10] ==> [/usr/include/c++/10]
-  collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux] ==> [/usr/include/c++/10/x86_64-redhat-linux]
-  collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward] ==> [/usr/include/c++/10/backward]
-  collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/10/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/10/include]
+  collapse include dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10] ==> [/include/c++/10]
+  collapse include dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux] ==> [/include/c++/10/x86_64-redhat-linux]
+  collapse include dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward] ==> [/include/c++/10/backward]
   collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/lib64/clang/10.0.0/include] ==> [/usr/lib64/clang/10.0.0/include]
   collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/usr/include/c++/10;/usr/include/c++/10/x86_64-redhat-linux;/usr/include/c++/10/backward;/usr/lib/gcc/x86_64-redhat-linux/10/include;/usr/local/include;/usr/include]
+  implicit include dirs: [/include/c++/10;/include/c++/10/x86_64-redhat-linux;/include/c++/10/backward;/usr/local/include;/usr/lib64/clang/10.0.0/include;/usr/include]
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_8c65b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8c65b.dir/build.make CMakeFiles/cmTC_8c65b.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_d1f26/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d1f26.dir/build.make CMakeFiles/cmTC_d1f26.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-redhat-linux]
-  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Building CXX object CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/bin/clang++-10    -v -o CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang version 10.0.0 (Fedora 10.0.0-2.fc32)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/10/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccHfYedW.s]
-  ignore line: [GNU C++14 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)]
-  ignore line: [	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1)  GMP version 6.1.2  MPFR version 4.0.2-p9  MPC version 1.1.0  isl version isl-0.16.1-GMP]
-  ignore line: []
-  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/include-fixed"]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/include"]
+  ignore line: [InstalledDir: /bin]
+  ignore line: [Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /opt/cuda-10.2  version 10.1]
+  ignore line: [ (in-process)]
+  ignore line: [ "/usr/bin/clang-10" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mframe-pointer=all -fmath-errno -fno-rounding-math -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /usr/lib64/clang/10.0.0 -internal-isystem /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10 -internal-isystem /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux -internal-isystem /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward -internal-isystem /usr/local/include -internal-isystem /usr/lib64/clang/10.0.0/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir /home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -faddrsig -o CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10]
-  ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux]
-  ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward]
-  ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/10/include]
+  ignore line: [ /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10]
+  ignore line: [ /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux]
+  ignore line: [ /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward]
   ignore line: [ /usr/local/include]
+  ignore line: [ /usr/lib64/clang/10.0.0/include]
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C++14 (GCC) version 10.2.1 20200723 (Red Hat 10.2.1-1) (x86_64-redhat-linux)]
-  ignore line: [	compiled by GNU C version 10.2.1 20200723 (Red Hat 10.2.1-1)  GMP version 6.1.2  MPFR version 4.0.2-p9  MPC version 1.1.0  isl version isl-0.16.1-GMP]
-  ignore line: []
-  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: 61a79f744777569dee61fe7e7cf9806a]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccHfYedW.s]
-  ignore line: [GNU assembler version 2.34 (x86_64-redhat-linux) using BFD version version 2.34-4.fc32]
-  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_8c65b]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c65b.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8c65b ]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-redhat-linux]
-  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Linking CXX executable cmTC_d1f26]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1f26.dir/link.txt --verbose=1]
+  ignore line: [/bin/clang++-10      -v CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_d1f26 ]
+  ignore line: [clang version 10.0.0 (Fedora 10.0.0-2.fc32)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.2.1 20200723 (Red Hat 10.2.1-1) (GCC) ]
-  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c65b' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/10/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGmjXAj.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8c65b /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/10 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../.. CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/10/crtend.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o]
-    arg [/usr/libexec/gcc/x86_64-redhat-linux/10/collect2] ==> ignore
-    arg [-plugin] ==> ignore
-    arg [/usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccGmjXAj.res] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [--build-id] ==> ignore
-    arg [--no-add-needed] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
+  ignore line: [InstalledDir: /bin]
+  ignore line: [Found candidate GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Selected GCC installation: /bin/../lib/gcc/x86_64-redhat-linux/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /opt/cuda-10.2  version 10.1]
+  link line: [ "/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_d1f26 /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /bin/../lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/bin/../lib/gcc/x86_64-redhat-linux/10 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/usr/bin/../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/bin/../lib/gcc/x86_64-redhat-linux/10/../../.. -L/usr/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /bin/../lib/gcc/x86_64-redhat-linux/10/crtend.o /bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o]
+    arg [/bin/ld] ==> ignore
     arg [--hash-style=gnu] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_8c65b] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-redhat-linux/10] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/10]
-    arg [-L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64]
+    arg [cmTC_d1f26] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/crtbegin.o] ==> ignore
+    arg [-L/bin/../lib/gcc/x86_64-redhat-linux/10] ==> dir [/bin/../lib/gcc/x86_64-redhat-linux/10]
+    arg [-L/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64]
+    arg [-L/usr/bin/../lib64] ==> dir [/usr/bin/../lib64]
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
-    arg [-L/usr/lib/gcc/x86_64-redhat-linux/10/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../..]
-    arg [CMakeFiles/cmTC_8c65b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-L/bin/../lib/gcc/x86_64-redhat-linux/10/../../..] ==> dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../..]
+    arg [-L/usr/bin/../lib] ==> dir [/usr/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_d1f26.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -423,15 +363,19 @@ Parsed CXX implicit link information from above output:
     arg [-lc] ==> lib [c]
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/crtend.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o] ==> ignore
-  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/10] ==> [/usr/lib/gcc/x86_64-redhat-linux/10]
-  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> [/usr/lib64]
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/crtend.o] ==> ignore
+    arg [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o] ==> ignore
+  collapse library dir [/bin/../lib/gcc/x86_64-redhat-linux/10] ==> [/lib/gcc/x86_64-redhat-linux/10]
+  collapse library dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../../../lib64] ==> [/lib64]
+  collapse library dir [/usr/bin/../lib64] ==> [/usr/lib64]
   collapse library dir [/lib/../lib64] ==> [/lib64]
   collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
-  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/10/../../..] ==> [/usr/lib]
+  collapse library dir [/bin/../lib/gcc/x86_64-redhat-linux/10/../../..] ==> [/lib]
+  collapse library dir [/usr/bin/../lib] ==> [/usr/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
   implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
-  implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/10;/usr/lib64;/lib64;/usr/lib]
+  implicit dirs: [/lib/gcc/x86_64-redhat-linux/10;/lib64;/usr/lib64;/lib;/usr/lib]
   implicit fwks: []
 
 

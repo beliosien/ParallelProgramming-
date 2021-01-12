@@ -6,32 +6,14 @@
 #define INCLUDE_TEXTURE_H_
 
 #include <GL/glew.h>
-#include <GL/glut.h>
-#include <GL/glxew.h>
-
-#include <GL/freeglut_ext.h>
 #include "image.h"
 #include "pixel.h"
 
-typedef struct texture {
-    GLuint texture_id;
-    pixel_t* pixels;
-    size_t width;
-    size_t height;
-} texture_t;
-
-texture_t* init_texture(image_t* image);
-void destroy_texture(texture_t* texture);
-
-int Bind(unsigned int slot, texture_t* texture);
-int UnBind();
-
-
-/*class Texture 
+class Texture 
 {
 private:
-    unsigned int texture_id;
-    pixels_t* pixels;
+    GLuint texture_id;
+    pixel_t* pixels;
     unsigned int width;
     unsigned int height;
 
@@ -39,8 +21,8 @@ public:
     Texture(image_t* image);
     ~Texture();
 
-    void Bind(unsigned int slot, texture_t* texture) const;
-    void UnBind() const;
-}*/
+    int Bind(unsigned int slot) const;
+    void Unbind() const;
+};
 
 #endif /*INCLUDE_TEXTURE_H_*/

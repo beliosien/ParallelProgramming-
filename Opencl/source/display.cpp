@@ -11,12 +11,15 @@
 
 #include "shader.h"
 #include "display.h"
-#include "image.h"
-#include "log.h"
 #include "texture.h"
 #include "vertexArray.h"
 #include "vertexBuffer.h"
 #include "indexBuffer.h"
+
+extern "C"{
+#include "image.h"
+#include "log.h"
+}
 
 #define WIDTH 640
 #define HEIGHT 480
@@ -28,7 +31,7 @@ typedef struct display {
     unsigned int window_id;
 
     image_dir_t* image_dir;
-    texture_t* texture;
+    Texture* texture;
     bool enabled;
 
 } display_t;
@@ -49,7 +52,7 @@ int display_init(image_dir_t* image_dir) {
     display->window_id = 0;
 
     display->image_dir = image_dir;
-    display->texture   = (texture_t*) malloc(sizeof(texture_t));
+    //display->texture   = (texture_t*) malloc(sizeof(texture_t));
     display->enabled   = true;
 
     return 0;
@@ -177,6 +180,7 @@ fail_exit:
     return -1;
 }*/
 
+ 
 static int render() {
     float positions[] = {
        -0.5f, -0.5f, 0.0f, 0.0f, 
@@ -207,22 +211,19 @@ static int render() {
     myShader.SetUniform4f("u_color", 0.2f, 0.3f, 0.8f, 1.0f);
 
 
-
-
     image_t* image = NULL;
     if (display->enabled && (image = image_dir_load_next(display->image_dir)) != NULL) {
-        texture_t* texture   = (texture_t*) malloc(sizeof(texture_t));
-        texture = init_texture(image);
+        Texture texture(image);
 
-        if(display->texture == NULL)
+       /* if(texture == NULL)
         {
             LOG_ERROR_NULL_PTR();
             goto fail_exit;
-        }
+        }*/
 
-        if(Bind(0, display->texture) < 0)
+        if(texture.Bind(0) < 0)
         {
-            LOG_ERROR("error binding the texture");
+            LOG_ERROR("Error binding the texture");
             goto fail_exit;
         }
         myShader.SetUniform1i("u_Texture", 0);

@@ -7,7 +7,9 @@
  * display helps us to see any kind of image
  */
 
+extern "C"{
 #include "image.h"
+}
 
 int display_init(image_dir_t* image_dir);
 void display_destroy();

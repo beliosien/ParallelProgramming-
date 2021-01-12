@@ -7,7 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sample.dir/source/opencl.c.o"
   "CMakeFiles/sample.dir/source/renderer.cpp.o"
   "CMakeFiles/sample.dir/source/shader.cpp.o"
-  "CMakeFiles/sample.dir/source/texture.c.o"
+  "CMakeFiles/sample.dir/source/texture.cpp.o"
   "CMakeFiles/sample.dir/source/vertexArray.cpp.o"
   "CMakeFiles/sample.dir/source/vertexBuffer.cpp.o"
   "sample"

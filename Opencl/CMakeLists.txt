@@ -10,7 +10,7 @@ target_sources(sample PUBLIC
     source/opencl.c
     source/image.c
     source/image-opencl.c
-    source/texture.c
+    source/texture.cpp
     source/display.cpp
     source/vertexBuffer.cpp
     source/indexBuffer.cpp

@@ -1,42 +1,30 @@
 #include "texture.h"
 #include "log.h"
 
-texture_t* init_texture(image_t* image) {
-    texture_t* texture = malloc(sizeof(texture_t));
-
-    if (image == NULL) {
-        LOG_ERROR("image has not been initialised");
-        goto fail_exit;
-    }
-
-    texture->texture_id = 0;
-    texture->pixels     = image->pixels;
-    texture->width      = image->width;
-    texture->height     = image->height;
-
-    return texture;
-
-fail_exit:
-    return NULL;
+Texture::Texture(image_t* image)
+{
+    texture_id = 0;
+    pixels     = image->pixels;
+    width      = image->width;
+    height     = image->height;
 }
 
-void destroy_texture(texture_t* texture) {
-    if (texture != NULL) {
-        free(texture->pixels);
-        free(texture);
-        glDeleteTextures(1, &texture->texture_id);
-    }
+Texture::~Texture() {
+    delete pixels;
+    Unbind();
+    glDeleteTextures(1, &texture_id);
 }
 
-int Bind(unsigned int slot, texture_t* texture) {
-    if (texture->texture_id == 0) {
-        glGenTextures(1, &texture->texture_id);
+int Texture::Bind(unsigned int slot) const {
+    if (texture_id == 0) {
+        glGenTextures(1, (GLuint* )&texture_id);
         if (LOG_ERROR_OPENGL("glGenTextures") < 0) {
             goto fail_exit;
         }
     }
 
-    glBindTexture(GL_TEXTURE_2D, texture->texture_id);
+
+    glBindTexture(GL_TEXTURE_2D, texture_id);
     if (LOG_ERROR_OPENGL("glBindTexture") < 0) {
         goto fail_exit;
     }
@@ -61,8 +49,8 @@ int Bind(unsigned int slot, texture_t* texture) {
         goto fail_exit;
     }
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, texture->width, texture->height, 0, GL_RGBA, GL_UNSIGNED_BYTE,
-                 texture->pixels);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE,
+                 pixels);
     if (LOG_ERROR_OPENGL("glTexImage2D") < 0) {
         goto fail_exit;
     }
@@ -83,14 +71,12 @@ fail_exit:
     return -1;
 }
 
-int UnBind() {
+void Texture:: Unbind() const {
     glBindTexture(GL_TEXTURE_2D, 0);
     if (LOG_ERROR_OPENGL("glBindTexture") < 0) {
         goto fail_exit;
     }
 
-    return 0;
-
 fail_exit:
-    return -1;
+    return;
 }

@@ -1,0 +1,57 @@
+[
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/main.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/main.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/main.cpp"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang-10 -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/opencl.c.o   -c /home/tmp/ParallelProgramming-/Opencl/source/opencl.c",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/opencl.c"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang-10 -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/image.c.o   -c /home/tmp/ParallelProgramming-/Opencl/source/image.c",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/image.c"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang-10 -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/image-opencl.c.o   -c /home/tmp/ParallelProgramming-/Opencl/source/image-opencl.c",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/image-opencl.c"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/texture.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/texture.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/texture.cpp"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/display.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/display.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/display.cpp"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/vertexBuffer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/indexBuffer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/vertexArray.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/shader.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/shader.cpp"
+},
+{
+  "directory": "/home/tmp/ParallelProgramming-/Opencl/build",
+  "command": "/bin/clang++-10  -DCL_TARGET_OPENCL_VERSION=220 -D__KERNEL_FILE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel/traitement.cl\\\" -D__OPENCL_INCLUDE__=\\\"/home/tmp/ParallelProgramming-/Opencl/source/kernel\\\" -I/home/tmp/ParallelProgramming-/Opencl/sample -I/home/tmp/ParallelProgramming-/Opencl/include -I/home/tmp/ParallelProgramming-/Opencl/res  -g   -o CMakeFiles/sample.dir/source/renderer.cpp.o -c /home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp",
+  "file": "/home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp"
+}
+]

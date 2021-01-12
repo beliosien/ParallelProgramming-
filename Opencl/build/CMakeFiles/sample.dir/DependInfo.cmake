@@ -8,9 +8,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/tmp/ParallelProgramming-/Opencl/source/image-opencl.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/image-opencl.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/image.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/image.c.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/opencl.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/opencl.c.o"
-  "/home/tmp/ParallelProgramming-/Opencl/source/texture.c" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/texture.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
@@ -31,10 +30,11 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/tmp/ParallelProgramming-/Opencl/source/main.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/main.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/renderer.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/shader.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/shader.cpp.o"
+  "/home/tmp/ParallelProgramming-/Opencl/source/texture.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/texture.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/vertexArray.cpp.o"
   "/home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp" "/home/tmp/ParallelProgramming-/Opencl/build/CMakeFiles/sample.dir/source/vertexBuffer.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX

@@ -15,12 +15,6 @@ CMakeFiles/sample.dir/source/opencl.c.o: ../include/log.h
 CMakeFiles/sample.dir/source/opencl.c.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/opencl.c.o: ../source/opencl.c
 
-CMakeFiles/sample.dir/source/texture.c.o: ../include/image.h
-CMakeFiles/sample.dir/source/texture.c.o: ../include/log.h
-CMakeFiles/sample.dir/source/texture.c.o: ../include/pixel.h
-CMakeFiles/sample.dir/source/texture.c.o: ../include/texture.h
-CMakeFiles/sample.dir/source/texture.c.o: ../source/texture.c
-
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/display.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/image.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/indexBuffer.h
@@ -53,6 +47,12 @@ CMakeFiles/sample.dir/source/renderer.cpp.o: ../source/renderer.cpp
 
 CMakeFiles/sample.dir/source/shader.cpp.o: ../include/shader.h
 CMakeFiles/sample.dir/source/shader.cpp.o: ../source/shader.cpp
+
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/image.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/log.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/pixel.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/texture.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../source/texture.cpp
 
 CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../include/log.h
 CMakeFiles/sample.dir/source/vertexArray.cpp.o: ../include/vertexArray.h
