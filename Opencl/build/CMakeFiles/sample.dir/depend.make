@@ -17,14 +17,9 @@ CMakeFiles/sample.dir/source/opencl.c.o: ../source/opencl.c
 
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/display.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/image.h
-CMakeFiles/sample.dir/source/display.cpp.o: ../include/indexBuffer.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/log.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/pixel.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/shader.h
-CMakeFiles/sample.dir/source/display.cpp.o: ../include/texture.h
-CMakeFiles/sample.dir/source/display.cpp.o: ../include/vertexArray.h
-CMakeFiles/sample.dir/source/display.cpp.o: ../include/vertexBuffer.h
-CMakeFiles/sample.dir/source/display.cpp.o: ../include/vertexBufferLayout.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../source/display.cpp
 
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../include/indexBuffer.h
@@ -47,6 +42,9 @@ CMakeFiles/sample.dir/source/renderer.cpp.o: ../source/renderer.cpp
 
 CMakeFiles/sample.dir/source/shader.cpp.o: ../include/shader.h
 CMakeFiles/sample.dir/source/shader.cpp.o: ../source/shader.cpp
+
+CMakeFiles/sample.dir/source/stb_image.cpp.o: ../include/stb_image.h
+CMakeFiles/sample.dir/source/stb_image.cpp.o: ../source/stb_image.cpp
 
 CMakeFiles/sample.dir/source/texture.cpp.o: ../include/image.h
 CMakeFiles/sample.dir/source/texture.cpp.o: ../include/log.h

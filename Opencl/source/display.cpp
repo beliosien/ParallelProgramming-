@@ -11,10 +11,6 @@
 
 #include "shader.h"
 #include "display.h"
-#include "texture.h"
-#include "vertexArray.h"
-#include "vertexBuffer.h"
-#include "indexBuffer.h"
 
 extern "C"{
 #include "image.h"
@@ -31,13 +27,13 @@ typedef struct display {
     unsigned int window_id;
 
     image_dir_t* image_dir;
-    Texture* texture;
+    GLuint texture;
     bool enabled;
 
 } display_t;
 
 static display_t* display = NULL;
-
+image_t* image = NULL;
 
 int display_init(image_dir_t* image_dir) {
     if (display != NULL) {
@@ -52,8 +48,10 @@ int display_init(image_dir_t* image_dir) {
     display->window_id = 0;
 
     display->image_dir = image_dir;
-    display->texture   = nullptr;
+    display->texture   = 0;
     display->enabled   = true;
+
+    image = image_dir_load_next(display->image_dir);
 
     return 0;
 
@@ -79,18 +77,6 @@ static int pre_display() {
         goto fail_exit;
     }
 
-    /*glMatrixMode(GL_PROJECTION);
-    if (LOG_ERROR_OPENGL("glMatrixMode") < 0) {
-        goto fail_exit;
-    }
-
-    glLoadIdentity();
-    if (LOG_ERROR_OPENGL("glLoadIdentity") < 0) {
-        goto fail_exit;
-    }
-
-    gluOrtho2D(0.0, 1.0, 0.0, 1.0);*/
-
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     if (LOG_ERROR_OPENGL("glClearColor") < 0) {
         goto fail_exit;
@@ -107,83 +93,91 @@ static int pre_display() {
 fail_exit:
     return -1;
 }
- 
-static int render() {
-    float positions[] = {
-       -0.5f, -0.5f, 0.0f, 0.0f, 
-        0.5f, -0.5f, 1.0f, 0.0f, 
-        0.5f, 0.5f, 1.0f, 1.0f, 
-       -0.5f, 0.5f, 0.0f, 1.0f  
-    };
 
-    unsigned int indices[] = {
-        0, 1, 2,
-        2, 3, 0
-    };
+static int render()
+{
+    unsigned int VBO, VAO, EBO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
 
-    vertexArray va;
-    vertexBuffer vb(positions, sizeof(positions));
+    glBindVertexArray(VAO);
 
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    vertexBufferLayout layout;
-    layout.Push<float>(2);
-    layout.Push<float>(2);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    indexBuffer ib(indices, 6);
+    // position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // color attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
+    // texture coord attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
     
     shader myShader("res/shaders/basic.glsl");
     myShader.Bind();
-    //myShader.SetUniform4f("u_color", 0.2f, 0.3f, 0.8f, 1.0f);
-
-    image_t* image = NULL;
 
     if (display == NULL)
     {
-        LOG_ERROR("display has not been initialised");
+        LOG_ERROR("display has not been initialized");
         goto fail_exit;
     }
 
-    if (display->image_dir == NULL)
-    {
-        LOG_ERROR_NULL_PTR();
-        goto fail_exit;
+    glGenTextures(1, &display->texture);
+    glBindTexture(GL_TEXTURE_2D, display->texture);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
+           goto fail_exit;
     }
-
-    
-    if (display->enabled && (image = image_dir_load_next(display->image_dir)) != NULL) {
-
-        if (image == NULL)
-        {
-            LOG_ERROR("Image is NULL");
+    	
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
+           goto fail_exit;
+    }
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
             goto fail_exit;
+    }
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) {
+            goto fail_exit;
+    }
+
+    load_next_image(display->image_dir);
+
+    // load and generate the texture
+    if (image->pixels)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->width, image->height, 0, 
+                    GL_RGBA, GL_UNSIGNED_BYTE, image->pixels);
+        if (LOG_ERROR_OPENGL("glTexImage2D") < 0) {
+           goto fail_exit;
+        }
+        glGenerateMipmap(GL_TEXTURE_2D);
+        if (LOG_ERROR_OPENGL("glGenerateMipmap") < 0) {
+           goto fail_exit;
         }
         
-       if(display->texture != nullptr)
-        {
-            display->texture = nullptr;
-        }
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
 
-        display->texture = new Texture(image);
-
-        if(display->texture->Bind(0) < 0)
-        {
-            LOG_ERROR("Error binding the texture");
-            goto fail_exit;
-        }
-        myShader.SetUniform1i("u_Texture", 0);
-
-        va.Unbind();
-        vb.Unbind();
-        ib.Unbind();
-        myShader.Unbind();
-
-        /*glEnable(GL_TEXTURE_2D);
-        if (LOG_ERROR_OPENGL("glEnable") < 0) {
-            goto fail_exit;
-        }*/
-
+    if (display->enabled) {
+       
+        glBindTexture(GL_TEXTURE_2D, display->texture);
+        glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-
+        glBindVertexArray(0);
     }
 
     return 0;
@@ -192,6 +186,17 @@ fail_exit:
     return -1;
 }
 
+void load_next_image(image_dir_t* image_dir)
+{
+    image_t* image_temp = image_dir_load_next(image_dir);
+    if (image_temp != NULL)
+    {
+        image = image_copy(image_temp);
+        delete image_temp;
+    }
+
+}
+ 
 static inline void post_display() {
     glutSwapBuffers();
 }

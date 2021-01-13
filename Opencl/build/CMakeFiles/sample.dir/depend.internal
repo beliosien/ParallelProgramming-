@@ -18,14 +18,9 @@ CMakeFiles/sample.dir/source/opencl.c.o
 CMakeFiles/sample.dir/source/display.cpp.o
  ../include/display.h
  ../include/image.h
- ../include/indexBuffer.h
  ../include/log.h
  ../include/pixel.h
  ../include/shader.h
- ../include/texture.h
- ../include/vertexArray.h
- ../include/vertexBuffer.h
- ../include/vertexBufferLayout.h
  /home/tmp/ParallelProgramming-/Opencl/source/display.cpp
 CMakeFiles/sample.dir/source/indexBuffer.cpp.o
  ../include/indexBuffer.h
@@ -48,6 +43,9 @@ CMakeFiles/sample.dir/source/renderer.cpp.o
 CMakeFiles/sample.dir/source/shader.cpp.o
  ../include/shader.h
  /home/tmp/ParallelProgramming-/Opencl/source/shader.cpp
+CMakeFiles/sample.dir/source/stb_image.cpp.o
+ ../include/stb_image.h
+ /home/tmp/ParallelProgramming-/Opencl/source/stb_image.cpp
 CMakeFiles/sample.dir/source/texture.cpp.o
  ../include/image.h
  ../include/log.h

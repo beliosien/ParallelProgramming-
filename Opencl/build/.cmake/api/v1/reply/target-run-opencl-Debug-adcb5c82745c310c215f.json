@@ -4,7 +4,8 @@
 	{
 		"commands" : 
 		[
-			"add_custom_target"
+			"add_custom_target",
+			"add_dependencies"
 		],
 		"files" : 
 		[
@@ -18,13 +19,26 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 80,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 84,
 				"parent" : 0
 			}
 		]
 	},
-	"id" : "format::@6890427a1f51a3e7e1df",
-	"name" : "format",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "sample::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "run-opencl::@6890427a1f51a3e7e1df",
+	"name" : "run-opencl",
 	"paths" : 
 	{
 		"build" : ".",
@@ -52,13 +66,13 @@
 		{
 			"backtrace" : 1,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/format",
+			"path" : "build/CMakeFiles/run-opencl",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/format.rule",
+			"path" : "build/CMakeFiles/run-opencl.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

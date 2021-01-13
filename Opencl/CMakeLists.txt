@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13.5)
 project(Opencl LANGUAGES C CXX)
 
 
-include_directories(sample include res)
+include_directories(sample include res data)
 add_executable(sample)
 target_link_libraries(sample -lm -lpthread -lpng  /usr/lib64/libOpenCL.so.1)
 target_sources(sample PUBLIC
@@ -17,6 +17,7 @@ target_sources(sample PUBLIC
     source/vertexArray.cpp
     source/shader.cpp
     source/renderer.cpp
+    source/stb_image.cpp
 )
 
 add_custom_target(format
@@ -72,6 +73,7 @@ endif()
 #set_source_files_properties(source/sinoscope-openmp.c PROPERTIES COMPILE_FLAGS -fopenmp)
 add_definitions(-D__KERNEL_FILE__="${PROJECT_SOURCE_DIR}/source/kernel/traitement.cl")
 add_definitions(-D__OPENCL_INCLUDE__="${PROJECT_SOURCE_DIR}/source/kernel")
+add_definitions(-D__SHADER_FILE__="${PROJECT_SOURCE_DIR}/res/basic.glsl")
 add_definitions(-DCL_TARGET_OPENCL_VERSION=220)
 
 

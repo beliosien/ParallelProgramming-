@@ -385,6 +385,33 @@ source/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/shader.cpp.s
 .PHONY : source/shader.cpp.s
 
+source/stb_image.o: source/stb_image.cpp.o
+
+.PHONY : source/stb_image.o
+
+# target to build an object file
+source/stb_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/stb_image.cpp.o
+.PHONY : source/stb_image.cpp.o
+
+source/stb_image.i: source/stb_image.cpp.i
+
+.PHONY : source/stb_image.i
+
+# target to preprocess a source file
+source/stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/stb_image.cpp.i
+.PHONY : source/stb_image.cpp.i
+
+source/stb_image.s: source/stb_image.cpp.s
+
+.PHONY : source/stb_image.s
+
+# target to generate assembly for a file
+source/stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/source/stb_image.cpp.s
+.PHONY : source/stb_image.cpp.s
+
 source/texture.o: source/texture.cpp.o
 
 .PHONY : source/texture.o
@@ -501,6 +528,9 @@ help:
 	@echo "... source/shader.o"
 	@echo "... source/shader.i"
 	@echo "... source/shader.s"
+	@echo "... source/stb_image.o"
+	@echo "... source/stb_image.i"
+	@echo "... source/stb_image.s"
 	@echo "... source/texture.o"
 	@echo "... source/texture.i"
 	@echo "... source/texture.s"

@@ -11,8 +11,22 @@ extern "C"{
 #include "image.h"
 }
 
+static float vertices[] = {
+                // positions          // colors           // texture coords
+                -1.0f,  -1.0f, 0.0f,   1.0f, 0.0f, 0.0f,   0.0f, 1.0f,   // top right
+                1.0f,  -1.0f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 1.0f,   // bottom right
+                1.0f,   1.0f, 0.0f,   0.0f, 0.0f, 1.0f,   1.0f, 0.0f,   // bottom left
+                -1.0f,   1.0f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 0.0f    // top left 
+            };
+    
+static unsigned int indices[] = {  // note that we start from 0!
+                        0, 1, 3,   // first triangle
+                        1, 2, 3    // second triangle
+                    }; 
+
 int display_init(image_dir_t* image_dir);
 void display_destroy();
 int display_open();
+void load_next_image(image_dir_t* image_dir);
 
 #endif /* INCLUDE_DISPLAY_H_ */
