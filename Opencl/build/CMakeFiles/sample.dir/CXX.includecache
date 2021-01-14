@@ -17,8 +17,8 @@ stddef.h
 -
 pixel.h
 ../include/pixel.h
-
-../include/indexBuffer.h
+opencl.h
+../include/opencl.h
 
 ../include/log.h
 errno.h
@@ -28,15 +28,11 @@ stdio.h
 string.h
 -
 
-../include/pixel.h
+../include/opencl.h
+CL/cl.h
+-
 
-../include/renderer.h
-indexBuffer.h
-../include/indexBuffer.h
-shader.h
-../include/shader.h
-vertexArray.h
-../include/vertexArray.h
+../include/pixel.h
 
 ../include/shader.h
 GL/glew.h
@@ -58,38 +54,6 @@ iostream
 vector
 -
 
-../include/stb_image.h
-stb_image.h
-../include/stb_image.h
-stdio.h
--
-stdlib.h
--
-stdarg.h
--
-stddef.h
--
-stdlib.h
--
-string.h
--
-limits.h
--
-math.h
--
-stdio.h
--
-assert.h
--
-stdint.h
--
-emmintrin.h
--
-intrin.h
--
-arm_neon.h
--
-
 ../include/texture.h
 GL/glew.h
 -
@@ -104,20 +68,6 @@ time.h
 stdbool.h
 -
 stdlib.h
--
-
-../include/vertexArray.h
-vertexBuffer.h
-../include/vertexBuffer.h
-vertexBufferLayout.h
-../include/vertexBufferLayout.h
-
-../include/vertexBuffer.h
-
-../include/vertexBufferLayout.h
-GL/glew.h
--
-vector
 -
 
 /home/tmp/ParallelProgramming-/Opencl/source/display.cpp
@@ -144,24 +94,6 @@ image.h
 log.h
 /home/tmp/ParallelProgramming-/Opencl/source/log.h
 
-/home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.cpp
-indexBuffer.h
-/home/tmp/ParallelProgramming-/Opencl/source/indexBuffer.h
-stdlib.h
--
-time.h
--
-log.h
-/home/tmp/ParallelProgramming-/Opencl/source/log.h
-GL/glew.h
--
-GL/glut.h
--
-GL/glxew.h
--
-GL/freeglut_ext.h
--
-
 /home/tmp/ParallelProgramming-/Opencl/source/main.cpp
 signal.h
 -
@@ -184,39 +116,7 @@ image.h
 log.h
 /home/tmp/ParallelProgramming-/Opencl/source/log.h
 
-/home/tmp/ParallelProgramming-/Opencl/source/renderer.cpp
-renderer.h
-/home/tmp/ParallelProgramming-/Opencl/source/renderer.h
-
-/home/tmp/ParallelProgramming-/Opencl/source/shader.cpp
-shader.h
-/home/tmp/ParallelProgramming-/Opencl/source/shader.h
-
-/home/tmp/ParallelProgramming-/Opencl/source/stb_image.cpp
-stb_image.h
-/home/tmp/ParallelProgramming-/Opencl/source/stb_image.h
-
 /home/tmp/ParallelProgramming-/Opencl/source/texture.cpp
 texture.h
 /home/tmp/ParallelProgramming-/Opencl/source/texture.h
-
-/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.cpp
-vertexArray.h
-/home/tmp/ParallelProgramming-/Opencl/source/vertexArray.h
-GL/glew.h
--
-log.h
-/home/tmp/ParallelProgramming-/Opencl/source/log.h
-
-/home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.cpp
-vertexBuffer.h
-/home/tmp/ParallelProgramming-/Opencl/source/vertexBuffer.h
-log.h
-/home/tmp/ParallelProgramming-/Opencl/source/log.h
-GL/glew.h
--
-stdlib.h
--
-time.h
--
 

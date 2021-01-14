@@ -3,11 +3,13 @@
 
 CMakeFiles/sample.dir/source/image-opencl.c.o: ../include/image.h
 CMakeFiles/sample.dir/source/image-opencl.c.o: ../include/log.h
+CMakeFiles/sample.dir/source/image-opencl.c.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/image-opencl.c.o: ../include/pixel.h
 CMakeFiles/sample.dir/source/image-opencl.c.o: ../source/image-opencl.c
 
 CMakeFiles/sample.dir/source/image.c.o: ../include/image.h
 CMakeFiles/sample.dir/source/image.c.o: ../include/log.h
+CMakeFiles/sample.dir/source/image.c.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/image.c.o: ../include/pixel.h
 CMakeFiles/sample.dir/source/image.c.o: ../source/image.c
 
@@ -18,6 +20,7 @@ CMakeFiles/sample.dir/source/opencl.c.o: ../source/opencl.c
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/display.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/image.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/log.h
+CMakeFiles/sample.dir/source/display.cpp.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/pixel.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../include/shader.h
 CMakeFiles/sample.dir/source/display.cpp.o: ../source/display.cpp
@@ -29,6 +32,7 @@ CMakeFiles/sample.dir/source/indexBuffer.cpp.o: ../source/indexBuffer.cpp
 CMakeFiles/sample.dir/source/main.cpp.o: ../include/display.h
 CMakeFiles/sample.dir/source/main.cpp.o: ../include/image.h
 CMakeFiles/sample.dir/source/main.cpp.o: ../include/log.h
+CMakeFiles/sample.dir/source/main.cpp.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/main.cpp.o: ../include/pixel.h
 CMakeFiles/sample.dir/source/main.cpp.o: ../source/main.cpp
 
@@ -48,6 +52,7 @@ CMakeFiles/sample.dir/source/stb_image.cpp.o: ../source/stb_image.cpp
 
 CMakeFiles/sample.dir/source/texture.cpp.o: ../include/image.h
 CMakeFiles/sample.dir/source/texture.cpp.o: ../include/log.h
+CMakeFiles/sample.dir/source/texture.cpp.o: ../include/opencl.h
 CMakeFiles/sample.dir/source/texture.cpp.o: ../include/pixel.h
 CMakeFiles/sample.dir/source/texture.cpp.o: ../include/texture.h
 CMakeFiles/sample.dir/source/texture.cpp.o: ../source/texture.cpp

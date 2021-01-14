@@ -4,11 +4,13 @@
 CMakeFiles/sample.dir/source/image-opencl.c.o
  ../include/image.h
  ../include/log.h
+ ../include/opencl.h
  ../include/pixel.h
  /home/tmp/ParallelProgramming-/Opencl/source/image-opencl.c
 CMakeFiles/sample.dir/source/image.c.o
  ../include/image.h
  ../include/log.h
+ ../include/opencl.h
  ../include/pixel.h
  /home/tmp/ParallelProgramming-/Opencl/source/image.c
 CMakeFiles/sample.dir/source/opencl.c.o
@@ -19,6 +21,7 @@ CMakeFiles/sample.dir/source/display.cpp.o
  ../include/display.h
  ../include/image.h
  ../include/log.h
+ ../include/opencl.h
  ../include/pixel.h
  ../include/shader.h
  /home/tmp/ParallelProgramming-/Opencl/source/display.cpp
@@ -30,6 +33,7 @@ CMakeFiles/sample.dir/source/main.cpp.o
  ../include/display.h
  ../include/image.h
  ../include/log.h
+ ../include/opencl.h
  ../include/pixel.h
  /home/tmp/ParallelProgramming-/Opencl/source/main.cpp
 CMakeFiles/sample.dir/source/renderer.cpp.o
@@ -49,6 +53,7 @@ CMakeFiles/sample.dir/source/stb_image.cpp.o
 CMakeFiles/sample.dir/source/texture.cpp.o
  ../include/image.h
  ../include/log.h
+ ../include/opencl.h
  ../include/pixel.h
  ../include/texture.h
  /home/tmp/ParallelProgramming-/Opencl/source/texture.cpp

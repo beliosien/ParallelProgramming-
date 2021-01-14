@@ -7,7 +7,7 @@
  * display helps us to see any kind of image
  */
 
-extern "C"{
+extern "C" {
 #include "image.h"
 }
 

@@ -70,7 +70,7 @@ void destroy_image_to_send(image_to_send_t* image);
 
 int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, size_t width, size_t height);
 void image_opencl_cleanup(image_opencl_t* opencl_image);
-int image_opencl(image_to_send_t* image)
+int image_opencl(image_to_send_t* image);
 
 
 #endif /* INCLUDE_IMAGE_H_ */

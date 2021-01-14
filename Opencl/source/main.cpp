@@ -39,6 +39,12 @@ static void fail_unknown_method_algorithm(const char* exec_name, const char* arg
     exit(1);
 }
 
+// TODO
+static void show_commands(const char* exec_name)
+{
+
+}
+
 /*static void fail_multiple_method(const char* exec_name) {
     fprintf(stderr, "%s: zero or one option `--method` must be specified\n", exec_name);
     fprintf(stderr, "Try '%s --help' for more information.\n", exec_name);
@@ -100,6 +106,9 @@ int main(int argc, char* argv[]) {
             i++;
         } else if (strcmp("--help", argv[i]) == 0) {
             show_help(stdout, exec_name);
+            exit(0);
+        } else if (strcmp("--command", argv[i]) == 0) {
+            show_commands(exec_name);
             exit(0);
         } else {
             fail_unknown_argument(exec_name, argv[i]);
