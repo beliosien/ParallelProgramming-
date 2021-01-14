@@ -33,6 +33,35 @@ fail_exit:
     return NULL;
 }
 
+image_to_send_t* create_image_to_send(size_t id, image_handler* handler, image_t* image){
+    image_to_send_t* image_to_send = calloc(1, sizeof(*image_to_send));
+
+    if (image_to_send == NULL){
+        LOG_ERROR_ERRNO("calloc");
+        goto fail_exit;
+    }
+
+    image_to_send->id       = id;
+    image_to_send->width    = image->width;
+    image_to_send->height   = image->height;
+    
+    image_to_send->handler      = handler;
+    image_to_send->buffer_size  = image_to_send->width * image_to_send->height * BYTE_PER_PIXEL;
+    image_to_send->buffer = create_buffer(image);
+
+    if (image_to_send->buffer == NULL){
+        LOG_ERROR_ERRNO("malloc");
+        goto fail_free_image_to_send;
+    }
+
+    return image_to_send;
+
+fail_free_image_to_send:
+    free(image_to_send);
+fail_exit:
+    return NULL;
+}
+
 image_t* image_create_from_png(char* filename) {
     if (filename == NULL) {
         LOG_ERROR_NULL_PTR();
@@ -190,12 +219,43 @@ fail_exit:
     return NULL;
 }
 
+unsigned char* create_buffer(image_t* image){
+    unsigned char* buffer = malloc(image->width * image->height * BYTE_PER_PIXEL * sizeof(unsigned char));
+    for (int i = 0; i < image->width; i++){
+        for (int j = 0; j < image->height; j++){
+            int index = (i * BYTE_PER_PIXEL) + (j * BYTE_PER_PIXEL) * image->width;
+            pixel_t* pixel = image_get_pixel(image, i,j);
+            buffer[index + 0] = pixel->bytes[0];
+            buffer[index + 1] = pixel->bytes[1];
+            buffer[index + 2] = pixel->bytes[2];
+            buffer[index + 3] = pixel->bytes[3];
+        }
+    }
+    return buffer;
+}
+
 void image_destroy(image_t* image) {
     if (image->pixels != NULL) {
         free(image->pixels);
     }
     free(image);
 }
+
+void destroy_image_to_send(image_to_send_t* image){
+    if (image->buffer != NULL){
+        free(image->buffer);
+    }
+
+    if (image->handler != NULL){
+        free(image->handler);
+    }
+
+    if (image->opencl != NULL){
+        free(image->opencl);
+    }
+    free(image);
+}
+
 
 int image_save_png(image_t* image, char* filename) {
     if (image == NULL || filename == NULL) {

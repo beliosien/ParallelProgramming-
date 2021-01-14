@@ -3,8 +3,10 @@
 #ifndef INCLUDE_PIXEL_H_
 #define INCLUDE_PIXEL_H_
 
+static const int BYTE_PER_PIXEL = 4;
+
 typedef struct pixel {
-    unsigned char bytes[4];
+    unsigned char bytes[BYTE_PER_PIXEL];
 } pixel_t;
 
 #endif /* INCLUDE_PIXEL_H_ */

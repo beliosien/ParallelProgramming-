@@ -1,7 +1,7 @@
 #include "image.h"
 #include "log.h"
 
-/*int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, unsigned int width, unsigned int height)
+int image_opencl_init(image_opencl_t* opencl_image, cl_device_id device_id, size_t width, size_t height)
 {
     cl_int err = 0;
 
@@ -13,7 +13,7 @@
     }
 
 
-    opencl_image->command_queue = clCreateCommandQueueWithProperties(opencl_image->context, device_id, 0, &err);
+    opencl_image->queue = clCreateCommandQueueWithProperties(opencl_image->context, device_id, 0, &err);
     if (err != CL_SUCCESS)
     {
         LOG_ERROR("error creating opencl command queue");
@@ -21,17 +21,10 @@
     }
 
     const unsigned int buffer_size = width * height;
-    opencl_image->buffer_in = clCreateBuffer(opencl_image->context , CL_MEM_READ_ONLY, buffer_size, NULL, &err);
+    opencl_image->buffer = clCreateBuffer(opencl_image->context , CL_MEM_READ_ONLY, buffer_size, NULL, &err);
     if (err != CL_SUCCESS)
     {
-        LOG_ERROR("error creating buffer in");
-        goto fail_exit;
-    }
-
-    opencl_image->buffer_out = clCreateBuffer(opencl_image->context , CL_MEM_WRITE_ONLY, buffer_size, NULL, &err);
-    if (err != CL_SUCCESS)
-    {
-        LOG_ERROR("error creating buffer out");
+        LOG_ERROR("error creating buffer");
         goto fail_exit;
     }
 
@@ -87,22 +80,21 @@ fail_exit:
 
 void image_opencl_cleanup(image_opencl_t* opencl_image)
 {
-    clReleaseMemObject(opencl_image->buffer_in);
-    clReleaseMemObject(opencl_image->buffer_out);
+    clReleaseMemObject(opencl_image->buffer);
     clReleaseKernel(opencl_image->kernel);
-    clReleaseCommandQueue(opencl_image->command_queue);
+    clReleaseCommandQueue(opencl_image->queue);
     clReleaseContext(opencl_image->context);
 }
 
 
 struct __attribute__((packed)) params_t {
-    unsigned int width;
-    unsigned int height;
-    unsigned int buffer_size;
+    size_t width;
+    size_t height;
+    size_t buffer_size;
 };
 
-int image_opencl(image_t* image) {
-    if (image->opencl_image == NULL) {
+int image_opencl(image_to_send_t* image) {
+    if (image->opencl == NULL) {
         LOG_ERROR_NULL_PTR();
         goto fail_exit;
     }
@@ -113,9 +105,9 @@ int image_opencl(image_t* image) {
     params.height = image->height;
     params.buffer_size = image->buffer_size;
 
-    err = clSetKernelArg(image->opencl_image->kernel,  0, sizeof(cl_mem), &(image->opencl_image->buffer_in));
-    err |= clSetKernelArg(image->opencl_image->kernel, 1, sizeof(struct params_t), &params);
-    err |= clSetKernelArg(image->opencl_image->kernel, 2, sizeof(cl_mem), &(image->opencl_image->buffer_out));
+    err = clSetKernelArg(image->opencl->kernel,  0, sizeof(cl_mem), &(image->opencl->buffer));
+    err |= clSetKernelArg(image->opencl->kernel, 1, sizeof(struct params_t), &params);
+    err |= clSetKernelArg(image->opencl->kernel, 2, sizeof(cl_mem), &(image->opencl->buffer));
 
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to set OpenCL kernel arguments");
@@ -123,27 +115,27 @@ int image_opencl(image_t* image) {
     }
 
     size_t global_size[] = {(size_t)image->height, (size_t)image->width};
-    err = clEnqueueNDRangeKernel(image->opencl_image->command_queue, image->opencl_image->kernel, 2,
+    err = clEnqueueNDRangeKernel(image->opencl->queue, image->opencl->kernel, 2,
                         NULL, global_size, NULL, 0, NULL, NULL);
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to enqueue and execute OpenCL kernel");
         goto fail_exit;
     }
 
-    err = clFinish(image->opencl_image->command_queue);
+    err = clFinish(image->opencl->queue);
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to wait for OpenCL kernel");
         goto fail_exit;
     }
 
-    err = clEnqueueWriteBuffer(image->opencl_image->command_queue, image->opencl_image->buffer_in, CL_TRUE, 0,
+    err = clEnqueueWriteBuffer(image->opencl->queue, image->opencl->buffer, CL_TRUE, 0,
                                 image->buffer_size, image->buffer, 0 , NULL, NULL);
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to enqueue commands to write buffer");
         goto fail_exit;
     }
 
-    err = clEnqueueReadBuffer(image->opencl_image->command_queue, image->opencl_image->buffer_out, CL_TRUE, 0,
+    err = clEnqueueReadBuffer(image->opencl->queue, image->opencl->buffer, CL_TRUE, 0,
                                 image->buffer_size, image->buffer, 0 , NULL, NULL);
     if (err != CL_SUCCESS) {
         LOG_ERROR("failed to enqueue commands to read buffer");
@@ -154,4 +146,4 @@ int image_opencl(image_t* image) {
 
 fail_exit:
     return -1;
-}*/
+}
