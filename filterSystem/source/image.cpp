@@ -4,7 +4,7 @@
 
 image::image(std::string filename)
 {
-    _pixels = stbi_load("sky.jpg", &_width, &_height, &_channels, 0);
+    _pixels = stbi_load(filename.c_str(), &_width, &_height, &_channels, 0);
 
     if (_pixels == nullptr)
     {

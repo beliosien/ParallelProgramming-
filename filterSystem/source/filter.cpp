@@ -13,7 +13,7 @@ image filter_scale_up(image& img, size_t factor)
         for (int j = 0; j < img.getHeight(); j++)
         {
             unsigned char pixVal = img.getPixel(i,j);
-
+            
             for (int ki = 0; ki < factor; ki++)
             {
                for (int kj = 0; kj < factor; kj++)

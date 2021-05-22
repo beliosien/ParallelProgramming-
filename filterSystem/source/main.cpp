@@ -2,6 +2,7 @@
 #include <string>
 #include "image.h"
 #include "filter.h"
+#include "stb_image_write.h"
 
 using namespace std;
 
@@ -16,10 +17,15 @@ void show_help()
     exit(0);
 }
 
+void save_image(image img)
+{
+    string filename = "./result.jpg";
+    stbi_write_jpg(filename.c_str(), img.getWidth(), img.getHeight(), img.getChannels(), img.getPixels(), 100);
+}
+
+
 int main(int argc, char *argv[]) 
 {
-    cout << "welcome to filter system" << endl;
-
     std::string file_path;
 
     // Read program argument
@@ -42,5 +48,11 @@ int main(int argc, char *argv[])
         show_help(); 
     }
 
+    cout << "welcome to filter system" << endl;
 
+    image img = image(file_path);
+    image scaled_img = filter_scale_up(img, 2);
+    save_image(scaled_img);
+
+    cout << "done" << endl;
 }
