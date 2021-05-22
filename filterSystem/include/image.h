@@ -21,8 +21,10 @@ public:
     int getWidth();
     int getHeight();
     int getChannels();
+
     unsigned char* getPixels();
     unsigned char getPixel(int i, int j);
+    unsigned char getPixel(int index);
 
     void setPixel(int i, int j, unsigned char pixVal);
 };

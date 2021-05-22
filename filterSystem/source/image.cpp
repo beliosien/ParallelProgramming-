@@ -10,6 +10,8 @@ image::image(std::string filename)
     {
         std::cout << "image not found" << std::endl;
     }
+
+    std::cout << " channels: " << _channels << std::endl;
 }
 
 image::image(int width, int height, int channels)
@@ -27,7 +29,11 @@ image::image(int width, int height, int channels)
 
 image::~image()
 {
-    delete _pixels;
+    /*if (_pixels != nullptr)
+    {
+        delete _pixels; see what happens here
+    }*/
+
 }
 
 /**
@@ -68,16 +74,30 @@ unsigned char* image::getPixels()
 /**
  * @param i position of the pixel in the horizontal axis
  * @param j position of the pixel in the vertical axis
- * @return the width of the image
+ * @return the pixel of the image at the given position
 */
 unsigned char image::getPixel(int i, int j)
 {
     if (i >=0 && i < _width && j >=0 && j < _height)
     {
-        return _pixels[i + j * _width];
+        return _pixels[i *_channels + j * _width *_channels];
     }
 
     return -1;
+}
+
+/**
+ * @param index index of the pixel we want to get
+ * @return the pixel of the image at the given position
+*/
+unsigned char image::getPixel(int index)
+{
+    if (index < _channels*_height*_width && index >=0)
+    {
+        return _pixels[index];
+    }
+
+    return 0;
 }
 
 
@@ -91,6 +111,8 @@ void image::setPixel(int i, int j, unsigned char pixVal)
 {
     if (i >=0 && i < _width && j >=0 && j < _height)
     {
-        _pixels[i + j * _width] = pixVal;
+        _pixels[i * _channels + j * _width * _channels] = pixVal;
+    } else {
+        std::cout << "out of bonds set pixel" << std::endl;
     }
 }

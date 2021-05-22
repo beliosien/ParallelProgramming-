@@ -3,6 +3,7 @@
 
 #include "image.h"
 
+image filter_to_grayscale(image& img);
 image filter_scale_up(image& img, size_t factor);
 image filter_sobel(image& img);
 image filter_to_hsv(image& img);
@@ -15,6 +16,5 @@ image filter_box_blur(image& img);
 image filter_gaussian_blur(image& img);
 image filter_horizontal_flip(image& img);
 image filter_vertical_flip(image& img);
-image filter_to_grayscale(image& img);
 
 #endif

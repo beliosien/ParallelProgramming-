@@ -284,6 +284,33 @@ source/stb_image_write.cpp.s:
 	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/stb_image_write.cpp.s
 .PHONY : source/stb_image_write.cpp.s
 
+source/utilitary.o: source/utilitary.cpp.o
+
+.PHONY : source/utilitary.o
+
+# target to build an object file
+source/utilitary.cpp.o:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/utilitary.cpp.o
+.PHONY : source/utilitary.cpp.o
+
+source/utilitary.i: source/utilitary.cpp.i
+
+.PHONY : source/utilitary.i
+
+# target to preprocess a source file
+source/utilitary.cpp.i:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/utilitary.cpp.i
+.PHONY : source/utilitary.cpp.i
+
+source/utilitary.s: source/utilitary.cpp.s
+
+.PHONY : source/utilitary.s
+
+# target to generate assembly for a file
+source/utilitary.cpp.s:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/utilitary.cpp.s
+.PHONY : source/utilitary.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -310,6 +337,9 @@ help:
 	@echo "... source/stb_image_write.o"
 	@echo "... source/stb_image_write.i"
 	@echo "... source/stb_image_write.s"
+	@echo "... source/utilitary.o"
+	@echo "... source/utilitary.i"
+	@echo "... source/utilitary.s"
 .PHONY : help
 
 

@@ -64,6 +64,12 @@ math.h
 assert.h
 -
 
+../include/utilitary.h
+image.h
+../include/image.h
+stb_image_write.h
+../include/stb_image_write.h
+
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/image.cpp
 image.h
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/image.h
@@ -75,10 +81,14 @@ iostream
 -
 string
 -
+utilitary.h
+/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.h
 image.h
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/image.h
 filter.h
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.h
-stb_image_write.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/stb_image_write.h
+
+/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.cpp
+utilitary.h
+/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.h
 
