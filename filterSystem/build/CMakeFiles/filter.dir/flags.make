@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/philippe/Desktop/filterSystem/include 
+CXX_INCLUDES = -I/home/philippe/Desktop/ParallelProgramming-/filterSystem/include 
 

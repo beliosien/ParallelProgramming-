@@ -4,15 +4,15 @@
 CMakeFiles/filter.dir/source/filter.cpp.o
  ../include/filter.h
  ../include/image.h
- /home/philippe/Desktop/filterSystem/source/filter.cpp
+ /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.cpp
 CMakeFiles/filter.dir/source/image.cpp.o
  ../include/image.h
  ../include/stb_image.h
- /home/philippe/Desktop/filterSystem/source/image.cpp
+ /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/image.cpp
 CMakeFiles/filter.dir/source/main.cpp.o
  ../include/filter.h
  ../include/image.h
- /home/philippe/Desktop/filterSystem/source/main.cpp
+ /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
 CMakeFiles/filter.dir/source/stb_image.cpp.o
  ../include/stb_image.h
- /home/philippe/Desktop/filterSystem/source/stb_image.cpp
+ /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/stb_image.cpp
