@@ -1,4 +1,17 @@
 #include "filter.h"
+#include "math.h"
+
+#define sobel_size 3
+
+const std::vector<std::vector<float>> sobel_x = { { 1, 0, -1 }, 
+                                                { 2, 0, -2 }, 
+                                                { 1, 0, -1 } };
+
+
+const std::vector<std::vector<float>> soble_y = { { 1, 2, 1 }, 
+                                                { 0, 0, 0 }, 
+                                                {-1, -2,-1 } };
+
 
 image filter_to_grayscale(image& img)
 {
@@ -54,3 +67,37 @@ image filter_scale_up(image& img, size_t factor)
     return img_scaled_up;
 }
 
+image filter_sobel(image& img)
+{   
+    int s_width = img.getWidth();
+    int s_heigth = img.getHeight();
+    int s_channels = img.getChannels();
+
+    image sobel_image = image(s_width, s_width, s_channels);
+
+    for (int i = 0; i < s_width; i++)
+    {
+        for (int j = 0; j < s_heigth; j++)
+        {
+            float pixVal_x = 0.0;
+            float pixVal_y = 0.0;
+            for (int ki = 0; ki < sobel_size; ki++)
+            {
+                for (int kj = 0; kj < sobel_size; kj++)
+                {
+                    pixVal_x += img.getPixel(i, j) * sobel_x[ki][kj];
+                    pixVal_y += img.getPixel(i,j) * soble_y[ki][kj];
+                }
+            }
+
+            int pixVal = (int) sqrt(pixVal_x * pixVal_x + pixVal_y * pixVal_y);
+
+            if (pixVal > 255) pixVal = 255;
+            if (pixVal < 0) pixVal = 0;
+
+            sobel_image.setPixel(i, j, pixVal);
+        }
+    }
+
+    return sobel_image;
+}

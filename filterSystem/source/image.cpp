@@ -11,7 +11,7 @@ image::image(std::string filename)
         std::cout << "image not found" << std::endl;
     }
 
-    std::cout << " channels: " << _channels << std::endl;
+    std::cout << "channels: " << _channels << std::endl;
 }
 
 image::image(int width, int height, int channels)
@@ -21,7 +21,7 @@ image::image(int width, int height, int channels)
     _channels = channels;
     _pixels = new unsigned char[_width*_height*_channels];
 
-    if (_pixels == nullptr)
+    if (_pixels == NULL)
     {
         std::cout << "Error allocating space for the pixels array of the image" << std::endl;
     }
@@ -29,9 +29,10 @@ image::image(int width, int height, int channels)
 
 image::~image()
 {
-    /*if (_pixels != nullptr)
+    /*if (_pixels != NULL)
     {
-        delete _pixels; see what happens here
+        delete _pixels; 
+        _pixels = NULL;
     }*/
 
 }
