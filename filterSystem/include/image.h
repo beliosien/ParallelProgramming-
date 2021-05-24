@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "log.h"
 
 
 class image

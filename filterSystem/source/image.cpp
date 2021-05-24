@@ -8,7 +8,7 @@ image::image(std::string filename)
 
     if (_pixels == nullptr)
     {
-        std::cout << "image not found" << std::endl;
+        LOG_ERROR("image not found");
     }
 }
 
@@ -21,7 +21,7 @@ image::image(int width, int height, int channels)
 
     if (_pixels == NULL)
     {
-        std::cout << "Error allocating space for the pixels array of the image" << std::endl;
+        LOG_ERROR("Error allocating space for the pixels array of the image");
     }
 }
 

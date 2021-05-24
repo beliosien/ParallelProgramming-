@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 {
     std::string file_path;
 
-    // Read program argument
+    // Read program arguments
     for (int i=1; i<argc; i++) {
         std::string arg(argv[i]);
         if (arg == "--file") 
