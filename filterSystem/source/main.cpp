@@ -1,10 +1,23 @@
 #include <iostream>
+#include <GL/glut.h>
 #include <string>
 #include "utilitary.h"
 #include "image.h"
 #include "filter.h"
 
 using namespace std;
+
+void displayMe(void)
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_POLYGON);
+        glVertex3f(0.5, 0.0, 0.5);
+        glVertex3f(0.5, 0.0, 0.0);
+        glVertex3f(0.0, 0.5, 0.0);
+        glVertex3f(0.0, 0.0, 0.5);
+    glEnd();
+    glFlush();
+}
 
 int main(int argc, char *argv[]) 
 {
@@ -31,16 +44,15 @@ int main(int argc, char *argv[])
 
     cout << "welcome to filter system" << endl;
 
-    image img = image(file_path);
-    image gray_img = filter_to_grayscale(img);
-    image scaled_image = filter_scale_up(gray_img, 3);
-    image sobel_image = filter_sobel(scaled_image);
-    image edge_image = filter_edge_detect(scaled_image);
-    image sharpen_image = filter_sharpen(scaled_image);
-    image box_blur_image = filter_box_blur(scaled_image);
-    image gaussian_blur_image = filter_gaussian_blur(scaled_image);
-    string filename = "./result.jpg";
-    save_image(gaussian_blur_image, filename);
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE);
+    glutInitWindowSize(400, 300);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("Hello world!");
+    glutDisplayFunc(displayMe);
+    glutMainLoop();
+    return 0;
+
 
     cout << "done" << endl;
 }

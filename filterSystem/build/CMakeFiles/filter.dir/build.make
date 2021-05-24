@@ -154,6 +154,8 @@ filter: CMakeFiles/filter.dir/source/stb_image_write.cpp.o
 filter: CMakeFiles/filter.dir/source/filter.cpp.o
 filter: CMakeFiles/filter.dir/source/main.cpp.o
 filter: CMakeFiles/filter.dir/build.make
+filter: /usr/lib/x86_64-linux-gnu/libGL.so
+filter: /usr/lib/x86_64-linux-gnu/libGLU.so
 filter: CMakeFiles/filter.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable filter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/filter.dir/link.txt --verbose=$(VERBOSE)

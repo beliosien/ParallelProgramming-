@@ -43,6 +43,8 @@ stb_image_write.h
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
 iostream
 -
+GL/glut.h
+-
 string
 -
 utilitary.h
