@@ -7,6 +7,12 @@
 #include "image.h"
 #include "log.h"
 
+#include <GL/glew.h>
+#include <GL/glut.h>
+#include <GL/glxew.h>
+
+#include <GL/freeglut_ext.h>
+
 #define WIDTH 640
 #define HEIGHT 480
 
@@ -21,10 +27,11 @@ private:
     std::vector<image> _images;
     GLuint _texture;
     bool _enabled;
-
-public:
+    
     viewer();
     ~viewer();
+
+public:
 
     /**
      * get the viewer instance
@@ -43,12 +50,24 @@ public:
     void addImage(image& img);
     
     int display_init();
-    int pre_display();
-    void display();
-    void post_display();
+    static int pre_display();
+    int display_open();
+    static void post_display();
+    
+    static void callback_display();
+    static void callback_idle();
+    static void callback_keyboard(unsigned char key, int x, int y);
+    static void callback_reshape(int width, int height);
 
-    int getWidth();
-    int getHeight();
+    static int render();
+
+
+    unsigned int getWidth();
+    unsigned int getHeight();
+    unsigned int getWindowId();
+
+    void setWidth(int width);
+    void setHeight(int height);
 };
 
 #endif
