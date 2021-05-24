@@ -1,7 +1,12 @@
 #include "filter.h"
 #include "math.h"
 
-
+/**
+ * convert an rgb image to grayscale
+ * 
+ * @param img the image that we want to convert to grayscale
+ * @return image in grayscale
+*/
 image filter_to_grayscale(image& img)
 {
     int g_width = img.getWidth();
@@ -28,7 +33,13 @@ image filter_to_grayscale(image& img)
 }
 
 
-
+/**
+ * scale your image by some factor
+ * 
+ * @param img the image that we want to scale up
+ * @param factor how much we want to enlarge the image
+ * @return image scaled up
+*/
 image filter_scale_up(image& img, size_t factor)
 {   
     int s_width = img.getWidth() * factor;
@@ -56,6 +67,13 @@ image filter_scale_up(image& img, size_t factor)
     return img_scaled_up;
 }
 
+
+/**
+ * apply sobel filter on a image
+ * 
+ * @param img the image that we want apply the filter
+ * @return sobel image
+*/
 image filter_sobel(image& img)
 {   
     int s_width = img.getWidth();
@@ -94,6 +112,14 @@ image filter_sobel(image& img)
     return sobel_image;
 }
 
+
+/**
+ * apply convolution on an image
+ * 
+ * @param img the image that we want apply the convolution
+ * @param mask the mask we use to apply the convolution
+ * @return the image convoluted
+*/
 image convolution(image& img, const double mask[3][3])
 {
     int width = img.getWidth();
@@ -123,22 +149,45 @@ image convolution(image& img, const double mask[3][3])
     return conv_image;
 }
 
-
+/**
+ * detect the egde of an image
+ * 
+ * @param img the image that we want to detect edge
+ * @return the image with edge detected
+*/
 image filter_edge_detect(image& img)
 {   
     return convolution(img, egde_mask);
 }
 
+/**
+ * sharpen the edge of your image
+ * 
+ * @param img the image that we want to sharpe edge
+ * @return the image with edge sharpened
+*/
 image filter_sharpen(image& img)
 {
     return convolution(img, sharpen_mask);
 }
 
+/**
+ * blur your image using box blur filter
+ * 
+ * @param img the image that we want to blur
+ * @return the image blurred
+*/
 image filter_box_blur(image& img)
 {
     return convolution(img, box_blur_mask);
 }
 
+/**
+ * blur your image using gaussian blur filter
+ * 
+ * @param img the image that we want to blur
+ * @return the image blurred
+*/
 image filter_gaussian_blur(image& img)
 {
     return convolution(img, gaussian_blur_mask);
