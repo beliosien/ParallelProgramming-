@@ -1,14 +1,18 @@
 #include "filter.h"
 #include "math.h"
 
-double sobel_x[3][3] = { { -1, 0, 1 },
+const double sobel_x[3][3]= { { -1, 0, 1 },
                          { -2, 0, 2 },
                          {-1, 0, 1 } };
 
 
-double sobel_y[3][3] = { { -1, -2, -1 },
+const double sobel_y[3][3]= {{ -1, -2, -1 },
                          { 0,  0,  0 },
                          { 1,  2,  1 } };
+
+const double egde_mask[3][3]= {{-1, -1, -1},
+                                {-1, 8, -1},
+                                {-1, -1, -1}};
 
 
 image filter_to_grayscale(image& img)
@@ -71,10 +75,7 @@ image filter_sobel(image& img)
     int s_heigth = img.getHeight();
     int s_channels = img.getChannels();
 
-    image sobel_image = image(s_width, s_width, s_channels);
-
-    int pixel_x = 0;
-    int pixel_y = 0;
+    image sobel_image = image(s_width, s_heigth, s_channels);
 
     unsigned char* arr = img.getPixels();
 
@@ -82,25 +83,17 @@ image filter_sobel(image& img)
     {
         for (int j = 1; j < s_heigth-1; j++)
         {
-            pixel_x = (sobel_x[0][0] * arr[s_width * (j-1) + (i-1)])
-                    + (sobel_x[0][1] * arr[s_width * (j-1) +  i   ])
-                    + (sobel_x[0][2] * arr[s_width * (j-1) + (i+1)])
-                    + (sobel_x[1][0] * arr[s_width *  j    + (i-1)])
-                    + (sobel_x[1][1] * arr[s_width *  j    +  i   ])
-                    + (sobel_x[1][2] * arr[s_width *  j    + (i+1)])
-                    + (sobel_x[2][0] * arr[s_width * (j+1) + (i-1)])
-                    + (sobel_x[2][1] * arr[s_width * (j+1) +  i   ])
-                    + (sobel_x[2][2] * arr[s_width * (j+1) + (i+1)]);
+            int pixel_x = 0;
+            int pixel_y = 0;
 
-            pixel_y = (sobel_y[0][0] * arr[s_width * (j-1) + (i-1)])
-                    + (sobel_y[0][1] * arr[s_width * (j-1) +  i   ])
-                    + (sobel_y[0][2] * arr[s_width * (j-1) + (i+1)])
-                    + (sobel_y[1][0] * arr[s_width *  j    + (i-1)])
-                    + (sobel_y[1][1] * arr[s_width *  j    +  i   ])
-                    + (sobel_y[1][2] * arr[s_width *  j    + (i+1)])
-                    + (sobel_y[2][0] * arr[s_width * (j+1) + (i-1)])
-                    + (sobel_y[2][1] * arr[s_width * (j+1) +  i   ])
-                    + (sobel_y[2][2] * arr[s_width * (j+1) + (i+1)]);
+            for (int ki = 0; ki < 3; ki++)
+            {
+                for (int kj = 0; kj < 3; kj++)
+                {
+                    pixel_x += img.getPixel(i-1 + ki, j-1 + kj) * sobel_x[ki][kj];
+                    pixel_y += img.getPixel(i-1 + ki, j-1 + kj) * sobel_y[ki][kj];
+                }
+            }
 
             int val = (int)sqrt((pixel_x * pixel_x) + (pixel_y * pixel_y));
 
@@ -112,4 +105,16 @@ image filter_sobel(image& img)
     }
 
     return sobel_image;
+}
+
+image filter_edge_detect(image& img)
+{
+    int e_width = img.getWidth();
+    int e_heigth = img.getHeight();
+    int e_channels = img.getChannels();
+
+    image egde_image = image(e_width, e_width, e_channels);    
+    
+
+    return egde_image;
 }
