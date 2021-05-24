@@ -10,8 +10,6 @@ image::image(std::string filename)
     {
         std::cout << "image not found" << std::endl;
     }
-
-    std::cout << "channels: " << _channels << std::endl;
 }
 
 image::image(int width, int height, int channels)

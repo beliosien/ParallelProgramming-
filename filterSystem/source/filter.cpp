@@ -1,19 +1,6 @@
 #include "filter.h"
 #include "math.h"
 
-const double sobel_x[3][3]= { { -1, 0, 1 },
-                         { -2, 0, 2 },
-                         {-1, 0, 1 } };
-
-
-const double sobel_y[3][3]= {{ -1, -2, -1 },
-                         { 0,  0,  0 },
-                         { 1,  2,  1 } };
-
-const double egde_mask[3][3]= {{-1, -1, -1},
-                                {-1, 8, -1},
-                                {-1, -1, -1}};
-
 
 image filter_to_grayscale(image& img)
 {
@@ -86,9 +73,9 @@ image filter_sobel(image& img)
             int pixel_x = 0;
             int pixel_y = 0;
 
-            for (int ki = 0; ki < 3; ki++)
+            for (int ki = 0; ki < size; ki++)
             {
-                for (int kj = 0; kj < 3; kj++)
+                for (int kj = 0; kj < size; kj++)
                 {
                     pixel_x += img.getPixel(i-1 + ki, j-1 + kj) * sobel_x[ki][kj];
                     pixel_y += img.getPixel(i-1 + ki, j-1 + kj) * sobel_y[ki][kj];
@@ -107,14 +94,52 @@ image filter_sobel(image& img)
     return sobel_image;
 }
 
-image filter_edge_detect(image& img)
+image convolution(image& img, const double mask[3][3])
 {
-    int e_width = img.getWidth();
-    int e_heigth = img.getHeight();
-    int e_channels = img.getChannels();
+    int width = img.getWidth();
+    int height = img.getHeight();
+    int channels = img.getChannels();
 
-    image egde_image = image(e_width, e_width, e_channels);    
-    
+    image conv_image = image(width, height, channels);    
 
-    return egde_image;
+    for (int i = 1; i < width -1; i++)
+    {
+        for (int j = 1; j < height -1; j++)
+        {
+            int pix = 0;
+
+            for (int ki = 0; ki < size; ki++)
+            {
+                for (int kj = 0; kj < size; kj++)
+                {
+                    pix += img.getPixel(i-1+ki, j-1+kj) * mask[ki][kj];
+                }
+            }
+
+            conv_image.setPixel(i,j, pix);
+        }
+    }
+
+    return conv_image;
+}
+
+
+image filter_edge_detect(image& img)
+{   
+    return convolution(img, egde_mask);
+}
+
+image filter_sharpen(image& img)
+{
+    return convolution(img, sharpen_mask);
+}
+
+image filter_box_blur(image& img)
+{
+    return convolution(img, box_blur_mask);
+}
+
+image filter_gaussian_blur(image& img)
+{
+    return convolution(img, gaussian_blur_mask);
 }

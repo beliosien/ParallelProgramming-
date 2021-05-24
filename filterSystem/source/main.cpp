@@ -35,8 +35,12 @@ int main(int argc, char *argv[])
     image gray_img = filter_to_grayscale(img);
     image scaled_image = filter_scale_up(gray_img, 3);
     image sobel_image = filter_sobel(scaled_image);
+    image edge_image = filter_edge_detect(scaled_image);
+    image sharpen_image = filter_sharpen(scaled_image);
+    image box_blur_image = filter_box_blur(scaled_image);
+    image gaussian_blur_image = filter_gaussian_blur(scaled_image);
     string filename = "./result.jpg";
-    save_image(sobel_image, filename);
+    save_image(gaussian_blur_image, filename);
 
     cout << "done" << endl;
 }
