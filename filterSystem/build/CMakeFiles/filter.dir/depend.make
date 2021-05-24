@@ -11,8 +11,18 @@ CMakeFiles/filter.dir/source/image.cpp.o: ../source/image.cpp
 
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/filter.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/image.h
+CMakeFiles/filter.dir/source/main.cpp.o: ../include/stb_image_write.h
+CMakeFiles/filter.dir/source/main.cpp.o: ../include/utilitary.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../source/main.cpp
 
 CMakeFiles/filter.dir/source/stb_image.cpp.o: ../include/stb_image.h
 CMakeFiles/filter.dir/source/stb_image.cpp.o: ../source/stb_image.cpp
+
+CMakeFiles/filter.dir/source/stb_image_write.cpp.o: ../include/stb_image_write.h
+CMakeFiles/filter.dir/source/stb_image_write.cpp.o: ../source/stb_image_write.cpp
+
+CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/image.h
+CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/stb_image_write.h
+CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/utilitary.h
+CMakeFiles/filter.dir/source/utilitary.cpp.o: ../source/utilitary.cpp
 

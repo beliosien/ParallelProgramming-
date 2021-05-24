@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/philippe/Desktop/filterSystem
+CMAKE_SOURCE_DIR = /home/philippe/Desktop/ParallelProgramming-/filterSystem
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/philippe/Desktop/filterSystem/build
+CMAKE_BINARY_DIR = /home/philippe/Desktop/ParallelProgramming-/filterSystem/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/philippe/Desktop/filterSystem/build/CMakeFiles /home/philippe/Desktop/filterSystem/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles /home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/philippe/Desktop/filterSystem/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -257,6 +257,60 @@ source/stb_image.cpp.s:
 	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/stb_image.cpp.s
 .PHONY : source/stb_image.cpp.s
 
+source/stb_image_write.o: source/stb_image_write.cpp.o
+
+.PHONY : source/stb_image_write.o
+
+# target to build an object file
+source/stb_image_write.cpp.o:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/stb_image_write.cpp.o
+.PHONY : source/stb_image_write.cpp.o
+
+source/stb_image_write.i: source/stb_image_write.cpp.i
+
+.PHONY : source/stb_image_write.i
+
+# target to preprocess a source file
+source/stb_image_write.cpp.i:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/stb_image_write.cpp.i
+.PHONY : source/stb_image_write.cpp.i
+
+source/stb_image_write.s: source/stb_image_write.cpp.s
+
+.PHONY : source/stb_image_write.s
+
+# target to generate assembly for a file
+source/stb_image_write.cpp.s:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/stb_image_write.cpp.s
+.PHONY : source/stb_image_write.cpp.s
+
+source/utilitary.o: source/utilitary.cpp.o
+
+.PHONY : source/utilitary.o
+
+# target to build an object file
+source/utilitary.cpp.o:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/utilitary.cpp.o
+.PHONY : source/utilitary.cpp.o
+
+source/utilitary.i: source/utilitary.cpp.i
+
+.PHONY : source/utilitary.i
+
+# target to preprocess a source file
+source/utilitary.cpp.i:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/utilitary.cpp.i
+.PHONY : source/utilitary.cpp.i
+
+source/utilitary.s: source/utilitary.cpp.s
+
+.PHONY : source/utilitary.s
+
+# target to generate assembly for a file
+source/utilitary.cpp.s:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/utilitary.cpp.s
+.PHONY : source/utilitary.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -280,6 +334,12 @@ help:
 	@echo "... source/stb_image.o"
 	@echo "... source/stb_image.i"
 	@echo "... source/stb_image.s"
+	@echo "... source/stb_image_write.o"
+	@echo "... source/stb_image_write.i"
+	@echo "... source/stb_image_write.s"
+	@echo "... source/utilitary.o"
+	@echo "... source/utilitary.i"
+	@echo "... source/utilitary.s"
 .PHONY : help
 
 

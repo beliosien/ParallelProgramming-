@@ -7,7 +7,9 @@ add_executable(filter)
 
 target_sources(filter PUBLIC
     source/image.cpp
+    source/utilitary.cpp
     source/stb_image.cpp
+    source/stb_image_write.cpp
     source/filter.cpp
     source/main.cpp
 )
