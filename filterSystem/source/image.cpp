@@ -40,7 +40,6 @@ image::~image()
 /**
  * @return the width of the image
 */
-
 int image::getWidth()
 {
     return _width;
@@ -49,7 +48,6 @@ int image::getWidth()
 /**
  * @return the height of the image
 */
-
 int image::getHeight() 
 {
     return _height;
@@ -66,7 +64,6 @@ int image::getChannels()
 /**
  * @return the width of the pixels of the image
 */
-
 unsigned char* image::getPixels()
 {
     return _pixels;

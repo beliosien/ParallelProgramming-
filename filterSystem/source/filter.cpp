@@ -1,16 +1,14 @@
 #include "filter.h"
 #include "math.h"
 
-#define sobel_size 3
-
-const std::vector<std::vector<float>> sobel_x = { { 1, 0, -1 }, 
-                                                { 2, 0, -2 }, 
-                                                { 1, 0, -1 } };
+double sobel_x[3][3] = { { -1, 0, 1 },
+                         { -2, 0, 2 },
+                         {-1, 0, 1 } };
 
 
-const std::vector<std::vector<float>> soble_y = { { 1, 2, 1 }, 
-                                                { 0, 0, 0 }, 
-                                                {-1, -2,-1 } };
+double sobel_y[3][3] = { { -1, -2, -1 },
+                         { 0,  0,  0 },
+                         { 1,  2,  1 } };
 
 
 image filter_to_grayscale(image& img)
@@ -75,27 +73,41 @@ image filter_sobel(image& img)
 
     image sobel_image = image(s_width, s_width, s_channels);
 
-    for (int i = 0; i < s_width; i++)
+    int pixel_x = 0;
+    int pixel_y = 0;
+
+    unsigned char* arr = img.getPixels();
+
+    for (int i = 1; i < s_width-1; i++)
     {
-        for (int j = 0; j < s_heigth; j++)
+        for (int j = 1; j < s_heigth-1; j++)
         {
-            float pixVal_x = 0.0;
-            float pixVal_y = 0.0;
-            for (int ki = 0; ki < sobel_size; ki++)
-            {
-                for (int kj = 0; kj < sobel_size; kj++)
-                {
-                    pixVal_x += img.getPixel(i, j) * sobel_x[ki][kj];
-                    pixVal_y += img.getPixel(i,j) * soble_y[ki][kj];
-                }
-            }
+            pixel_x = (sobel_x[0][0] * arr[s_width * (j-1) + (i-1)])
+                    + (sobel_x[0][1] * arr[s_width * (j-1) +  i   ])
+                    + (sobel_x[0][2] * arr[s_width * (j-1) + (i+1)])
+                    + (sobel_x[1][0] * arr[s_width *  j    + (i-1)])
+                    + (sobel_x[1][1] * arr[s_width *  j    +  i   ])
+                    + (sobel_x[1][2] * arr[s_width *  j    + (i+1)])
+                    + (sobel_x[2][0] * arr[s_width * (j+1) + (i-1)])
+                    + (sobel_x[2][1] * arr[s_width * (j+1) +  i   ])
+                    + (sobel_x[2][2] * arr[s_width * (j+1) + (i+1)]);
 
-            int pixVal = (int) sqrt(pixVal_x * pixVal_x + pixVal_y * pixVal_y);
+            pixel_y = (sobel_y[0][0] * arr[s_width * (j-1) + (i-1)])
+                    + (sobel_y[0][1] * arr[s_width * (j-1) +  i   ])
+                    + (sobel_y[0][2] * arr[s_width * (j-1) + (i+1)])
+                    + (sobel_y[1][0] * arr[s_width *  j    + (i-1)])
+                    + (sobel_y[1][1] * arr[s_width *  j    +  i   ])
+                    + (sobel_y[1][2] * arr[s_width *  j    + (i+1)])
+                    + (sobel_y[2][0] * arr[s_width * (j+1) + (i-1)])
+                    + (sobel_y[2][1] * arr[s_width * (j+1) +  i   ])
+                    + (sobel_y[2][2] * arr[s_width * (j+1) + (i+1)]);
 
-            if (pixVal > 255) pixVal = 255;
-            if (pixVal < 0) pixVal = 0;
+            int val = (int)sqrt((pixel_x * pixel_x) + (pixel_y * pixel_y));
 
-            sobel_image.setPixel(i, j, pixVal);
+            if(val < 0) val = 0;
+            if(val > 255) val = 255;
+         
+            sobel_image.setPixel(i, j, val);
         }
     }
 

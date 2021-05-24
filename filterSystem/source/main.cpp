@@ -34,8 +34,9 @@ int main(int argc, char *argv[])
     image img = image(file_path);
     image gray_img = filter_to_grayscale(img);
     image scaled_image = filter_scale_up(gray_img, 3);
+    image sobel_image = filter_sobel(scaled_image);
     string filename = "./result.jpg";
-    save_image(scaled_image, filename);
+    save_image(sobel_image, filename);
 
     cout << "done" << endl;
 }
