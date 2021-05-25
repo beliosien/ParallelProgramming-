@@ -183,7 +183,7 @@ int viewer::display()
         (void*)0            // array buffer offset
     );
 
-    shader myShader("./res/shaders/basic.glsl");
+    shader myShader("../res/shaders/basic.glsl");
     myShader.Bind();
 
     // Draw the triangle !

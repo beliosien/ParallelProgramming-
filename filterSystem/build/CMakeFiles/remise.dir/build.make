@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/philippe/Desktop/ParallelProgramming-/filterSystem/buil
 include CMakeFiles/remise.dir/progress.make
 
 CMakeFiles/remise:
-	cd /home/philippe/Desktop/ParallelProgramming-/filterSystem && zip --must-match -r /home/philippe/Desktop/ParallelProgramming-/filterSystem/build/filter_system.zip src/*.cpp include/*.h filter
+	cd /home/philippe/Desktop/ParallelProgramming-/filterSystem && zip --must-match -r /home/philippe/Desktop/ParallelProgramming-/filterSystem/build/filter_system.zip source/*.cpp include/*.h res/shaders/*.glsl filter
 
 remise: CMakeFiles/remise
 remise: CMakeFiles/remise.dir/build.make

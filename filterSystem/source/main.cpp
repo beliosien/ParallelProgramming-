@@ -20,6 +20,8 @@ void displayMe(void)
 
 int main(int argc, char *argv[]) 
 {
+    glutInitContextVersion(3,3);
+    glutInitContextProfile(GLUT_CORE_PROFILE);
     glutInit(&argc, argv);
     std::string file_path;
 

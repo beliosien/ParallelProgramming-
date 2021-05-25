@@ -34,7 +34,8 @@ unsigned int shader::CompileShader(unsigned int type, const std::string& source)
 }
 
 shaderProgramSource shader::ParseShader(const std::string& filePath) {
-    std::fstream stream(filePath);
+    std::ifstream stream;
+    stream.open(filePath, std::ios::in);
 
     enum class shaderType { NONE = -1, VERTEX = 0, FRAGMENT = 1 };
 
@@ -42,17 +43,20 @@ shaderProgramSource shader::ParseShader(const std::string& filePath) {
     std::stringstream ss[2];
     shaderType type = shaderType::NONE;
 
-    while (getline(stream, line)) {
-        std::cout << line << std::endl;
-        /*if (line.find("#shader") != std::string::npos) {
-            if (line.find("vertex") != std::string::npos) {
-                type = shaderType::VERTEX;
-            } else if (line.find("fragment") != std::string::npos) {
-                type = shaderType::FRAGMENT;
+    if (stream.is_open())
+    {
+        while (getline(stream, line)) 
+        {
+            if (line.find("#shader") != std::string::npos) {
+                if (line.find("vertex") != std::string::npos) {
+                    type = shaderType::VERTEX;
+                } else if (line.find("fragment") != std::string::npos) {
+                    type = shaderType::FRAGMENT;
+                }
+            } else {
+                ss[(int)type] << line << "\n";
             }
-        } else {
-            ss[(int)type] << line << "\n";
-        }*/
+        }
     }
 
     return {ss[0].str(), ss[1].str()};
