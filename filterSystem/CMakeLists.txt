@@ -12,6 +12,7 @@ target_sources(filter PUBLIC
     source/viewer.cpp
     source/stb_image.cpp
     source/stb_image_write.cpp
+    source/shader.cpp
     source/filter.cpp
     source/main.cpp
 )
@@ -52,7 +53,7 @@ add_custom_target(format
 
 add_custom_target(remise
     COMMAND zip --must-match -r ${CMAKE_CURRENT_BINARY_DIR}/filter_system.zip
-            src/*.cpp include/*.h filter
+            source/*.cpp include/*.h res/shaders/*.glsl filter
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
 add_dependencies(remise filter)

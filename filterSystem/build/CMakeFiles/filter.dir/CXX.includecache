@@ -30,6 +30,26 @@ string.h
 GL/glut.h
 -
 
+../include/shader.h
+GL/glew.h
+-
+malloc.h
+-
+stdio.h
+-
+string
+-
+unordered_map
+-
+fstream
+-
+sstream
+-
+iostream
+-
+vector
+-
+
 ../include/stb_image_write.h
 stdlib.h
 -
@@ -47,6 +67,8 @@ assert.h
 -
 
 ../include/utilitary.h
+viewer.h
+../include/viewer.h
 image.h
 ../include/image.h
 stb_image_write.h
@@ -55,6 +77,8 @@ stb_image_write.h
 ../include/viewer.h
 GL/glew.h
 -
+shader.h
+../include/shader.h
 iostream
 -
 string
@@ -77,8 +101,6 @@ iostream
 -
 string
 -
-viewer.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer.h
 utilitary.h
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.h
 image.h

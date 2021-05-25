@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/filter.dir/source/filter.cpp.o"
   "CMakeFiles/filter.dir/source/image.cpp.o"
   "CMakeFiles/filter.dir/source/main.cpp.o"
+  "CMakeFiles/filter.dir/source/shader.cpp.o"
   "CMakeFiles/filter.dir/source/stb_image.cpp.o"
   "CMakeFiles/filter.dir/source/stb_image_write.cpp.o"
   "CMakeFiles/filter.dir/source/utilitary.cpp.o"

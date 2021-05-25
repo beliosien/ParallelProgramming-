@@ -2,6 +2,7 @@
 #define INCLUDE_VIEWER_H
 
 #include <GL/glew.h>
+#include "shader.h"
 #include <iostream>
 #include <string>
 #include <vector>

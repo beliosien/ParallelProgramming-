@@ -27,12 +27,6 @@ void viewer::addImage(image& img)
 
 int viewer::display_init()
 {
-    /*if (_viewer != NULL)
-    {
-        LOG_ERROR("viewer has already been initialized");
-        return -1;
-    }*/
-
     _width = WIDTH;
     _height = HEIGHT;
     _window_id = 0;
@@ -45,24 +39,18 @@ int viewer::display_init()
 
 int viewer::pre_display()
 {
-    /*if  (_viewer == NULL)
-    {
-        LOG_ERROR("viewer has not been initialized");
-        return -1;
-    }*/
-
     glViewport(0, 0, _viewer->getWidth(), _viewer->getHeight());
     if (LOG_ERROR_OPENGL("glViewport") < 0) {
         return -1;
     }
 
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     if (LOG_ERROR_OPENGL("glClearColor") < 0) {
         return -1;
     }
 
 
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     if (LOG_ERROR_OPENGL("glClear") < 0) {
         return -1;
     }
@@ -93,11 +81,6 @@ void viewer::callback_idle()
 
 void viewer::callback_keyboard(unsigned char key, int x, int y)
 {
-    /*if (_viewer == NULL) {
-        LOG_ERROR("viewer has not been initialised");
-        return;
-    }*/
-
     // TODO change: zoom in, zoom out, avancer, rentrer
     switch (key) {
     case 'q':
@@ -139,12 +122,6 @@ void viewer::callback_reshape(int width, int height)
 
 int viewer::display_open()
 {
-    if (_viewer == NULL)
-    {
-        LOG_ERROR("viewer has not been initialised");
-        return -1;
-    }
-
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
     int x_pos = (glutGet(GLUT_SCREEN_WIDTH) - _width) / 2;
     int y_pos = (glutGet(GLUT_SCREEN_HEIGHT) - _height) / 2;
@@ -205,6 +182,10 @@ int viewer::display()
         0,                  // stride
         (void*)0            // array buffer offset
     );
+
+    shader myShader("../res/shaders/basic.glsl");
+    myShader.Bind();
+
     // Draw the triangle !
     glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
     glDisableVertexAttribArray(0);
