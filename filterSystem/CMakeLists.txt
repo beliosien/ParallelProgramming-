@@ -4,11 +4,12 @@ project(filterSystem LANGUAGES CXX)
 
 include_directories(include)
 add_executable(filter)
-target_link_libraries(filter -lglut -lGLU -lGL)
+target_link_libraries(filter -lGL -lGLU -lglut)
 
 target_sources(filter PUBLIC
     source/image.cpp
     source/utilitary.cpp
+    source/viewer.cpp
     source/stb_image.cpp
     source/stb_image_write.cpp
     source/filter.cpp
@@ -25,6 +26,22 @@ if(OPENGL_FOUND)
     target_include_directories(filter PUBLIC ${OPENGL_INCLUDE_DIR})
 else()
     message(FATAL_ERROR "opengl is required for building the application")
+endif()
+
+include(FindGLUT)
+if(GLUT_FOUND)
+    target_link_libraries(filter ${GLUT_LIBRARIES})
+    target_include_directories(filter PUBLIC ${GLUT_INCLUDE_DIR})
+else()
+    message(FATAL_ERROR "glut is required for building the application")
+endif()
+
+include(FindGLEW)
+if(GLEW_FOUND)
+    target_link_libraries(filter ${GLEW_LIBRARIES})
+    target_include_directories(filter PUBLIC ${GLEW_INCLUDE_DIRS})
+else()
+    message(FATAL_ERROR "glew is required for building the application")
 endif()
 
 add_custom_target(format

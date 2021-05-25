@@ -1,6 +1,6 @@
 #include <iostream>
-#include <GL/glut.h>
 #include <string>
+#include "viewer.h"
 #include "utilitary.h"
 #include "image.h"
 #include "filter.h"
@@ -43,16 +43,25 @@ int main(int argc, char *argv[])
     }
 
     cout << "welcome to filter system" << endl;
-
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE);
-    glutInitWindowSize(400, 300);
-    glutInitWindowPosition(100, 100);
-    glutCreateWindow("Hello world!");
-    glutDisplayFunc(displayMe);
-    glutMainLoop();
+
+    viewer* v = v->getInstance();
+    if (v->display_init() < 0)
+    {
+        LOG_ERROR("initialisation failed");
+        exit(1);
+    }
+
+    if(v->display_open() < 0)
+    {
+        LOG_ERROR("failed to open viewer");
+        exit(1);
+    }
+    
+    
+    
+    cout << "done" << endl;
     return 0;
 
 
-    cout << "done" << endl;
 }

@@ -311,6 +311,33 @@ source/utilitary.cpp.s:
 	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/utilitary.cpp.s
 .PHONY : source/utilitary.cpp.s
 
+source/viewer.o: source/viewer.cpp.o
+
+.PHONY : source/viewer.o
+
+# target to build an object file
+source/viewer.cpp.o:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/viewer.cpp.o
+.PHONY : source/viewer.cpp.o
+
+source/viewer.i: source/viewer.cpp.i
+
+.PHONY : source/viewer.i
+
+# target to preprocess a source file
+source/viewer.cpp.i:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/viewer.cpp.i
+.PHONY : source/viewer.cpp.i
+
+source/viewer.s: source/viewer.cpp.s
+
+.PHONY : source/viewer.s
+
+# target to generate assembly for a file
+source/viewer.cpp.s:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/viewer.cpp.s
+.PHONY : source/viewer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -340,6 +367,9 @@ help:
 	@echo "... source/utilitary.o"
 	@echo "... source/utilitary.i"
 	@echo "... source/utilitary.s"
+	@echo "... source/viewer.o"
+	@echo "... source/viewer.i"
+	@echo "... source/viewer.s"
 .PHONY : help
 
 

@@ -4,16 +4,20 @@
 CMakeFiles/filter.dir/source/filter.cpp.o
  ../include/filter.h
  ../include/image.h
+ ../include/log.h
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.cpp
 CMakeFiles/filter.dir/source/image.cpp.o
  ../include/image.h
+ ../include/log.h
  ../include/stb_image.h
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/image.cpp
 CMakeFiles/filter.dir/source/main.cpp.o
  ../include/filter.h
  ../include/image.h
+ ../include/log.h
  ../include/stb_image_write.h
  ../include/utilitary.h
+ ../include/viewer.h
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
 CMakeFiles/filter.dir/source/stb_image.cpp.o
  ../include/stb_image.h
@@ -23,6 +27,12 @@ CMakeFiles/filter.dir/source/stb_image_write.cpp.o
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/stb_image_write.cpp
 CMakeFiles/filter.dir/source/utilitary.cpp.o
  ../include/image.h
+ ../include/log.h
  ../include/stb_image_write.h
  ../include/utilitary.h
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.cpp
+CMakeFiles/filter.dir/source/viewer.cpp.o
+ ../include/image.h
+ ../include/log.h
+ ../include/viewer.h
+ /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer.cpp

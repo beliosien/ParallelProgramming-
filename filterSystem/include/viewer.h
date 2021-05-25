@@ -1,16 +1,17 @@
 #ifndef INCLUDE_VIEWER_H
 #define INCLUDE_VIEWER_H
 
+#include <GL/glew.h>
 #include <iostream>
 #include <string>
 #include <vector>
 #include "image.h"
+
+#include <GL/glxew.h>
 #include "log.h"
 
-#include <GL/glew.h>
-#include <GL/glut.h>
-#include <GL/glxew.h>
 
+#include <GL/glut.h>
 #include <GL/freeglut_ext.h>
 
 #define WIDTH 640
@@ -59,7 +60,7 @@ public:
     static void callback_keyboard(unsigned char key, int x, int y);
     static void callback_reshape(int width, int height);
 
-    static int render();
+    static int display();
 
 
     unsigned int getWidth();
