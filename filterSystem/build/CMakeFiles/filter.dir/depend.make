@@ -14,10 +14,14 @@ CMakeFiles/filter.dir/source/image.cpp.o: ../source/image.cpp
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/filter.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/image.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/log.h
+CMakeFiles/filter.dir/source/main.cpp.o: ../include/shader.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/stb_image_write.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/utilitary.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../include/viewer.h
 CMakeFiles/filter.dir/source/main.cpp.o: ../source/main.cpp
+
+CMakeFiles/filter.dir/source/shader.cpp.o: ../include/shader.h
+CMakeFiles/filter.dir/source/shader.cpp.o: ../source/shader.cpp
 
 CMakeFiles/filter.dir/source/stb_image.cpp.o: ../include/stb_image.h
 CMakeFiles/filter.dir/source/stb_image.cpp.o: ../source/stb_image.cpp
@@ -27,12 +31,15 @@ CMakeFiles/filter.dir/source/stb_image_write.cpp.o: ../source/stb_image_write.cp
 
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/image.h
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/log.h
+CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/shader.h
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/stb_image_write.h
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/utilitary.h
+CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/viewer.h
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../source/utilitary.cpp
 
 CMakeFiles/filter.dir/source/viewer.cpp.o: ../include/image.h
 CMakeFiles/filter.dir/source/viewer.cpp.o: ../include/log.h
+CMakeFiles/filter.dir/source/viewer.cpp.o: ../include/shader.h
 CMakeFiles/filter.dir/source/viewer.cpp.o: ../include/viewer.h
 CMakeFiles/filter.dir/source/viewer.cpp.o: ../source/viewer.cpp
 

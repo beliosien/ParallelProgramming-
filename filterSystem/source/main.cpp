@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include "viewer.h"
 #include "utilitary.h"
 #include "image.h"
 #include "filter.h"
@@ -21,6 +20,7 @@ void displayMe(void)
 
 int main(int argc, char *argv[]) 
 {
+    glutInit(&argc, argv);
     std::string file_path;
 
     // Read program arguments
@@ -43,22 +43,8 @@ int main(int argc, char *argv[])
     }
 
     cout << "welcome to filter system" << endl;
-    glutInit(&argc, argv);
-
-    viewer* v = v->getInstance();
-    if (v->display_init() < 0)
-    {
-        LOG_ERROR("initialisation failed");
-        exit(1);
-    }
-
-    if(v->display_open() < 0)
-    {
-        LOG_ERROR("failed to open viewer");
-        exit(1);
-    }
-    
-    
+        
+    run_viewer();
     
     cout << "done" << endl;
     return 0;

@@ -230,6 +230,33 @@ source/main.cpp.s:
 	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
+source/shader.o: source/shader.cpp.o
+
+.PHONY : source/shader.o
+
+# target to build an object file
+source/shader.cpp.o:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/shader.cpp.o
+.PHONY : source/shader.cpp.o
+
+source/shader.i: source/shader.cpp.i
+
+.PHONY : source/shader.i
+
+# target to preprocess a source file
+source/shader.cpp.i:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/shader.cpp.i
+.PHONY : source/shader.cpp.i
+
+source/shader.s: source/shader.cpp.s
+
+.PHONY : source/shader.s
+
+# target to generate assembly for a file
+source/shader.cpp.s:
+	$(MAKE) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/source/shader.cpp.s
+.PHONY : source/shader.cpp.s
+
 source/stb_image.o: source/stb_image.cpp.o
 
 .PHONY : source/stb_image.o
@@ -358,6 +385,9 @@ help:
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
+	@echo "... source/shader.o"
+	@echo "... source/shader.i"
+	@echo "... source/shader.s"
 	@echo "... source/stb_image.o"
 	@echo "... source/stb_image.i"
 	@echo "... source/stb_image.s"

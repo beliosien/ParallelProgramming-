@@ -122,9 +122,22 @@ CMakeFiles/filter.dir/source/stb_image_write.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/filter.dir/source/stb_image_write.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/stb_image_write.cpp -o CMakeFiles/filter.dir/source/stb_image_write.cpp.s
 
+CMakeFiles/filter.dir/source/shader.cpp.o: CMakeFiles/filter.dir/flags.make
+CMakeFiles/filter.dir/source/shader.cpp.o: ../source/shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/filter.dir/source/shader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/filter.dir/source/shader.cpp.o -c /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/shader.cpp
+
+CMakeFiles/filter.dir/source/shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/filter.dir/source/shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/shader.cpp > CMakeFiles/filter.dir/source/shader.cpp.i
+
+CMakeFiles/filter.dir/source/shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/filter.dir/source/shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/shader.cpp -o CMakeFiles/filter.dir/source/shader.cpp.s
+
 CMakeFiles/filter.dir/source/filter.cpp.o: CMakeFiles/filter.dir/flags.make
 CMakeFiles/filter.dir/source/filter.cpp.o: ../source/filter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/filter.dir/source/filter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/filter.dir/source/filter.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/filter.dir/source/filter.cpp.o -c /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.cpp
 
 CMakeFiles/filter.dir/source/filter.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/filter.dir/source/filter.cpp.s: cmake_force
 
 CMakeFiles/filter.dir/source/main.cpp.o: CMakeFiles/filter.dir/flags.make
 CMakeFiles/filter.dir/source/main.cpp.o: ../source/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/filter.dir/source/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/filter.dir/source/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/filter.dir/source/main.cpp.o -c /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
 
 CMakeFiles/filter.dir/source/main.cpp.i: cmake_force
@@ -155,6 +168,7 @@ filter_OBJECTS = \
 "CMakeFiles/filter.dir/source/viewer.cpp.o" \
 "CMakeFiles/filter.dir/source/stb_image.cpp.o" \
 "CMakeFiles/filter.dir/source/stb_image_write.cpp.o" \
+"CMakeFiles/filter.dir/source/shader.cpp.o" \
 "CMakeFiles/filter.dir/source/filter.cpp.o" \
 "CMakeFiles/filter.dir/source/main.cpp.o"
 
@@ -166,6 +180,7 @@ filter: CMakeFiles/filter.dir/source/utilitary.cpp.o
 filter: CMakeFiles/filter.dir/source/viewer.cpp.o
 filter: CMakeFiles/filter.dir/source/stb_image.cpp.o
 filter: CMakeFiles/filter.dir/source/stb_image_write.cpp.o
+filter: CMakeFiles/filter.dir/source/shader.cpp.o
 filter: CMakeFiles/filter.dir/source/filter.cpp.o
 filter: CMakeFiles/filter.dir/source/main.cpp.o
 filter: CMakeFiles/filter.dir/build.make
@@ -174,7 +189,7 @@ filter: /usr/lib/x86_64-linux-gnu/libGLU.so
 filter: /usr/lib/x86_64-linux-gnu/libglut.so
 filter: /usr/lib/x86_64-linux-gnu/libGLEW.so
 filter: CMakeFiles/filter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable filter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/philippe/Desktop/ParallelProgramming-/filterSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable filter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/filter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

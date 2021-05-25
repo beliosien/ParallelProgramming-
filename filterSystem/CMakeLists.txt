@@ -12,6 +12,7 @@ target_sources(filter PUBLIC
     source/viewer.cpp
     source/stb_image.cpp
     source/stb_image_write.cpp
+    source/shader.cpp
     source/filter.cpp
     source/main.cpp
 )

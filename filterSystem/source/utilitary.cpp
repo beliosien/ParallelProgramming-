@@ -24,3 +24,22 @@ void save_image(image img, std::string filename)
 {
     stbi_write_jpg(filename.c_str(), img.getWidth(), img.getHeight(), img.getChannels(), img.getPixels(), 100);
 }
+
+/***
+ * run the image viewer 
+*/
+void run_viewer()
+{
+    viewer* v = v->getInstance();
+    if (v->display_init() < 0)
+    {
+        LOG_ERROR("initialisation failed");
+        exit(1);
+    }
+
+    if(v->display_open() < 0)
+    {
+        LOG_ERROR("failed to open viewer");
+        exit(1);
+    }
+}
