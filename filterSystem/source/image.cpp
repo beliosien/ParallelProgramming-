@@ -25,6 +25,10 @@ image::image(int width, int height, int channels)
     }
 }
 
+image::image(): _width(0), _height(0), _channels(0), _pixels(NULL)
+{
+}
+
 image::~image()
 {
     /*if (_pixels != NULL)

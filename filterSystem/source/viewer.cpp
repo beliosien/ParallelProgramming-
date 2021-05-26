@@ -82,6 +82,13 @@ void viewer::callback_idle()
 
 void viewer::callback_keyboard(unsigned char key, int x, int y)
 {
+    viewer* v = v->getInstance();
+    if (v == NULL)
+    {
+        LOG_ERROR("viewer has not been initialized");
+        glutLeaveMainLoop();
+    }
+
     // TODO change: zoom in, zoom out, avancer, rentrer
     switch (key) {
     case 'q':
@@ -89,16 +96,22 @@ void viewer::callback_keyboard(unsigned char key, int x, int y)
         glutLeaveMainLoop();
         break;
 
-    case '1':
-        printf("Selected serial implementation\n");
+    case '+':
+        std::cout << "Zoom in" << std::endl;
+        break;
+    
+    case '-':
+        std::cout << "Zoom out" << std::endl;
         break;
 
-    case '2':
-        printf("Selected openmp implementation\n");
+    case 'r':
+        std::cout << "Next image" << std::endl;
+        v->curr_pos++;
         break;
 
-    case '3':
-        printf("Selected opencl implementation\n");
+    case 'l':
+        std::cout << "Previous image" << std::endl;
+        v->curr_pos--;
         break;
 
     case ' ':
@@ -155,12 +168,17 @@ int viewer::display()
     viewer* v = v->getInstance();
     unsigned int VBO, VAO, EBO;
     shader myShader("../res/shaders/basic.glsl");
-    image img = v->_images[v->curr_pos];
+    image img = image();
     
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
         goto fail_exit;
+    }
+
+    if (v->curr_pos < v->_images.size())
+    {
+        img = v->_images[v->curr_pos];
     }
 
     glGenVertexArrays(1, &VAO);
@@ -238,10 +256,9 @@ int viewer::display()
            goto fail_exit;
         }
         
-    }
-    else
+    }else
     {
-        LOG_ERROR("Failed to load pixels");
+        LOG_ERROR("No image to display");
     }
 
     if (v->_enabled) 
