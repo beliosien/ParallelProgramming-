@@ -224,8 +224,8 @@ int viewer::display()
 
     if (img.getPixels() != NULL)
     {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.getWidth(), img.getHeight(), 0, 
-                    GL_RGBA, GL_UNSIGNED_BYTE, img.getPixels());
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, img.getWidth(), img.getHeight(), 0, 
+                    GL_RED, GL_UNSIGNED_BYTE, img.getPixels());
         
         if (LOG_ERROR_OPENGL("glTexImage2D") < 0)
         {
