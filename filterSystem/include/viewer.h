@@ -18,6 +18,19 @@
 #define WIDTH 640
 #define HEIGHT 480
 
+static float vertices[] = {
+                // positions          // colors           // texture coords
+                -1.0f,  -1.0f, 0.0f,   1.0f, 0.0f, 0.0f,   0.0f, 1.0f,   // top right
+                1.0f,  -1.0f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 1.0f,   // bottom right
+                1.0f,   1.0f, 0.0f,   0.0f, 0.0f, 1.0f,   1.0f, 0.0f,   // bottom left
+                -1.0f,   1.0f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 0.0f    // top left 
+            };
+ 
+static unsigned int indices[] = {  // note that we start from 0!
+                        0, 1, 3,   // first triangle
+                        1, 2, 3    // second triangle
+                    }; 
+
 
 class viewer
 {
@@ -29,6 +42,7 @@ private:
     std::vector<image> _images;
     GLuint _texture;
     bool _enabled;
+    int curr_pos;
     
     viewer();
     ~viewer();

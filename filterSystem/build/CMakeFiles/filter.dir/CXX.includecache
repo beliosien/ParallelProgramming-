@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/filter.h
-image.h
-../include/image.h
-vector
--
-
 ../include/image.h
 iostream
 -
@@ -50,30 +44,6 @@ iostream
 vector
 -
 
-../include/stb_image_write.h
-stdlib.h
--
-stdio.h
--
-stdarg.h
--
-stdlib.h
--
-string.h
--
-math.h
--
-assert.h
--
-
-../include/utilitary.h
-viewer.h
-../include/viewer.h
-image.h
-../include/image.h
-stb_image_write.h
-../include/stb_image_write.h
-
 ../include/viewer.h
 GL/glew.h
 -
@@ -96,15 +66,7 @@ GL/glut.h
 GL/freeglut_ext.h
 -
 
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
-iostream
--
-string
--
-utilitary.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.h
-image.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/image.h
-filter.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.h
+/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer.cpp
+viewer.h
+/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer.h
 

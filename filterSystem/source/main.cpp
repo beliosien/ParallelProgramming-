@@ -39,13 +39,18 @@ int main(int argc, char *argv[])
 
     if (file_path.empty())
     {
-        cout << "Error: File missing. Please enter your file." << endl;
+        LOG_ERROR("Error: File missing. Please enter your file.");
         cout << endl;
         show_help(); 
     }
 
     cout << "welcome to filter system" << endl;
-        
+    
+    image img = image(file_path);
+    image gray_img = filter_to_grayscale(img);
+
+    viewer* v = v->getInstance();
+    v->addImage(gray_img);
     run_viewer();
     
     cout << "done" << endl;

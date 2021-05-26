@@ -60,7 +60,7 @@ int image::getChannels()
 }
 
 /**
- * @return the width of the pixels of the image
+ * @return the pixel array of the image
 */
 unsigned char* image::getPixels()
 {
