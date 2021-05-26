@@ -4,6 +4,7 @@ viewer *viewer::_viewer = 0;
 
 viewer::viewer()
 {
+    curr_pos = 0;
 }
 
 viewer::~viewer()
@@ -44,7 +45,7 @@ int viewer::pre_display()
         return -1;
     }
 
-    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     if (LOG_ERROR_OPENGL("glClearColor") < 0) {
         return -1;
     }
@@ -81,6 +82,13 @@ void viewer::callback_idle()
 
 void viewer::callback_keyboard(unsigned char key, int x, int y)
 {
+    viewer* v = v->getInstance();
+    if (v == NULL)
+    {
+        LOG_ERROR("viewer has not been initialized");
+        glutLeaveMainLoop();
+    }
+
     // TODO change: zoom in, zoom out, avancer, rentrer
     switch (key) {
     case 'q':
@@ -88,16 +96,22 @@ void viewer::callback_keyboard(unsigned char key, int x, int y)
         glutLeaveMainLoop();
         break;
 
-    case '1':
-        printf("Selected serial implementation\n");
+    case '+':
+        std::cout << "Zoom in" << std::endl;
+        break;
+    
+    case '-':
+        std::cout << "Zoom out" << std::endl;
         break;
 
-    case '2':
-        printf("Selected openmp implementation\n");
+    case 'r':
+        std::cout << "Next image" << std::endl;
+        v->curr_pos++;
         break;
 
-    case '3':
-        printf("Selected opencl implementation\n");
+    case 'l':
+        std::cout << "Previous image" << std::endl;
+        v->curr_pos--;
         break;
 
     case ' ':
@@ -151,46 +165,114 @@ void viewer::post_display()
 
 int viewer::display()
 {
-  GLuint VertexArrayID;
-  glGenVertexArrays(1, &VertexArrayID);
-  glBindVertexArray(VertexArrayID);
-
-  // An array of 3 vectors which represents 3 vertices
-    static const GLfloat g_vertex_buffer_data[] = {
-        -1.0f, -1.0f, 0.0f,
-         1.0f, -1.0f, 0.0f,
-         0.0f,  1.0f, 0.0f,
-        };
-
-    // This will identify our vertex buffer
-    GLuint vertexbuffer;
-    // Generate 1 buffer, put the resulting identifier in vertexbuffer
-    glGenBuffers(1, &vertexbuffer);
-    // The following commands will talk about our 'vertexbuffer' buffer
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    // Give our vertices to OpenGL.
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
-
-    // 1st attribute buffer : vertices
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    glVertexAttribPointer(
-        0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-        3,                  // size
-        GL_FLOAT,           // type
-        GL_FALSE,           // normalized?
-        0,                  // stride
-        (void*)0            // array buffer offset
-    );
-
+    viewer* v = v->getInstance();
+    unsigned int VBO, VAO, EBO;
     shader myShader("../res/shaders/basic.glsl");
+    image img = image();
+    
+    if (v == NULL)
+    {
+        LOG_ERROR("viewer has not been initialized");
+        goto fail_exit;
+    }
+
+    if (v->curr_pos < v->_images.size())
+    {
+        img = v->_images[v->curr_pos];
+    }
+
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
+
+    glBindVertexArray(VAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+    // position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // color attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
+    // texture coord attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+    
     myShader.Bind();
 
-    // Draw the triangle !
-    glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
-    glDisableVertexAttribArray(0);
+    if (display == NULL)
+    {
+        LOG_ERROR("display has not been initialized");
+        goto fail_exit;
+    }
 
-  return 0;
+    glGenTextures(1, &v->_texture);
+    glBindTexture(GL_TEXTURE_2D, v->_texture);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) 
+    {
+        goto fail_exit;
+    }
+    	
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) 
+    {
+        goto fail_exit;
+    }
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) 
+    {
+        goto fail_exit;
+    }
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    if (LOG_ERROR_OPENGL("glTexParameteri") < 0) 
+    {
+        goto fail_exit;
+    }
+
+    if (img.getPixels() != NULL)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, img.getWidth(), img.getHeight(), 0, 
+                    GL_RED, GL_UNSIGNED_BYTE, img.getPixels());
+        
+        if (LOG_ERROR_OPENGL("glTexImage2D") < 0)
+        {
+           goto fail_exit;
+        }
+
+        glGenerateMipmap(GL_TEXTURE_2D);
+        if (LOG_ERROR_OPENGL("glGenerateMipmap") < 0) 
+        {
+           goto fail_exit;
+        }
+        
+    }else
+    {
+        LOG_ERROR("No image to display");
+    }
+
+    if (v->_enabled) 
+    {
+        glBindTexture(GL_TEXTURE_2D, v->_texture);
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+        glBindVertexArray(0);
+    }
+
+    return 0;
+
+fail_exit:
+    return -1;
 }
 
 unsigned int viewer::getWidth()

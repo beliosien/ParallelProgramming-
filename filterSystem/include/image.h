@@ -17,6 +17,7 @@ private:
 public:
     image(std::string filename);
     image(int width, int height, int channels);
+    image();
     ~image();
 
     int getWidth();
