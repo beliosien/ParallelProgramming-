@@ -66,7 +66,6 @@ std::vector<image> load_images(std::string& dirname)
 */
 void save_image(image& img, std::string& filename)
 {
-    std::cout << "saving" << std::endl;
     stbi_write_jpg(filename.c_str(), img.getWidth(), img.getHeight(), img.getChannels(), img.getPixels(), 100);
 }
 
@@ -81,7 +80,7 @@ void save_folder(std::vector<image>& imgs, std::string& dirname)
 {
     for (auto it = imgs.begin(); it != imgs.end(); it++)
     {
-        std::string filename = dirname + "/" + it->getName();
+        std::string filename = dirname + "/" + it->getName() + ".jpg";
         save_image(*it, filename);
     }
 }
@@ -109,14 +108,16 @@ void run_viewer()
 std::string getFileName(const std::string& s) 
 {
    char sep = '/';
+   std::string extension = ".png";
 
 #ifdef _WIN32
    sep = '\\';
 #endif
 
    size_t i = s.rfind(sep, s.length());
-   if (i != std::string::npos) {
-      return(s.substr(i+1, s.length() - i));
+   size_t j = s.rfind(extension, s.length());
+   if (i != std::string::npos && j != std::string::npos) {
+      return(s.substr(i+1, j-i-1));
    }
 
    return("");

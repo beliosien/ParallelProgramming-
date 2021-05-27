@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 
     if (isFile && isFolder)
     {
-        LOG_ERROR("Error: Parameters are wrong. Please refer to the help.");
+        LOG_ERROR("Error: Too much parameter. Please refer to the help.");
         cout << endl;
         show_help();
     }
@@ -55,12 +55,13 @@ int main(int argc, char *argv[])
     if (isFile)
     {
         std::string name = getFileName(path);
-
         image img = image(path, name);
         image gray_img = filter_to_grayscale(img);
-        viewer* v = v->getInstance();
-        std::string save = "./" + name;
+        
+        std::string save = "./" + name + ".jpg";
         save_image(img, save);
+        
+        viewer* v = v->getInstance();
         v->addImage(gray_img);
         run_viewer();
         
