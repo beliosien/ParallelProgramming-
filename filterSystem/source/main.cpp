@@ -67,7 +67,16 @@ int main(int argc, char *argv[])
         
     } else if (isFolder)
     {
-        load_images(path);
+       vector<image> images = load_images(path);
+
+       viewer* v = v->getInstance();
+
+       for (auto it = images.begin(); it != images.end(); it++)
+       {
+           v->addImage(*it);
+       }
+
+       run_viewer();
     }
     
     cout << "done" << endl;

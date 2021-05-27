@@ -48,7 +48,16 @@ std::vector<image> load_images(std::string& dirname)
        std::string s = std::string(filepath);
        if (s.find(".png") != std::string::npos) 
        {
-           std::cout << filepath << std::endl;
+           std::string name = getFileName(filepath);
+           image img = image(filepath, name);
+           if (img.getChannels() > 1)
+           {
+                image img_one_channel = filter_to_grayscale(img);
+                imgs.push_back(img_one_channel);
+           } else 
+           {
+               imgs.push_back(img);
+           }
        }
     }
 

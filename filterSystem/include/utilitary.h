@@ -4,6 +4,7 @@
 #include "viewer.h"
 #include "image.h"
 #include "stb_image_write.h"
+#include "filter.h"
 #include <dirent.h>
 
 void show_help();

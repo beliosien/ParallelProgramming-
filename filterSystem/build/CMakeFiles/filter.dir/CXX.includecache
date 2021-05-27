@@ -73,6 +73,8 @@ image.h
 ../include/image.h
 stb_image_write.h
 ../include/stb_image_write.h
+filter.h
+../include/filter.h
 dirent.h
 -
 
