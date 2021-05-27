@@ -89,7 +89,7 @@ void viewer::callback_keyboard(unsigned char key, int x, int y)
         glutLeaveMainLoop();
     }
 
-    // TODO change: zoom in, zoom out, avancer, rentrer
+    // TODO change: zoom in, zoom out
     switch (key) {
     case 'q':
         printf("Closing application\n");

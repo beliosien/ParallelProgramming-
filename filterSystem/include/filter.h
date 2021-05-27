@@ -42,7 +42,7 @@ const double gaussian_blur_mask[size][size] = {
 image filter_to_grayscale(image& img);
 image filter_scale_up(image& img, size_t factor);
 image filter_sobel(image& img);
-image convolution(image& img, const double mask[size][size]);
+image convolution(image& img, const double mask[size][size], std::string& name);
 image filter_edge_detect(image& img);
 image filter_sharpen(image& img);
 image filter_box_blur(image& img);

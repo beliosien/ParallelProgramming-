@@ -12,9 +12,10 @@ image filter_to_grayscale(image& img)
     int g_width = img.getWidth();
     int g_heigth = img.getHeight();
     int g_channels = 1;
+    std::string name = "gray_" + img.getName();
 
     int channels = img.getChannels();
-    image gray_img = image(g_width, g_heigth, g_channels);
+    image gray_img = image(g_width, g_heigth, g_channels, name);
 
     for (int i = 0; i < g_width; i++)
     {
@@ -45,8 +46,9 @@ image filter_scale_up(image& img, size_t factor)
     int s_width = img.getWidth() * factor;
     int s_heigth = img.getHeight() * factor;
     int s_channels = img.getChannels();
+    std::string name = "scaled_" + img.getName();
 
-    image img_scaled_up = image(s_width, s_heigth, s_channels);
+    image img_scaled_up = image(s_width, s_heigth, s_channels, name);
 
     for (int i = 0; i < img.getWidth(); i++)
     {
@@ -79,8 +81,9 @@ image filter_sobel(image& img)
     int s_width = img.getWidth();
     int s_heigth = img.getHeight();
     int s_channels = img.getChannels();
+    std::string name = "sobel_" + img.getName();
 
-    image sobel_image = image(s_width, s_heigth, s_channels);
+    image sobel_image = image(s_width, s_heigth, s_channels, name);
 
     unsigned char* arr = img.getPixels();
 
@@ -118,15 +121,17 @@ image filter_sobel(image& img)
  * 
  * @param img the image that we want apply the convolution
  * @param mask the mask we use to apply the convolution
+ * @param name the name of the image
  * @return the image convoluted
 */
-image convolution(image& img, const double mask[3][3])
+image convolution(image& img, const double mask[3][3], std::string& name)
 {
     int width = img.getWidth();
     int height = img.getHeight();
     int channels = img.getChannels();
+    name += img.getName();
 
-    image conv_image = image(width, height, channels);    
+    image conv_image = image(width, height, channels, name);    
 
     for (int i = 1; i < width -1; i++)
     {
@@ -157,7 +162,8 @@ image convolution(image& img, const double mask[3][3])
 */
 image filter_edge_detect(image& img)
 {   
-    return convolution(img, egde_mask);
+    std::string name = "edge_";
+    return convolution(img, egde_mask, name);
 }
 
 /**
@@ -168,7 +174,8 @@ image filter_edge_detect(image& img)
 */
 image filter_sharpen(image& img)
 {
-    return convolution(img, sharpen_mask);
+    std::string name = "sharpen_";
+    return convolution(img, sharpen_mask, name);
 }
 
 /**
@@ -179,7 +186,8 @@ image filter_sharpen(image& img)
 */
 image filter_box_blur(image& img)
 {
-    return convolution(img, box_blur_mask);
+    std::string name = "box_blur_";
+    return convolution(img, box_blur_mask, name);
 }
 
 /**
@@ -190,5 +198,6 @@ image filter_box_blur(image& img)
 */
 image filter_gaussian_blur(image& img)
 {
-    return convolution(img, gaussian_blur_mask);
+    std::string name = "gaussian_blur";
+    return convolution(img, gaussian_blur_mask, name);
 }
