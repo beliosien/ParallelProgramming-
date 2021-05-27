@@ -59,8 +59,11 @@ int main(int argc, char *argv[])
         image img = image(path, name);
         image gray_img = filter_to_grayscale(img);
         viewer* v = v->getInstance();
+        std::string save = "./" + name;
+        save_image(img, save);
         v->addImage(gray_img);
         run_viewer();
+        
     } else if (isFolder)
     {
         load_images(path);

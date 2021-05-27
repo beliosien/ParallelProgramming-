@@ -66,6 +66,7 @@ std::vector<image> load_images(std::string& dirname)
 */
 void save_image(image& img, std::string& filename)
 {
+    std::cout << "saving" << std::endl;
     stbi_write_jpg(filename.c_str(), img.getWidth(), img.getHeight(), img.getChannels(), img.getPixels(), 100);
 }
 
@@ -105,8 +106,8 @@ void run_viewer()
 }
 
 /** code from https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s15.html*/
-std::string getFileName(const std::string& s) {
-
+std::string getFileName(const std::string& s) 
+{
    char sep = '/';
 
 #ifdef _WIN32

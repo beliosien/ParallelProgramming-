@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/filter.h
-image.h
-../include/image.h
-vector
--
-
 ../include/image.h
 iostream
 -
@@ -97,20 +91,6 @@ GL/glut.h
 -
 GL/freeglut_ext.h
 -
-
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
-experimental/filesystem
--
-iostream
--
-string
--
-utilitary.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.h
-image.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/image.h
-filter.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.h
 
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.cpp
 utilitary.h
