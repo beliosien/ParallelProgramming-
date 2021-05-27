@@ -2,21 +2,22 @@
 #include "stb_image.h"
 
 
-image::image(std::string filename)
+image::image(std::string filename, std::string name)
 {
     _pixels = stbi_load(filename.c_str(), &_width, &_height, &_channels, 0);
-
+    _name = name;
     if (_pixels == nullptr)
     {
         LOG_ERROR("image not found");
     }
 }
 
-image::image(int width, int height, int channels)
+image::image(int width, int height, int channels, std::string name)
 {
     _width = width;
     _height = height;
     _channels = channels;
+    _name = name;
     _pixels = new unsigned char[_width*_height*_channels];
 
     if (_pixels == NULL)
@@ -25,7 +26,7 @@ image::image(int width, int height, int channels)
     }
 }
 
-image::image(): _width(0), _height(0), _channels(0), _pixels(NULL)
+image::image(): _width(0), _height(0), _channels(0), _name(""),_pixels(NULL)
 {
 }
 
@@ -61,6 +62,14 @@ int image::getHeight()
 int image::getChannels()
 {
     return _channels;
+}
+
+/**
+ * @return the name of the image
+*/
+std::string image::getName()
+{
+    return _name;
 }
 
 /**

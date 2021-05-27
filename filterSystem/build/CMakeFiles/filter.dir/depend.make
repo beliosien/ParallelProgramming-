@@ -29,6 +29,7 @@ CMakeFiles/filter.dir/source/stb_image.cpp.o: ../source/stb_image.cpp
 CMakeFiles/filter.dir/source/stb_image_write.cpp.o: ../include/stb_image_write.h
 CMakeFiles/filter.dir/source/stb_image_write.cpp.o: ../source/stb_image_write.cpp
 
+CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/filter.h
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/image.h
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/log.h
 CMakeFiles/filter.dir/source/utilitary.cpp.o: ../include/shader.h

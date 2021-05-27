@@ -12,17 +12,19 @@ private:
     int _width;
     int _height;
     int _channels;
+    std::string _name;
     unsigned char* _pixels;
     
 public:
-    image(std::string filename);
-    image(int width, int height, int channels);
+    image(std::string filename, std::string name);
+    image(int width, int height, int channels, std::string name);
     image();
     ~image();
 
     int getWidth();
     int getHeight();
     int getChannels();
+    std::string getName();
 
     unsigned char* getPixels();
     unsigned char getPixel(int i, int j);
