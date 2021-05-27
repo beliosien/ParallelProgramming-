@@ -34,8 +34,9 @@ int viewer::display_init()
     _texture = 0;
     _enabled = true;
 
-    return 0;
+    show_viewer_commands();
 
+    return 0;
 }
 
 int viewer::pre_display()
@@ -89,19 +90,10 @@ void viewer::callback_keyboard(unsigned char key, int x, int y)
         glutLeaveMainLoop();
     }
 
-    // TODO change: zoom in, zoom out
     switch (key) {
     case 'q':
         printf("Closing application\n");
         glutLeaveMainLoop();
-        break;
-
-    case '+':
-        std::cout << "Zoom in" << std::endl;
-        break;
-    
-    case '-':
-        std::cout << "Zoom out" << std::endl;
         break;
 
     case 'r':
@@ -317,4 +309,22 @@ void viewer::setWidth(int width)
 void viewer::setHeight(int height)
 {
     _height = height;
+}
+
+/**
+ * show all the commands to interact with the viewer
+*/
+void show_viewer_commands()
+{
+    std::cout << "Welcome to my viewer" << std::endl;
+    std::cout << "Usage:" << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "Options:" << std::endl;
+    std::cout << " press 'r'             to move to the next image"     << std::endl;
+    std::cout << " press 'l'             to move to the previous image" << std::endl;
+    std::cout << " press space           to enable/disable the viewer"  << std::endl;
+    std::cout << " press 'q'             to quit the application"       << std::endl;
+
+    std::cout << "Thank you" << std::endl;
 }

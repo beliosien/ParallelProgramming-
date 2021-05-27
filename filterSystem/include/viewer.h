@@ -84,6 +84,7 @@ public:
 
     void setWidth(int width);
     void setHeight(int height);
+    void show_viewer_commands();
 };
 
 #endif

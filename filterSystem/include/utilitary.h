@@ -8,6 +8,7 @@
 #include <dirent.h>
 
 void show_help();
+void show_menu();
 std::vector<image> load_images(std::string& dirname);
 void save_image(image& img, std::string& filename);
 void save_folder(std::vector<image>& imgs, std::string& dirname);

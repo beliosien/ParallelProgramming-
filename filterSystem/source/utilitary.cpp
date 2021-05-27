@@ -15,6 +15,21 @@ void show_help()
     exit(0);
 }
 
+/**
+ * show the menu
+*/
+void show_menu()
+{
+    std::cout << "0. Open the viewer" << std::endl;
+    std::cout << "1. Apply detect egde filter"     << std::endl;
+    std::cout << "2. Apply sharpen edge filter"    << std::endl;
+    std::cout << "3. Apply box blur filter"        << std::endl;
+    std::cout << "4. Apply gaussian blur filter"   << std::endl;
+    std::cout << "5. Apply sobel filter"           << std::endl;
+    std::cout << "6. Scale up your image/images"   << std::endl;
+    std::cout << "7. close the application"        << std::endl;
+}
+
 
 /**
  * load all png image in the folder
@@ -113,7 +128,9 @@ void run_viewer()
     }
 }
 
-/** code from https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s15.html*/
+/** code from https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s15.html
+ * modified by me
+*/
 std::string getFileName(const std::string& s) 
 {
    char sep = '/';

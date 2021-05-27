@@ -51,6 +51,31 @@ int main(int argc, char *argv[])
     }
 
     cout << "welcome to filter system" << endl;
+    int choice;
+    do
+    {
+        cin >> choice;
+        //show_menu();
+
+            std::cout << "0. Open the viewer" << std::endl;
+    std::cout << "1. Apply detect egde filter"     << std::endl;
+    std::cout << "2. Apply sharpen edge filter"    << std::endl;
+    std::cout << "3. Apply box blur filter"        << std::endl;
+    std::cout << "4. Apply gaussian blur filter"   << std::endl;
+    std::cout << "5. Apply sobel filter"           << std::endl;
+    std::cout << "6. Scale up your image/images"   << std::endl;
+    std::cout << "7. close the application"        << std::endl;
+
+        switch (choice)
+        {
+        case 0:
+            run_viewer();
+            break;
+        
+        default:
+            break;
+        }
+    } while (choice != 9);
     
     if (isFile)
     {

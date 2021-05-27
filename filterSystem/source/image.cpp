@@ -32,12 +32,6 @@ image::image(): _width(0), _height(0), _channels(0), _name(""),_pixels(NULL)
 
 image::~image()
 {
-    /*if (_pixels != NULL)
-    {
-        delete _pixels; 
-        _pixels = NULL;
-    }*/
-
 }
 
 /**
