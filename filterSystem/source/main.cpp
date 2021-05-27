@@ -56,13 +56,15 @@ int main(int argc, char *argv[])
     {
         std::string name = getFileName(path);
         image img = image(path, name);
-        image gray_img = filter_scale_up(img,2);
+        image gray_img = filter_to_grayscale(img);
+        image scaled_img = filter_edge_detect(gray_img);
         
-        std::string save = "./" + name + ".jpg";
-        save_image(img, save);
+        //std::string save = "./" + name + ".jpg";
+        //save_image(scaled_img, save);
         
         viewer* v = v->getInstance();
         v->addImage(gray_img);
+        v->addImage(scaled_img);
         run_viewer();
         
     } else if (isFolder)
