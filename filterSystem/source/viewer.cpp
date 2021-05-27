@@ -275,25 +275,45 @@ fail_exit:
     return -1;
 }
 
+/**
+ * @return the width of the viewer
+*/
 unsigned int viewer::getWidth()
 {
     return _width;
 }
+
+/**
+ * @return the height of the viewer
+*/
 unsigned int viewer::getHeight()
 {
     return _height;
 }
 
+/**
+ * @return the window id of the viewer
+*/
 unsigned int viewer::getWindowId()
 {
     return _window_id;
 }
 
+/**
+ * set the width of the viewer
+ * 
+ * @param width the width of the viewer
+*/
 void viewer::setWidth(int width)
 {
     _width = width;
 }
 
+/**
+ * set the height of the viewer
+ * 
+ * @param height the height of the viewer
+*/
 void viewer::setHeight(int height)
 {
     _height = height;

@@ -1,5 +1,6 @@
 #include "filter.h"
 #include "math.h"
+#include <omp.h>
 
 /**
  * convert an rgb image to grayscale
@@ -16,10 +17,12 @@ image filter_to_grayscale(image& img)
 
     int channels = img.getChannels();
     image gray_img = image(g_width, g_heigth, g_channels, name);
+    int i,j;
 
-    for (int i = 0; i < g_width; i++)
+    #pragma omp parallel for collapse(2)
+    for (i = 0; i < g_width; i++)
     {
-        for (int j = 0; j < g_heigth; j++)
+        for (j = 0; j < g_heigth; j++)
         {
             int index = i * channels + j * channels * g_width;
             unsigned char pix1 = img.getPixel(index);
@@ -55,7 +58,6 @@ image filter_scale_up(image& img, size_t factor)
         for (int j = 0; j < img.getHeight(); j++)
         {
             unsigned char pixVal = img.getPixel(i,j);
-            
             for (int ki = 0; ki < factor; ki++)
             {
                for (int kj = 0; kj < factor; kj++)

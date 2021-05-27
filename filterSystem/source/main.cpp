@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
     {
         std::string name = getFileName(path);
         image img = image(path, name);
-        image gray_img = filter_to_grayscale(img);
+        image gray_img = filter_scale_up(img,2);
         
         std::string save = "./" + name + ".jpg";
         save_image(img, save);
