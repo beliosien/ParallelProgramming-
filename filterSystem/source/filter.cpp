@@ -1,5 +1,6 @@
 #include "filter.h"
 #include "math.h"
+#include <omp.h>
 
 /**
  * convert an rgb image to grayscale
@@ -16,10 +17,12 @@ image filter_to_grayscale(image& img)
 
     int channels = img.getChannels();
     image gray_img = image(g_width, g_heigth, g_channels, name);
+    int i,j;
 
-    for (int i = 0; i < g_width; i++)
+    #pragma omp parallel for collapse(2)
+    for (i = 0; i < g_width; i++)
     {
-        for (int j = 0; j < g_heigth; j++)
+        for (j = 0; j < g_heigth; j++)
         {
             int index = i * channels + j * channels * g_width;
             unsigned char pix1 = img.getPixel(index);
@@ -50,18 +53,19 @@ image filter_scale_up(image& img, size_t factor)
 
     image img_scaled_up = image(s_width, s_heigth, s_channels, name);
 
+    #pragma omp parallel for collapse(2)
     for (int i = 0; i < img.getWidth(); i++)
     {
         for (int j = 0; j < img.getHeight(); j++)
         {
             unsigned char pixVal = img.getPixel(i,j);
-            
+            #pragma omp parallel for collapse(2)
             for (int ki = 0; ki < factor; ki++)
             {
-               for (int kj = 0; kj < factor; kj++)
-               {
-                   img_scaled_up.setPixel(factor * i + ki, factor * j + kj, pixVal);
-               }
+                for (int kj = 0; kj < factor; kj++)
+                {
+                    img_scaled_up.setPixel(factor * i + ki, factor * j + kj, pixVal);
+                }
            }
         }
     }
@@ -85,8 +89,7 @@ image filter_sobel(image& img)
 
     image sobel_image = image(s_width, s_heigth, s_channels, name);
 
-    unsigned char* arr = img.getPixels();
-
+    #pragma omp parallel for collapse(2)
     for (int i = 1; i < s_width-1; i++)
     {
         for (int j = 1; j < s_heigth-1; j++)
@@ -94,6 +97,7 @@ image filter_sobel(image& img)
             int pixel_x = 0;
             int pixel_y = 0;
 
+            #pragma omp parallel for collapse(2) reduction(+:pixel_x,pixel_y)
             for (int ki = 0; ki < size; ki++)
             {
                 for (int kj = 0; kj < size; kj++)
@@ -133,12 +137,14 @@ image convolution(image& img, const double mask[3][3], std::string& name)
 
     image conv_image = image(width, height, channels, name);    
 
+    #pragma omp parallel for collapse(2)
     for (int i = 1; i < width -1; i++)
     {
         for (int j = 1; j < height -1; j++)
         {
             int pix = 0;
 
+            #pragma omp parallel for collapse(2) reduction(+:pix)
             for (int ki = 0; ki < size; ki++)
             {
                 for (int kj = 0; kj < size; kj++)
