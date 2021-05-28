@@ -7,6 +7,9 @@
 #include "filter.h"
 #include <dirent.h>
 
+const int max_factor = 100;
+const int min_factor = 0;
+
 void show_help();
 void show_menu();
 std::vector<image> load_images(std::string& dirname);

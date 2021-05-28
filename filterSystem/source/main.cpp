@@ -50,68 +50,175 @@ int main(int argc, char *argv[])
         show_help();
     }
 
+    if (isFile)
+    {
+        std::string name = getFileName(path);
+        image img = image(path, name);
+        image gray_img = filter_to_grayscale(img);
+        img = gray_img;
+        
+    } else if (isFolder)
+    {
+       vector<image> images = load_images(path);
+    }
+
     cout << "welcome to filter system" << endl;
     int choice;
+    viewer* v = v->getInstance();
+    
     do
     {
-        cin >> choice;
         show_menu();
-
+        cin >> choice;
+        
         switch (choice)
         {
         case 0:
             run_viewer();
             break;
         case 1:
+            if (isFile)
+            {
+                std::string name = getFileName(path);
+                image img = image(path, name);
+                image gray_image = filter_to_grayscale(img);
+                image edge_image = filter_edge_detect(gray_image);
+                v->addImage(edge_image);
+            } else if (isFolder)
+            {
+                vector<image> images = load_images(path);
+                for (auto it = images.begin(); it != images.end(); it++)
+                {
+                    image gray_image = filter_to_grayscale(*it);
+                    image edge_image = filter_edge_detect(gray_image);
+                    v->addImage(edge_image);
+                }
+            }
             break;
         case 2:
+            if (isFile)
+            {
+                std::string name = getFileName(path);
+                image img = image(path, name);
+                image gray_image = filter_to_grayscale(img);
+                image sharpen_image = filter_sharpen(gray_image);
+                v->addImage(sharpen_image);
+            } else if (isFolder)
+            {
+                vector<image> images = load_images(path);
+                for (auto it = images.begin(); it != images.end(); it++)
+                {
+                    image gray_image = filter_to_grayscale(*it);
+                    image sharpen_image = filter_sharpen(gray_image);
+                    v->addImage(sharpen_image);
+                }
+            }
             break;
         case 3:
+            if (isFile)
+            {
+                std::string name = getFileName(path);
+                image img = image(path, name);
+                image gray_image = filter_to_grayscale(img);
+                image box_blur_image = filter_box_blur(gray_image);
+                v->addImage(box_blur_image);
+            } else if (isFolder)
+            {
+                vector<image> images = load_images(path);
+                for (auto it = images.begin(); it != images.end(); it++)
+                {
+                    image gray_image = filter_to_grayscale(*it);
+                    image box_blur_image = filter_box_blur(gray_image);
+                    v->addImage(box_blur_image);
+                }
+            }
             break;
         case 4:
+            if (isFile)
+            {
+                std::string name = getFileName(path);
+                image img = image(path, name);
+                image gray_image = filter_to_grayscale(img);
+                image gaussian_blur_image = filter_box_blur(gray_image);
+                v->addImage(gaussian_blur_image);
+            } else if (isFolder)
+            {
+                vector<image> images = load_images(path);
+                for (auto it = images.begin(); it != images.end(); it++)
+                {
+                    image gray_image = filter_to_grayscale(*it);
+                    image gaussian_blur_image = filter_box_blur(gray_image);
+                    v->addImage(gaussian_blur_image);
+                }
+            }
             break;
         case 5:
+            if (isFile)
+            {
+                std::string name = getFileName(path);
+                image img = image(path, name);
+                image gray_image = filter_to_grayscale(img);
+                image sobel_image = filter_sobel(gray_image);
+                v->addImage(sobel_image);
+            } else if (isFolder)
+            {
+                vector<image> images = load_images(path);
+                for (auto it = images.begin(); it != images.end(); it++)
+                {
+                    image gray_image = filter_to_grayscale(*it);
+                    image sobel_image = filter_sobel(gray_image);
+                    v->addImage(sobel_image);
+                }
+            }
             break;
         case 6:
+            if (isFile)
+            {
+                int factor;
+                do
+                {
+                    cout << "Please enter your scaling factor between 0 and 100" << endl;
+                    cin >> factor;
+                } while (factor > max_factor || factor < min_factor);
+                
+
+                std::string name = getFileName(path);
+                image img = image(path, name);
+                image gray_image = filter_to_grayscale(img);
+                image scaled_image = filter_scale_up(scaled_image, factor);
+                v->addImage(scaled_image);
+            } else if (isFolder)
+            {
+                vector<image> images = load_images(path);
+                for (auto it = images.begin(); it != images.end(); it++)
+                {
+                    image gray_image = filter_to_grayscale(*it);
+                    image scaled_image = filter_box_blur(gray_image);
+                    v->addImage(scaled_image);
+                }
+            }
             break;
+        
+        case 7:
+            if (isFile)
+            {
+                image img = v->getImages()[0];
+                string name = img.getName();
+                save_image(img, name);
+            } else if (isFolder)
+            {
+                vector<image> images = v->getImages();
+                save_folder(images, path);
+            }
         case 9:
             choice = 9;
             cout << "closing the application" << endl;
             break;
         default:
-            cout << "wrong number please refer to the menu" << endl;
+            cout << "Wrong number please refer to the menu" << endl;
             break;
         }
     } while (choice != 9);
-    
-    if (isFile)
-    {
-        std::string name = getFileName(path);
-        image img = image(path, name);
-        image gray_img = filter_to_grayscale(img);
-        image scaled_img = filter_edge_detect(gray_img);
-        
-        //std::string save = "./" + name + ".jpg";
-        //save_image(scaled_img, save);
-        
-        viewer* v = v->getInstance();
-        v->addImage(gray_img);
-        v->addImage(scaled_img);
-        run_viewer();
-        
-    } else if (isFolder)
-    {
-       vector<image> images = load_images(path);
-
-       viewer* v = v->getInstance();
-
-       for (auto it = images.begin(); it != images.end(); it++)
-       {
-           v->addImage(*it);
-       }
-
-       run_viewer();
-    }
     
     cout << "done" << endl;
     return 0;

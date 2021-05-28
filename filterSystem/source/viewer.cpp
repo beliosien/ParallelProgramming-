@@ -292,6 +292,14 @@ unsigned int viewer::getWindowId()
 }
 
 /**
+ * @return all images
+*/
+ std::vector<image> viewer::getImages()
+ {
+    return _images;
+ }
+
+/**
  * set the width of the viewer
  * 
  * @param width the width of the viewer
@@ -314,7 +322,7 @@ void viewer::setHeight(int height)
 /**
  * show all the commands to interact with the viewer
 */
-void show_viewer_commands()
+void viewer::show_viewer_commands()
 {
     std::cout << "Welcome to my viewer" << std::endl;
     std::cout << "Usage:" << std::endl;

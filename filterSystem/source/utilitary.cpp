@@ -27,6 +27,7 @@ void show_menu()
     std::cout << "4. Apply gaussian blur filter"   << std::endl;
     std::cout << "5. Apply sobel filter"           << std::endl;
     std::cout << "6. Scale up your image/images"   << std::endl;
+    std::cout << "7. Save your image/images"       << std::endl;
     std::cout << "9. close the application"        << std::endl;
 }
 

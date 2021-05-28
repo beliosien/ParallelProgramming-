@@ -81,6 +81,7 @@ public:
     unsigned int getWidth();
     unsigned int getHeight();
     unsigned int getWindowId();
+    std::vector<image> getImages();
 
     void setWidth(int width);
     void setHeight(int height);

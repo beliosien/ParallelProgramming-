@@ -100,14 +100,6 @@ GL/glut.h
 GL/freeglut_ext.h
 -
 
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.cpp
-filter.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.h
-math.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/math.h
-omp.h
--
-
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
 experimental/filesystem
 -
