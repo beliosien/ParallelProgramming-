@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     bool isFolder = false;
 
     std::string path;
+    vector<image> images;
 
     // Read program arguments
     for (int i=1; i<argc; i++) {
@@ -63,18 +64,25 @@ int main(int argc, char *argv[])
     }
 
     cout << "welcome to filter system" << endl;
+    cout << endl;
     int choice;
     viewer* v = v->getInstance();
     
     do
     {
         show_menu();
+        cout << "Select your choice by entering the appropriate number and press enter" << endl;
         cin >> choice;
         
         switch (choice)
         {
         case 0:
-            run_viewer();
+            if (v->getImages().size() > 0)
+            {
+                run_viewer();
+            } else {
+                std::cout << "Nothing to display. Please choose one operation before using the viewer." << endl;
+            }
             break;
         case 1:
             if (isFile)
@@ -200,16 +208,10 @@ int main(int argc, char *argv[])
             break;
         
         case 7:
-            if (isFile)
-            {
-                image img = v->getImages()[0];
-                string name = img.getName();
-                save_image(img, name);
-            } else if (isFolder)
-            {
-                vector<image> images = v->getImages();
-                save_folder(images, path);
-            }
+            images = v->getImages();
+            save_folder(images, path);
+            break;
+
         case 9:
             choice = 9;
             cout << "closing the application" << endl;
@@ -220,8 +222,5 @@ int main(int argc, char *argv[])
         }
     } while (choice != 9);
     
-    cout << "done" << endl;
     return 0;
-
-
 }

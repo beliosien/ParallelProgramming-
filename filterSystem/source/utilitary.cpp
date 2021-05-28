@@ -20,7 +20,7 @@ void show_help()
 */
 void show_menu()
 {
-    std::cout << "0. Open the viewer" << std::endl;
+    std::cout << "0. Open the viewer"              << std::endl;
     std::cout << "1. Apply detect egde filter"     << std::endl;
     std::cout << "2. Apply sharpen edge filter"    << std::endl;
     std::cout << "3. Apply box blur filter"        << std::endl;

@@ -43,6 +43,7 @@ private:
     GLuint _texture;
     bool _enabled;
     int curr_pos;
+    bool _isInit = false;
     
     viewer();
     ~viewer();
@@ -82,9 +83,11 @@ public:
     unsigned int getHeight();
     unsigned int getWindowId();
     std::vector<image> getImages();
+    bool getisInit();
 
     void setWidth(int width);
     void setHeight(int height);
+    void setisInit(bool isInit);
     void show_viewer_commands();
 };
 

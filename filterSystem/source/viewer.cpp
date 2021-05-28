@@ -87,12 +87,16 @@ void viewer::callback_keyboard(unsigned char key, int x, int y)
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
+        glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_CONTINUE_EXECUTION);
         glutLeaveMainLoop();
+
     }
 
     switch (key) {
     case 'q':
         printf("Closing application\n");
+        v->_isInit = false;
+        glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_CONTINUE_EXECUTION);
         glutLeaveMainLoop();
         break;
 
@@ -300,6 +304,14 @@ unsigned int viewer::getWindowId()
  }
 
 /**
+ * @return true/false whether or not the window has been initalized
+*/
+ bool viewer::getisInit()
+ {
+    return _isInit;
+ }
+
+/**
  * set the width of the viewer
  * 
  * @param width the width of the viewer
@@ -317,6 +329,16 @@ void viewer::setWidth(int width)
 void viewer::setHeight(int height)
 {
     _height = height;
+}
+
+/**
+ * set the value of isInit
+ * 
+ * @param isInit the value that we want to assign to isInit
+*/
+void viewer::setisInit(bool isInit)
+{
+    _isInit = isInit;
 }
 
 /**
