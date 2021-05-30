@@ -117,13 +117,13 @@ void save_folder(std::vector<image>& imgs, std::string& dirname)
 void run_viewer()
 {
     viewer* v = v->getInstance();
-    if (v->display_init() < 0)
+    if (v->viewer_init() < 0)
     {
         LOG_ERROR("initialisation failed");
         exit(1);
     }
 
-    if(v->display_open() < 0)
+    if(viewer_open() < 0)
     {
         LOG_ERROR("failed to open viewer");
         exit(1);

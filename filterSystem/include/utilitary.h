@@ -1,7 +1,7 @@
 #ifndef INCLUDE_UTILITARY_H
 #define INCLUDE_UTILITARY_H
 
-#include "viewer.h"
+#include "viewer_utilitary.h"
 #include "image.h"
 #include "stb_image_write.h"
 #include "filter.h"

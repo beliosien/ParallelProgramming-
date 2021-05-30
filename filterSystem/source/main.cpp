@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 {
     glutInitContextVersion(3,3);
     glutInitContextProfile(GLUT_CORE_PROFILE);
-    glutInit(&argc, argv);
 
     bool isFile = false;
     bool isFolder = false;
@@ -70,6 +69,12 @@ int main(int argc, char *argv[])
     
     do
     {
+        if (!v->getisInit())
+        {
+            glutInit(&argc, argv);
+            v->setisInit(!v->getisInit());
+        }
+        
         show_menu();
         cout << "Select your choice by entering the appropriate number and press enter" << endl;
         cin >> choice;

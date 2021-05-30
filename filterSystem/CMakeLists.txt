@@ -10,6 +10,7 @@ target_sources(filter PUBLIC
     source/image.cpp
     source/utilitary.cpp
     source/viewer.cpp
+    source/viewer_utilitary.cpp
     source/stb_image.cpp
     source/stb_image_write.cpp
     source/shader.cpp
