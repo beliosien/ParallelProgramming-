@@ -94,7 +94,7 @@ void viewer::callback_keyboard(unsigned char key, int x, int y)
 
     switch (key) {
     case 'q':
-        printf("Closing application\n");
+        printf("Closing the viewer\n");
         v->_isInit = false;
         glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_CONTINUE_EXECUTION);
         glutLeaveMainLoop();

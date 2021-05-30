@@ -91,6 +91,7 @@ std::vector<image> load_images(std::string& dirname)
 */
 void save_image(image& img, std::string& filename)
 {
+    std::cout << "saving " << filename << std::endl;
     stbi_write_jpg(filename.c_str(), img.getWidth(), img.getHeight(), img.getChannels(), img.getPixels(), 100);
 }
 
@@ -102,7 +103,7 @@ void save_image(image& img, std::string& filename)
  * 
 */
 void save_folder(std::vector<image>& imgs, std::string& dirname)
-{
+{   
     for (auto it = imgs.begin(); it != imgs.end(); it++)
     {
         std::string filename = dirname + "/" + it->getName() + ".jpg";

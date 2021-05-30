@@ -208,7 +208,18 @@ int main(int argc, char *argv[])
             break;
         
         case 7:
-            images = v->getImages();
+            cout << "going to save" << endl;
+            if (isFile)
+            {
+                std::string filename = getFileName(path) + ".jpg";
+                image img = v->getImages()[0];
+                save_image(img, filename);
+            } else 
+            {
+                images = v->getImages();
+                save_folder(images, path);
+            }
+
             save_folder(images, path);
             break;
 
@@ -222,5 +233,6 @@ int main(int argc, char *argv[])
         }
     } while (choice != 9);
     
+    cout << "Thank you bye bye." << endl;
     return 0;
 }
