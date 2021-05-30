@@ -40,14 +40,14 @@ int main(int argc, char *argv[])
 
     if (path.empty())
     {
-        LOG_ERROR("Error: File missing. Please enter your file or directory.");
+        cout << "Error: File/Directory missing. Please enter your file or directory." << endl;
         cout << endl;
         show_help(); 
     }
 
     if (isFile && isFolder)
     {
-        LOG_ERROR("Error: Too much parameter. Please refer to the help.");
+        cout << "Error: Too much parameter. Please refer to the help." << endl;
         cout << endl;
         show_help();
     }

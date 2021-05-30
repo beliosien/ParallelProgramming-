@@ -9,10 +9,10 @@ void show_help()
     std::cout << std::endl;
 
     std::cout << "Options:" << std::endl;
-    std::cout << "   --file             Filename the name of the file you want to apply filter " << std::endl;
-    std::cout << "   --directory        Filename the name of the directory you want to apply filter " << std::endl;
+    std::cout << "   --file             The path of the file you want to apply filter " << std::endl;
+    std::cout << "   --directory        The path of the directory you want to apply filter " << std::endl;
     std::cout << "   --help             Show this help" << std::endl;
-    exit(0);
+    exit(1);
 }
 
 /**
