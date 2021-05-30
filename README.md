@@ -2,14 +2,14 @@
 Introduction to parallel programming with opencl, openmp, tbb and mpi
 
 First project:
-  Name: Opencl
-  Description: This project consists of sending images to your gpu to apply different image processing filters as quickly as possible using opencl.
-  Status: in progress
+- Name: Opencl
+- Description: This project consists of sending images to your gpu to apply different image processing filters as quickly as possible using opencl.
+- Status: in progress
   
 Second Project: 
-  Name: FilterSystem
-  Description: This project consists of applying image processing filters to images of different sizes. Processing speed is improved using the openmp library.
-  Status: Done
+- Name: FilterSystem
+- Description: This project consists of applying image processing filters to images of different sizes. Processing speed is improved using the openmp library.
+- Status: Done
   
   Usage: 
   - The exectable name is filter
