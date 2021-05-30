@@ -9,7 +9,12 @@
 #include "log.h"
 #include "viewer.h"
 
+#define WIDTH 640
+#define HEIGHT 480
+
 // all function necessary to the viewer to works properly
+
+static viewer* v = NULL;
 
 static float vertices[] = {
                 // positions          // colors           // texture coords
@@ -25,7 +30,10 @@ static unsigned int indices[] = {  // note that we start from 0!
                     }; 
 
 
+int viewer_init(std::vector<image>& images);
 int viewer_open();
+void viewer_destroy();
+
 static int pre_display();
 static int display();
 static void post_display();

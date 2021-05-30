@@ -15,8 +15,9 @@ int main(int argc, char *argv[])
     bool isFile = false;
     bool isFolder = false;
 
-    std::string path;
+    string path;
     vector<image> images;
+    vector<image> filtered_images;
 
     // Read program arguments
     for (int i=1; i<argc; i++) {
@@ -65,16 +66,9 @@ int main(int argc, char *argv[])
     cout << "welcome to filter system" << endl;
     cout << endl;
     int choice;
-    viewer* v = v->getInstance();
     
     do
     {
-        if (!v->getisInit())
-        {
-            glutInit(&argc, argv);
-            v->setisInit(!v->getisInit());
-        }
-        
         show_menu();
         cout << "Select your choice by entering the appropriate number and press enter" << endl;
         cin >> choice;
@@ -82,9 +76,11 @@ int main(int argc, char *argv[])
         switch (choice)
         {
         case 0:
-            if (v->getImages().size() > 0)
+            if (filtered_images.size() > 0)
             {
-                run_viewer();
+               
+                glutInit(&argc, argv);
+                run_viewer(filtered_images);
             } else {
                 std::cout << "Nothing to display. Please choose one operation before using the viewer." << endl;
             }
@@ -96,7 +92,7 @@ int main(int argc, char *argv[])
                 image img = image(path, name);
                 image gray_image = filter_to_grayscale(img);
                 image edge_image = filter_edge_detect(gray_image);
-                v->addImage(edge_image);
+                filtered_images.push_back(edge_image);
             } else if (isFolder)
             {
                 vector<image> images = load_images(path);
@@ -104,7 +100,7 @@ int main(int argc, char *argv[])
                 {
                     image gray_image = filter_to_grayscale(*it);
                     image edge_image = filter_edge_detect(gray_image);
-                    v->addImage(edge_image);
+                    filtered_images.push_back(edge_image);
                 }
             }
             break;
@@ -115,7 +111,7 @@ int main(int argc, char *argv[])
                 image img = image(path, name);
                 image gray_image = filter_to_grayscale(img);
                 image sharpen_image = filter_sharpen(gray_image);
-                v->addImage(sharpen_image);
+                filtered_images.push_back(sharpen_image);
             } else if (isFolder)
             {
                 vector<image> images = load_images(path);
@@ -123,7 +119,7 @@ int main(int argc, char *argv[])
                 {
                     image gray_image = filter_to_grayscale(*it);
                     image sharpen_image = filter_sharpen(gray_image);
-                    v->addImage(sharpen_image);
+                    filtered_images.push_back(sharpen_image);
                 }
             }
             break;
@@ -134,7 +130,7 @@ int main(int argc, char *argv[])
                 image img = image(path, name);
                 image gray_image = filter_to_grayscale(img);
                 image box_blur_image = filter_box_blur(gray_image);
-                v->addImage(box_blur_image);
+                filtered_images.push_back(box_blur_image);
             } else if (isFolder)
             {
                 vector<image> images = load_images(path);
@@ -142,7 +138,7 @@ int main(int argc, char *argv[])
                 {
                     image gray_image = filter_to_grayscale(*it);
                     image box_blur_image = filter_box_blur(gray_image);
-                    v->addImage(box_blur_image);
+                    filtered_images.push_back(box_blur_image);
                 }
             }
             break;
@@ -153,7 +149,7 @@ int main(int argc, char *argv[])
                 image img = image(path, name);
                 image gray_image = filter_to_grayscale(img);
                 image gaussian_blur_image = filter_box_blur(gray_image);
-                v->addImage(gaussian_blur_image);
+                filtered_images.push_back(gaussian_blur_image);
             } else if (isFolder)
             {
                 vector<image> images = load_images(path);
@@ -161,7 +157,7 @@ int main(int argc, char *argv[])
                 {
                     image gray_image = filter_to_grayscale(*it);
                     image gaussian_blur_image = filter_box_blur(gray_image);
-                    v->addImage(gaussian_blur_image);
+                    filtered_images.push_back(gaussian_blur_image);
                 }
             }
             break;
@@ -172,7 +168,7 @@ int main(int argc, char *argv[])
                 image img = image(path, name);
                 image gray_image = filter_to_grayscale(img);
                 image sobel_image = filter_sobel(gray_image);
-                v->addImage(sobel_image);
+                filtered_images.push_back(sobel_image);
             } else if (isFolder)
             {
                 vector<image> images = load_images(path);
@@ -180,7 +176,7 @@ int main(int argc, char *argv[])
                 {
                     image gray_image = filter_to_grayscale(*it);
                     image sobel_image = filter_sobel(gray_image);
-                    v->addImage(sobel_image);
+                    filtered_images.push_back(sobel_image);
                 }
             }
             break;
@@ -199,7 +195,7 @@ int main(int argc, char *argv[])
                 image img = image(path, name);
                 image gray_image = filter_to_grayscale(img);
                 image scaled_image = filter_scale_up(scaled_image, factor);
-                v->addImage(scaled_image);
+                filtered_images.push_back(scaled_image);
             } else if (isFolder)
             {
                 vector<image> images = load_images(path);
@@ -207,7 +203,7 @@ int main(int argc, char *argv[])
                 {
                     image gray_image = filter_to_grayscale(*it);
                     image scaled_image = filter_box_blur(gray_image);
-                    v->addImage(scaled_image);
+                    filtered_images.push_back(scaled_image);
                 }
             }
             break;
@@ -217,11 +213,11 @@ int main(int argc, char *argv[])
             if (isFile)
             {
                 std::string filename = getFileName(path) + ".jpg";
-                image img = v->getImages()[0];
+                image img = v->images[0];
                 save_image(img, filename);
             } else 
             {
-                images = v->getImages();
+                images = v->images;
                 save_folder(images, path);
             }
 

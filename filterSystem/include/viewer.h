@@ -6,63 +6,23 @@
 #include <vector>
 #include "image.h"
 
-#define WIDTH 640
-#define HEIGHT 480
 
-class viewer
+typedef struct viewer
 {
-private:
-    static viewer* _viewer;
-    unsigned int _width;
-    unsigned int _height;
-    unsigned int _window_id;
-    std::vector<image> _images;
-    GLuint _texture;
-    bool _enabled;
-    int _curr_pos;
-    bool _isInit = false;
-    
-    viewer();
-    ~viewer();
+    unsigned int width;
+    unsigned int height;
+    unsigned int window_id;
+    std::vector<image> images;
+    GLuint texture;
+    bool enabled;
+    int curr_pos;
 
-public:
-
-    /**
-     * get the viewer instance
-     * 
-     * @return the instance of the viewer
-    */
-    static viewer* getInstance()
-    {
-        if (!_viewer)
-        {
-            _viewer = new viewer();
-        }
-        return _viewer;
-    }
+    viewer(unsigned int width, unsigned int height, unsigned int window_id, std::vector<image>& images,
+                GLuint texture, bool enabled);
 
     void addImage(image& img);
-    
-    int viewer_init();
-    unsigned int getWidth();
-    unsigned int getHeight();
-    unsigned int getWindowId();
-    int getCurrpos();
-    bool getIsEnabled();
-    std::vector<image> getImages();
-    bool getisInit();
-    GLuint getTexture();
-
-    void setWidth(int width);
-    void setHeight(int height);
-    void setWindowId(int id);
-    void setisInit(bool isInit);
-    void setCurrPos(int curPos);
-    void setIsEnable(bool isEnabled);
-
     void show_viewer_commands();
-    
-    
-};
+
+} viewer;
 
 #endif

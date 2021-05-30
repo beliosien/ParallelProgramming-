@@ -15,7 +15,7 @@ void show_menu();
 std::vector<image> load_images(std::string& dirname);
 void save_image(image& img, std::string& filename);
 void save_folder(std::vector<image>& imgs, std::string& dirname);
-void run_viewer();
+void run_viewer(std::vector<image>& images);
 std::string getFileName(const std::string& s);
 
 #endif

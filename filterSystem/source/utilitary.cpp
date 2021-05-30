@@ -114,10 +114,9 @@ void save_folder(std::vector<image>& imgs, std::string& dirname)
 /***
  * run the image viewer 
 */
-void run_viewer()
+void run_viewer(std::vector<image>& images)
 {
-    viewer* v = v->getInstance();
-    if (v->viewer_init() < 0)
+    if (viewer_init(images) < 0)
     {
         LOG_ERROR("initialisation failed");
         exit(1);
@@ -128,6 +127,8 @@ void run_viewer()
         LOG_ERROR("failed to open viewer");
         exit(1);
     }
+
+    viewer_destroy();
 }
 
 /** code from https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s15.html

@@ -1,8 +1,21 @@
 #include "viewer_utilitary.h"
 
+
+int viewer_init(std::vector<image>& images)
+{
+    if (v != NULL)
+    {
+        LOG_ERROR("viewer has already been initialized");
+        return -1;
+    }
+
+    v = new viewer(WIDTH, HEIGHT, 0, images, 0, true);
+
+    return 0;
+}
+
 int viewer_open()
 {
-    viewer* v = v->getInstance();
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
@@ -11,13 +24,13 @@ int viewer_open()
 
 
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
-    int x_pos = (glutGet(GLUT_SCREEN_WIDTH) - v->getWidth()) / 2;
-    int y_pos = (glutGet(GLUT_SCREEN_HEIGHT) - v->getHeight()) / 2;
+    int x_pos = (glutGet(GLUT_SCREEN_WIDTH) - v->width) / 2;
+    int y_pos = (glutGet(GLUT_SCREEN_HEIGHT) - v->height) / 2;
 
     glutInitWindowPosition(x_pos, y_pos);
 
-    glutInitWindowSize(v->getWidth(), v->getHeight());
-    v->setWindowId(glutCreateWindow("Viewer"));
+    glutInitWindowSize(v->width, v->height);
+    v->window_id = glutCreateWindow("Viewer");
     
     glutDisplayFunc(callback_display);
     glutIdleFunc(callback_idle);
@@ -31,17 +44,23 @@ int viewer_open()
     return 0;
 }
 
+void viewer_destroy() {
+    if (v != NULL) {
+        v->images.clear();
+        free(v);
+        v = NULL;
+    }
+}
+
 int pre_display()
 {
-    viewer* v = v->getInstance();
-
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
         goto fail_exit;
     }
 
-    glViewport(0, 0, v->getWidth(), v->getHeight());
+    glViewport(0, 0, v->width, v->height);
     if (LOG_ERROR_OPENGL("glViewport") < 0) {
         goto fail_exit;
     }
@@ -64,7 +83,6 @@ fail_exit:
 
 int display()
 {
-    viewer* v = v->getInstance();
     unsigned int VBO, VAO, EBO;
     shader myShader("../res/shaders/basic.glsl");
     image img = image();
@@ -75,9 +93,9 @@ int display()
         goto fail_exit;
     }
 
-    if (v->getCurrpos() < v->getImages().size())
+    if (v->curr_pos < v->images.size())
     {
-        img = v->getImages()[v->getCurrpos()];
+        img = v->images[v->curr_pos];
     }
 
     glGenVertexArrays(1, &VAO);
@@ -106,7 +124,7 @@ int display()
     
     myShader.Bind();
 
-    texture = v->getTexture();
+    texture = v->texture;
     
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -156,7 +174,7 @@ int display()
         LOG_ERROR("No image to display");
     }
 
-    if (v->getIsEnabled()) 
+    if (v->enabled) 
     {
         glBindTexture(GL_TEXTURE_2D, texture);
         glBindVertexArray(VAO);
@@ -190,14 +208,12 @@ void callback_display()
 
 void callback_idle()
 {
-    viewer* v = v->getInstance();
-    glutSetWindow(v->getWindowId());
+    glutSetWindow(v->window_id);
     glutPostRedisplay();
 }
 
 void callback_keyboard(unsigned char key, int x, int y)
 {
-    viewer* v = v->getInstance();
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
@@ -209,24 +225,24 @@ void callback_keyboard(unsigned char key, int x, int y)
     switch (key) {
     case 'q':
         printf("Closing the viewer\n");
-        v->setisInit(!v->getisInit());
+        glDeleteTextures(1, &v->texture);
         glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_CONTINUE_EXECUTION);
         glutLeaveMainLoop();
         break;
 
     case 'r':
         std::cout << "Next image" << std::endl;
-        v->setCurrPos(v->getCurrpos() + 1);
+        v->curr_pos++;
         break;
 
     case 'l':
         std::cout << "Previous image" << std::endl;
-        v->setCurrPos(v->getCurrpos() - 1);
+        v->curr_pos--;
         break;
 
     case ' ':
-        printf("Rendering %s\n", v->getIsEnabled() ? "disabled" : "enabled");
-        v->setIsEnable(!v->getIsEnabled());
+        printf("Rendering %s\n", v->enabled ? "disabled" : "enabled");
+        v->enabled = !v->enabled;
         break;
 
     default:
@@ -236,16 +252,15 @@ void callback_keyboard(unsigned char key, int x, int y)
 
 void callback_reshape(int width, int height) 
 {
-    viewer* v = v->getInstance();
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
         return;
     }
 
-    glutSetWindow(v->getWindowId());
+    glutSetWindow(v->window_id);
     glutReshapeWindow(width, height);
 
-    v->setWidth(width);
-    v->setHeight(height);
+    v->width = width;
+    v->height = height;
 }
