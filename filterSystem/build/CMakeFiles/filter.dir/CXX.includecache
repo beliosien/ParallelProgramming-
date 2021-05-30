@@ -67,8 +67,8 @@ assert.h
 -
 
 ../include/utilitary.h
-viewer.h
-../include/viewer.h
+viewer_utilitary.h
+../include/viewer_utilitary.h
 image.h
 ../include/image.h
 stb_image_write.h
@@ -79,10 +79,6 @@ dirent.h
 -
 
 ../include/viewer.h
-GL/glew.h
--
-shader.h
-../include/shader.h
 iostream
 -
 string
@@ -91,22 +87,22 @@ vector
 -
 image.h
 ../include/image.h
+
+../include/viewer_utilitary.h
+GL/glew.h
+-
+shader.h
+../include/shader.h
 GL/glxew.h
 -
-log.h
-../include/log.h
 GL/glut.h
 -
 GL/freeglut_ext.h
 -
-
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.cpp
-filter.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.h
-math.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/math.h
-omp.h
--
+log.h
+../include/log.h
+viewer.h
+../include/viewer.h
 
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
 experimental/filesystem

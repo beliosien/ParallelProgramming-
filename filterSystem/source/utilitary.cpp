@@ -15,6 +15,22 @@ void show_help()
     exit(0);
 }
 
+/**
+ * show the menu
+*/
+void show_menu()
+{
+    std::cout << "0. Open the viewer"              << std::endl;
+    std::cout << "1. Apply detect egde filter"     << std::endl;
+    std::cout << "2. Apply sharpen edge filter"    << std::endl;
+    std::cout << "3. Apply box blur filter"        << std::endl;
+    std::cout << "4. Apply gaussian blur filter"   << std::endl;
+    std::cout << "5. Apply sobel filter"           << std::endl;
+    std::cout << "6. Scale up your image/images"   << std::endl;
+    std::cout << "7. Save your image/images"       << std::endl;
+    std::cout << "9. close the application"        << std::endl;
+}
+
 
 /**
  * load all png image in the folder
@@ -75,6 +91,7 @@ std::vector<image> load_images(std::string& dirname)
 */
 void save_image(image& img, std::string& filename)
 {
+    std::cout << "saving " << filename << std::endl;
     stbi_write_jpg(filename.c_str(), img.getWidth(), img.getHeight(), img.getChannels(), img.getPixels(), 100);
 }
 
@@ -86,7 +103,7 @@ void save_image(image& img, std::string& filename)
  * 
 */
 void save_folder(std::vector<image>& imgs, std::string& dirname)
-{
+{   
     for (auto it = imgs.begin(); it != imgs.end(); it++)
     {
         std::string filename = dirname + "/" + it->getName() + ".jpg";
@@ -97,23 +114,26 @@ void save_folder(std::vector<image>& imgs, std::string& dirname)
 /***
  * run the image viewer 
 */
-void run_viewer()
+void run_viewer(std::vector<image>& images)
 {
-    viewer* v = v->getInstance();
-    if (v->display_init() < 0)
+    if (viewer_init(images) < 0)
     {
         LOG_ERROR("initialisation failed");
         exit(1);
     }
 
-    if(v->display_open() < 0)
+    if(viewer_open() < 0)
     {
         LOG_ERROR("failed to open viewer");
         exit(1);
     }
+
+    viewer_destroy();
 }
 
-/** code from https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s15.html*/
+/** code from https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s15.html
+ * modified by me
+*/
 std::string getFileName(const std::string& s) 
 {
    char sep = '/';

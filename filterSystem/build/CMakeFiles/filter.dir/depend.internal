@@ -19,6 +19,7 @@ CMakeFiles/filter.dir/source/main.cpp.o
  ../include/stb_image_write.h
  ../include/utilitary.h
  ../include/viewer.h
+ ../include/viewer_utilitary.h
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/main.cpp
 CMakeFiles/filter.dir/source/shader.cpp.o
  ../include/shader.h
@@ -37,10 +38,17 @@ CMakeFiles/filter.dir/source/utilitary.cpp.o
  ../include/stb_image_write.h
  ../include/utilitary.h
  ../include/viewer.h
+ ../include/viewer_utilitary.h
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.cpp
 CMakeFiles/filter.dir/source/viewer.cpp.o
  ../include/image.h
  ../include/log.h
- ../include/shader.h
  ../include/viewer.h
  /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer.cpp
+CMakeFiles/filter.dir/source/viewer_utilitary.cpp.o
+ ../include/image.h
+ ../include/log.h
+ ../include/shader.h
+ ../include/viewer.h
+ ../include/viewer_utilitary.h
+ /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer_utilitary.cpp

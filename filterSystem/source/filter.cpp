@@ -98,9 +98,9 @@ image filter_sobel(image& img)
             int pixel_y = 0;
 
             #pragma omp parallel for collapse(2) reduction(+:pixel_x,pixel_y)
-            for (int ki = 0; ki < size; ki++)
+            for (int ki = 0; ki < mask_size; ki++)
             {
-                for (int kj = 0; kj < size; kj++)
+                for (int kj = 0; kj < mask_size; kj++)
                 {
                     pixel_x += img.getPixel(i-1 + ki, j-1 + kj) * sobel_x[ki][kj];
                     pixel_y += img.getPixel(i-1 + ki, j-1 + kj) * sobel_y[ki][kj];
@@ -145,9 +145,9 @@ image convolution(image& img, const double mask[3][3], std::string& name)
             int pix = 0;
 
             #pragma omp parallel for collapse(2) reduction(+:pix)
-            for (int ki = 0; ki < size; ki++)
+            for (int ki = 0; ki < mask_size; ki++)
             {
-                for (int kj = 0; kj < size; kj++)
+                for (int kj = 0; kj < mask_size; kj++)
                 {
                     pix += img.getPixel(i-1+ki, j-1+kj) * mask[ki][kj];
                 }
