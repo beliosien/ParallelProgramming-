@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
     glutInitContextVersion(3,3);
     glutInitContextProfile(GLUT_CORE_PROFILE);
+    glutInit(&argc, argv);
 
     bool isFile = false;
     bool isFolder = false;
@@ -70,6 +71,7 @@ int main(int argc, char *argv[])
     do
     {
         show_menu();
+        cout << endl;
         cout << "Select your choice by entering the appropriate number and press enter" << endl;
         cin >> choice;
         
@@ -78,10 +80,9 @@ int main(int argc, char *argv[])
         case 0:
             if (filtered_images.size() > 0)
             {
-               
-                glutInit(&argc, argv);
                 run_viewer(filtered_images);
-            } else {
+            } else 
+            {
                 std::cout << "Nothing to display. Please choose one operation before using the viewer." << endl;
             }
             break;
@@ -190,11 +191,10 @@ int main(int argc, char *argv[])
                     cin >> factor;
                 } while (factor > max_factor || factor < min_factor);
                 
-
                 std::string name = getFileName(path);
                 image img = image(path, name);
                 image gray_image = filter_to_grayscale(img);
-                image scaled_image = filter_scale_up(scaled_image, factor);
+                image scaled_image = filter_scale_up(gray_image, factor);
                 filtered_images.push_back(scaled_image);
             } else if (isFolder)
             {
@@ -234,6 +234,5 @@ int main(int argc, char *argv[])
         }
     } while (choice != 9);
     
-    cout << "Thank you bye bye." << endl;
     return 0;
 }

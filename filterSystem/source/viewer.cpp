@@ -42,7 +42,7 @@ void viewer::show_viewer_commands()
     std::cout << " press space           to enable/disable the viewer"  << std::endl;
     std::cout << " press 'q'             to quit the application"       << std::endl;
 
-    std::cout << "Thank you" << std::endl;
+    std::cout << "Thank you." << std::endl;
 }
 
 

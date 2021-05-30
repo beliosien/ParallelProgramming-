@@ -1,6 +1,5 @@
 #include "viewer_utilitary.h"
 
-
 int viewer_init(std::vector<image>& images)
 {
     if (v != NULL)
@@ -86,7 +85,6 @@ int display()
     unsigned int VBO, VAO, EBO;
     shader myShader("../res/shaders/basic.glsl");
     image img = image();
-    GLuint texture;
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
@@ -124,10 +122,13 @@ int display()
     
     myShader.Bind();
 
-    texture = v->texture;
+    if (v->texture == 0) {
+        glGenTextures(1, &v->texture);
+        if (LOG_ERROR_OPENGL("glGenTextures") < 0) {
+            goto fail_exit;
+        }
+    }
     
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     if (LOG_ERROR_OPENGL("glTexParameteri") < 0) 
@@ -176,12 +177,12 @@ int display()
 
     if (v->enabled) 
     {
-        glBindTexture(GL_TEXTURE_2D, texture);
+        glBindTexture(GL_TEXTURE_2D, v->texture);
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
         glBindVertexArray(0);
     }
-
+    
     return 0;
 
 fail_exit:
@@ -217,26 +218,23 @@ void callback_keyboard(unsigned char key, int x, int y)
     if (v == NULL)
     {
         LOG_ERROR("viewer has not been initialized");
-        glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_CONTINUE_EXECUTION);
         glutLeaveMainLoop();
 
     }
 
     switch (key) {
     case 'q':
-        printf("Closing the viewer\n");
-        glDeleteTextures(1, &v->texture);
-        glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_CONTINUE_EXECUTION);
+        std::cout << "Closing the application" << std::endl;
         glutLeaveMainLoop();
         break;
 
     case 'r':
-        std::cout << "Next image" << std::endl;
+        std::cout << "Moving to the next image" << std::endl;
         v->curr_pos++;
         break;
 
     case 'l':
-        std::cout << "Previous image" << std::endl;
+        std::cout << "Moving to the previous image" << std::endl;
         v->curr_pos--;
         break;
 

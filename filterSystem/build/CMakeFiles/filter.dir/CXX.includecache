@@ -118,15 +118,3 @@ image.h
 filter.h
 /home/philippe/Desktop/ParallelProgramming-/filterSystem/source/filter.h
 
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.cpp
-utilitary.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/utilitary.h
-
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer.cpp
-viewer.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer.h
-
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer_utilitary.cpp
-viewer_utilitary.h
-/home/philippe/Desktop/ParallelProgramming-/filterSystem/source/viewer_utilitary.h
-
