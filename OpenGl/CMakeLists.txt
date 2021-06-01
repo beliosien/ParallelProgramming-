@@ -11,6 +11,7 @@ target_link_libraries(opengl -lGL -lGLU -lglut ${SDL2_LIBRARIES})
 target_sources(opengl PUBLIC
     source/Display.cpp
     source/shader.cpp
+    source/Mesh.cpp
     source/main.cpp
 )
 
