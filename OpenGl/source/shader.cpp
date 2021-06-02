@@ -4,6 +4,8 @@
 shader::shader(const std::string& filepath) : m_FilePath(filepath), m_rendererID(0) {
     shaderProgramSource source = ParseShader(filepath);
     m_rendererID               = CreateShader(source.VertexSource, source.FragmentSource);
+
+
 }
 
 shader::~shader() {
@@ -84,6 +86,14 @@ void shader::Bind() const {
 
 void shader::Unbind() const {
     glUseProgram(0);
+}
+
+void shader::Update(Transform& transform)
+{
+    std::string name = "transform";
+    glm::mat4 model = transform.getModel();
+    int location = GetUniformLocation(name);
+    glUniformMatrix4fv(location, 1, GL_FALSE, &model[0][0]);
 }
 
 void shader::SetUniform1i(const std::string& name, int value){

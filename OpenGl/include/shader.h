@@ -2,6 +2,7 @@
 #define INCLUDE_SHADER_H
 
 #include <GL/glew.h>
+#include "Transform.h"
 #include <malloc.h>
 #include <stdio.h>
 #include <string>
@@ -28,6 +29,8 @@ class shader {
 
     void Bind() const;
     void Unbind() const;
+
+    void Update(Transform& transform);
 
     void SetUniform1i(const std::string& name, int value);
     void SetUniform1f(const std::string& name, float value);

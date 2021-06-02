@@ -4,6 +4,7 @@
 #include "shader.h"
 #include "Mesh.h"
 #include "Texture.h"
+#include "Transform.h"
 
 using namespace std;
 
@@ -20,17 +21,24 @@ int main()
     Texture texture("../textures/route.png");
     shader shader("../shaders/basic.glsl");
     Mesh mesh = Mesh(vertices, sizeof(vertices)/sizeof(vertices[0]));
+    Transform transform;
+
+    float counter = 0.0f;
     
 
     while (!display.IsClosed())
     {
         display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
 
+        transform.getPos().x = sinf(counter);
+        transform.getRot().y = counter * 20;
         shader.Bind();
         texture.Bind(0);
+        shader.Update(transform);
         mesh.Draw();
         
         display.Update();
+        counter += 0.01f;
     }
     
 

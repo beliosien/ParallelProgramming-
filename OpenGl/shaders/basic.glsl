@@ -6,9 +6,11 @@ attribute vec2 aText;
 
 varying vec2 texcoord0;
 
+uniform mat4 transform;
+
 void main()
 {
-    gl_Position = vec4(aPos, 1.0);
+    gl_Position = transform * vec4(aPos, 1.0);
     texcoord0 = aText;
 }
 
