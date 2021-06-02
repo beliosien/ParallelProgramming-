@@ -12,6 +12,8 @@ target_sources(opengl PUBLIC
     source/Display.cpp
     source/shader.cpp
     source/Mesh.cpp
+    source/stb_image.cpp
+    source/Texture.cpp
     source/main.cpp
 )
 
