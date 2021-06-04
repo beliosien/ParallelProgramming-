@@ -5,6 +5,10 @@
 #include "Mesh.h"
 #include "Texture.h"
 #include "Transform.h"
+#include "Camera.h"
+
+#define width 800
+#define heigth 600
 
 using namespace std;
 
@@ -22,6 +26,7 @@ int main()
     shader shader("../shaders/basic.glsl");
     Mesh mesh = Mesh(vertices, sizeof(vertices)/sizeof(vertices[0]));
     Transform transform;
+    Camera camera(glm::vec3(0,0,-1), 70.0f, (float)width/heigth, 0.01f, 1000.0f);
 
     float counter = 0.0f;
     
@@ -34,7 +39,7 @@ int main()
         transform.getRot().y = counter * 20;
         shader.Bind();
         texture.Bind(0);
-        shader.Update(transform);
+        shader.Update(transform, camera);
         mesh.Draw();
         
         display.Update();

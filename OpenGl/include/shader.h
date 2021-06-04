@@ -11,6 +11,7 @@
 #include <sstream>
 #include <iostream>
 #include <vector>
+#include "Camera.h"
 
 struct shaderProgramSource {
     std::string VertexSource;
@@ -30,7 +31,7 @@ class shader {
     void Bind() const;
     void Unbind() const;
 
-    void Update(Transform& transform);
+    void Update(Transform& transform, const Camera& camera);
 
     void SetUniform1i(const std::string& name, int value);
     void SetUniform1f(const std::string& name, float value);

@@ -88,10 +88,10 @@ void shader::Unbind() const {
     glUseProgram(0);
 }
 
-void shader::Update(Transform& transform)
+void shader::Update(Transform& transform, const Camera& camera)
 {
     std::string name = "transform";
-    glm::mat4 model = transform.getModel();
+    glm::mat4 model = camera.GetViewProjection() * transform.getModel();
     int location = GetUniformLocation(name);
     glUniformMatrix4fv(location, 1, GL_FALSE, &model[0][0]);
 }
