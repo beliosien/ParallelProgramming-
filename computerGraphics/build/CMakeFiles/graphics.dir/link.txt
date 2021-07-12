@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp    CMakeFiles/graphics.dir/source/main.cpp.o  -o graphics  -lGL -lGLU -lglut /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libXi.so /usr/lib/x86_64-linux-gnu/libGLEW.so 

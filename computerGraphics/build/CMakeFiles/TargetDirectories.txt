@@ -1,0 +1,5 @@
+/home/philippe/Desktop/ParallelProgramming-/computerGraphics/build/CMakeFiles/edit_cache.dir
+/home/philippe/Desktop/ParallelProgramming-/computerGraphics/build/CMakeFiles/rebuild_cache.dir
+/home/philippe/Desktop/ParallelProgramming-/computerGraphics/build/CMakeFiles/remise.dir
+/home/philippe/Desktop/ParallelProgramming-/computerGraphics/build/CMakeFiles/format.dir
+/home/philippe/Desktop/ParallelProgramming-/computerGraphics/build/CMakeFiles/graphics.dir
